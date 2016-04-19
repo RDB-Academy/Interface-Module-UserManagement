@@ -6,11 +6,11 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     sassOptions: {
       includePaths: [
-        //'bower_components/foundation-sites/scss/'
+        'bower_components/bootstrap-sass/assets/stylesheets'
       ]
     }
   });
-  app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js');
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
