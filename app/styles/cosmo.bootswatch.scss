@@ -252,6 +252,12 @@ a.list-group-item {
   }
 }
 
+.btn {
+  &:active, &:focus {
+    outline:none;
+  }
+}
+
 .modal {
   .close {
     color: $text-color;
