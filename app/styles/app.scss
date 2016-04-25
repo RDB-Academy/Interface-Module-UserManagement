@@ -5,6 +5,56 @@
 
 @import "cosmo.bootswatch";
 
+
+.centered-grid-md-11 {
+  @extend .col-md-11;
+  float: none;
+  margin: 0 auto;
+  > .games {
+    @extend .row;
+    margin-top: 50px;
+  }
+  > .DataPorn {
+    > .pagination {
+      .button {
+        border: 0;
+        background: grey;
+        height: 14px;
+        width: 14px;
+        border-radius: 30px;
+        &:active {
+          outline: none;
+        }
+        &:hover {
+          background: #313131
+        }
+      }
+    }
+  }
+  .thumbnail-vertical {
+    @extend .row;
+    > .thumbnail-vertical-body {
+      @extend .col-md-10;
+      &.body-left {
+        @extend .col-md-pull-2;
+      }
+      > .panel {
+        margin-bottom: 0px;
+      }
+    }
+    > .thumbnail-vertical-image {
+      @extend .col-md-2;
+      &.image-right {
+        @extend .col-md-push-10;
+      }
+
+      .thumbnail-vertical-object {
+        width: 100%;
+      }
+    }
+  }
+}
+
 .navbar {
   .navbar-badge.badge {
     margin-right: 10px;
