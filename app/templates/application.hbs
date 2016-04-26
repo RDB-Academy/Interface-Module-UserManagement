@@ -16,7 +16,7 @@
       <nav class="collapse navbar-collapse" id="navbar-menu-bar">
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="navbar-badge badge">1</span>fabiomazzone<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="navbar-badge badge">1</span>fabiomazzone <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li>
                 <div class="navbar-profile">
@@ -24,15 +24,11 @@
                     <img src="img/identicon.png" class="img-circle"/>
                   </a>
                   <div class="profile-text" >
-
                       <a>fabiomazzone</a>
-
                     <span class="cs-breakline"></span>
-
                       <a>Settings</a>
-
                   </div>
-                </div>
+                </div> <!-- /.navbar-profile -->
               </li>
               <li role="separator" class="divider"></li>
               <li><a href="#">friends <span class="badge pull-right">1</span></a></li>
@@ -40,7 +36,7 @@
               <li><a href="#">achievements</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="#">log out</a></li>
-            </ul>
+            </ul> <!-- /.dropdown-menu -->
           </li>
         </ul>
         <form class="navbar-form navbar-right">
@@ -51,9 +47,9 @@
     </div><!-- /.container-fluid -->
   </nav>
 </header>
-<content>
+<main>
   {{outlet}}
-</content>
+</main>
 <footer style="background: #222222; color: #fff">
   <div class="container">
     <div class="footer">
@@ -66,5 +62,5 @@
         <p> girls</p>
       </div>
     </div>
-  </div>
+  </div> <!-- /.footer -->
 </footer>

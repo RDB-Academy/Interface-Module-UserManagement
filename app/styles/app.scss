@@ -5,6 +5,14 @@
 
 @import "cosmo.bootswatch";
 
+body {
+  background-color: #222222;
+}
+
+main {
+  background-color: #fff;
+}
+
 .navbar {
   .navbar-badge.badge {
     margin-right: 10px;
@@ -49,18 +57,18 @@
 .thumbnail-vertical {
   @extend .row;
   > .thumbnail-vertical-body {
-    @extend .col-md-10;
+    @extend .col-sm-10;
     &.body-left {
-      @extend .col-md-pull-2;
+      @extend .col-sm-pull-2;
     }
     > .panel {
       margin-bottom: 0px;
     }
   }
   > .thumbnail-vertical-image {
-    @extend .col-md-2;
+    @extend .col-sm-2;
     &.image-right {
-      @extend .col-md-push-10;
+      @extend .col-sm-push-10;
     }
 
     .thumbnail-vertical-object {
@@ -82,6 +90,15 @@
       height: 14px;
       width: 14px;
       border-radius: 30px;
+
+      &.left {
+
+      }
+
+      &.right {
+
+      }
+
       &:active {
         outline: none;
       }
@@ -100,7 +117,7 @@ footer {
   .footer {
     @extend .row;
     > .footer-column {
-      @extend .col-md-4;
+      @extend .col-sm-4;
       padding-left: 20px;
     }
   }
