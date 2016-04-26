@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu-bar" aria-expanded="false">
@@ -52,11 +52,19 @@
   </nav>
 </header>
 <content>
-  {{#if model}}
-    {{model}}
-  {{/if}}
   {{outlet}}
 </content>
-<footer>
-
+<footer style="background: #222222; color: #fff">
+  <div class="container">
+    <div class="footer">
+      <div class="footer-column">
+        <b>Test</b>
+        <p> about us </p>
+      </div>
+      <div class="footer-column">
+        <b>Test2</b>
+        <p> girls</p>
+      </div>
+    </div>
+  </div>
 </footer>
