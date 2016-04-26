@@ -5,38 +5,8 @@
 
 @import "cosmo.bootswatch";
 
-body {
-  background-color: #222222;
-}
-
-main {
-  background-color: #fff;
-}
-
-.navbar {
-  .navbar-badge.badge {
-    margin-right: 10px;
-    margin-top: -3px;
-  }
-  .navbar-profile {
-    display: flex;
-    margin: 10px;
-    img {
-      height: 55px;
-      width: 55px;
-    }
-    .profile-text {
-      min-width: 180px;
-      width: 100%;
-      margin: auto 5px;
-      a {
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
-  }
-}
+@import "global.scss";
+@import "index.scss";
 
 .cs-breakline {
   display: block;
@@ -50,75 +20,26 @@ main {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1a000000',GradientType=1 );
 }
 
-#welcome.jumbotron {
-  margin-top: -20px;
-}
-
 .thumbnail-vertical {
   @extend .row;
   > .thumbnail-vertical-body {
-    @extend .col-sm-10;
+    @extend .col-sm-9;
+    padding: 0px;
     &.body-left {
-      @extend .col-sm-pull-2;
+      @extend .col-sm-pull-3;
     }
     > .panel {
       margin-bottom: 0px;
     }
   }
   > .thumbnail-vertical-image {
-    @extend .col-sm-2;
+    @extend .col-sm-3;
     &.image-right {
-      @extend .col-sm-push-10;
+      @extend .col-sm-push-9;
     }
 
     .thumbnail-vertical-object {
       width: 100%;
-    }
-  }
-}
-
-
-.games {
-  @extend .row;
-  margin-top: 50px;
-}
-.DataPorn {
-  > .pagination {
-    .button {
-      border: 0;
-      background: grey;
-      height: 14px;
-      width: 14px;
-      border-radius: 30px;
-
-      &.left {
-
-      }
-
-      &.right {
-
-      }
-
-      &:active {
-        outline: none;
-      }
-      &:hover {
-        background: #313131
-      }
-    }
-  }
-}
-
-
-footer {
-  background-color: #222222;
-  color: #fff;
-
-  .footer {
-    @extend .row;
-    > .footer-column {
-      @extend .col-sm-4;
-      padding-left: 20px;
     }
   }
 }
