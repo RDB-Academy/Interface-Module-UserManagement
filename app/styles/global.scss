@@ -3,7 +3,7 @@ body {
 }
 
 .nav.navbar-nav {
-  > li {
+  > li.profile {
     min-width: 200px;
     text-align: center;
     > .navbar-avatar-container {
@@ -60,6 +60,24 @@ body {
           text-decoration: none;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-xs-max) {
+  .nav.navbar-nav > li.profile > .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    display: block;
+    > li > a {
+      color: #fff;
+      line-height: 21px;
+      padding: 5px 15px 5px 25px;
     }
   }
 }
