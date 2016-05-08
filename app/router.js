@@ -10,6 +10,8 @@ Router.map(function() {
   this.route('profile');
   this.route('achievments');
   this.route('leaderboard');
+  this.route('aboutus');
+  this.route('friends');
 });
 
 export default Router;
