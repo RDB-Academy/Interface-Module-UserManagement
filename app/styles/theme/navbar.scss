@@ -86,3 +86,14 @@
     }
   }
 }
+
+.modal-dialog .btn-confirm {
+  @extend .btn-primary;
+  width: 100%;
+}
+
+@media (min-width: $screen-sm-min) {
+  .modal-dialog {
+    margin-top: 11%;
+  }
+}

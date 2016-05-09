@@ -16,10 +16,14 @@
       <nav class="collapse navbar-collapse" id="navbar-menu-bar">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a>Login</a>
+            <a data-toggle="modal" data-target="#loginModal">
+              Login
+            </a>
           </li>
           <li>
-            <a>Sign Up</a>
+            <a data-toggle="modal" data-target="#signUpModal">
+              Sign Up
+            </a>
           </li>
           <li class="dropdown profile">
             <div class="navbar-avatar-container">
@@ -55,6 +59,76 @@
 </header>
 <main>
   {{outlet}}
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title" id="loginModalTitle">Login</h3>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="form-group col-xs-12">
+                <label for="loginEmailInputLabel">Email address</label>
+                <input type="email" class="form-control" id="loginEmailInput" placeholder="Email">
+              </div>
+              <div class="form-group col-xs-12">
+                <label for="loginPasswordInputLabel">Password</label>
+                <input type="password" class="form-control" id="loginPasswordInput" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-4">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+                  <button type="button" class="btn btn-confirm">Login</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title" id="signUpModalTitle">Sign Up</h3>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="form-group col-xs-12">
+                <label for="signUpEmailInputLabel">Email address</label>
+                <input type="email" class="form-control" id="signUpEmailInput" placeholder="Email">
+              </div>
+              <div class="form-group col-xs-12">
+                <label for="signUpUsernameInputLabel">Username</label>
+                <input type="username" class="form-control" id="signUpUsernameInput" placeholder="Username">
+              </div>
+              <div class="form-group col-xs-12">
+                <label for="signUpPasswordInputLabel">Password</label>
+                <input type="password" class="form-control" id="signUpPasswordInput" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <div class="col-xs-12 col-sm-4 col-sm-offset-8">
+                  <button type="button" class="btn btn-confirm">SignUp</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 <footer style="background: #222222; color: #fff">
   <div class="container">
