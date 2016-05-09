@@ -15,17 +15,8 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <nav class="collapse navbar-collapse" id="navbar-menu-bar">
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a>Login</a>
-          </li>
-          <li>
-            <a>Sign Up</a>
-          </li>
-          <li class="dropdown profile">
-            <div class="navbar-avatar-container">
-              <img src="img/identicon.png" class="avatar-image" />
-            </div>
-            <a href="#" class="dropdown-toggle  hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="navbar-badge badge">1</span>fabiomazzone <span class="caret"></span></a>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="navbar-badge badge">1</span>fabiomazzone <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li>
                 <div class="navbar-profile">
@@ -41,7 +32,7 @@
               </li>
               <li role="separator" class="divider"></li>
               <li>{{#link-to "home"}}Home{{/link-to}}</li>
-              <li>{{#link-to "friends"}}friends <span class="badge pull-right">1</span>{{/link-to}}</li>
+              <li><a href="#">friends <span class="badge pull-right">1</span></a></li>
               <li>{{#link-to "leaderboard"}}leaderboard{{/link-to}}</li>
               <li>{{#link-to "achievments"}}achievements{{/link-to}}</li>
               <li role="separator" class="divider"></li>
@@ -49,6 +40,10 @@
             </ul> <!-- /.dropdown-menu -->
           </li>
         </ul>
+        <form class="navbar-form navbar-right">
+          <button type="button" class="btn btn-default">Login</button>
+          <button type="button" class="btn btn-default">Sign up</button>
+        </form>
       </nav><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
@@ -61,7 +56,11 @@
     <div class="footer">
       <div class="footer-column">
         <b>Test</b>
-        <p> about us </p>
+          <p>
+            {{#link-to "aboutus"}}
+              About Us
+            {{/link-to}}
+          </p>
       </div>
       <div class="footer-column">
         <b>Test2</b>
