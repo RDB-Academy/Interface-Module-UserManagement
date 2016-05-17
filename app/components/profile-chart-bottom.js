@@ -4,8 +4,9 @@ export default Ember.Component.extend({
   tagName: "canvas",
 
   didRender(){
-    Chart.defaults.global.legend.display = true;
     Chart.defaults.global.legend.position = "bottom";
+    //Chart.defaults.global.options.scale.ticks.suggestedMax = 1;
+    //Chart.defaults.global.options.scale.ticks.beginAtZero: true;
 
     var ctx = this.$()[0];
     console.log(ctx);
@@ -38,9 +39,16 @@ export default Ember.Component.extend({
           }
         ]
       },
-      options : {
-
-      }
+      options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+                    max: 100
+                }
+            }]
+        }
+    }
     });
   }
 
