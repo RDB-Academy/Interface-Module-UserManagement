@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     Chart.defaults.global.legend.position = "bottom";
 
     var ctx = this.$()[0];
-    console.log(ctx);
+    ctx.onselectstart = function() {return false};
     ctx.height = 1/3*ctx.width;
     new Chart(ctx, {
       type: 'line',
