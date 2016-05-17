@@ -7,8 +7,8 @@ export default Ember.Component.extend({
       Chart.defaults.global.legend.position = "bottom";
 
       var ctx = this.$()[0];
+      ctx.onselectstart = function() {return false};
       ctx.height = ctx.width;
-      console.log(ctx);
       new Chart(ctx, {
         type: 'radar',
         data : {
