@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('home');
   this.route('profile');
-  this.route('achievments');
+  this.route('achievements');
   this.route('leaderboard');
   this.route('aboutus');
   this.route('friends');
