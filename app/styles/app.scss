@@ -2,8 +2,14 @@
 
 @import 'global';
 @import 'index';
+<<<<<<< HEAD
 @import "aboutus";
 @import 'achievements';
+=======
+@import 'aboutus';
+@import 'friends';
+@import 'achievments';
+>>>>>>> ea76a19b08f0a77c07be446e7afe1565aaedf8ad
 
 .cs-breakline {
   background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.0) 100%);
