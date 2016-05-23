@@ -1,5 +1,4 @@
 # Usermanagement-frontend
-
 [![Build Status](https://travis-ci.org/ifis-featuring-poeblis/UserManagment-FrontEnd.svg?branch=develop)](https://travis-ci.org/ifis-featuring-poeblis/UserManagment-FrontEnd)
 
 This README outlines the details of collaborating on this Ember application.
