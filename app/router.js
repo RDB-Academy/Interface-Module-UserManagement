@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('aboutus');
   this.route('friends');
   this.route('impressum');
+  this.route('settings');
 });
 
 export default Router;
