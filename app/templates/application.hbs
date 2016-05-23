@@ -39,15 +39,15 @@
                   <div class="profile-text" >
                       {{#link-to "profile" class="test"}}fabiomazzone{{/link-to}}
                     <span class="cs-breakline"></span>
-                      <a>Settings</a>
+                      {{#link-to "settings"}}Settings{{/link-to}}
                   </div>
                 </div> <!-- /.navbar-profile -->
               </li>
               <li role="separator" class="divider"></li>
               <li>{{#link-to "home"}}Home{{/link-to}}</li>
-              <li><a href="#">friends <span class="badge pull-right">1</span></a></li>
+              <li>{{#link-to "friends"}}friends <span class="badge pull-right">1</span>{{/link-to}}</li>
               <li>{{#link-to "leaderboard"}}leaderboard{{/link-to}}</li>
-              <li>{{#link-to "achievments"}}achievements{{/link-to}}</li>
+              <li>{{#link-to "achievements"}}achievements{{/link-to}}</li>
               <li role="separator" class="divider"></li>
               <li><a href="#">log out</a></li>
             </ul> <!-- /.dropdown-menu -->
