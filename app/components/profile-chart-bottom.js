@@ -9,7 +9,9 @@ export default Ember.Component.extend({
     //Chart.defaults.global.options.scale.ticks.beginAtZero: true;
 
     var ctx = this.$()[0];
-    ctx.onselectstart = function() {return false};
+    ctx.onselectstart = function() {
+      return false;
+    };
     ctx.height = 1/3*ctx.width;
     new Chart(ctx, {
       type: 'line',
