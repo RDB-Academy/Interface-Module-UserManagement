@@ -1,0 +1,15 @@
+<div class="thumbnail-vertical">
+  <div class="thumbnail-vertical-image {{if isLeft "image-left" "image-right"}}">
+    <img class="thumbnail-vertical-object" src="{{image}}"/>
+  </div>
+  <div class="thumbnail-vertical-body {{if isLeft "body-right" "body-left"}}">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{title}}</h3>
+      </div>
+      <div class="panel-body">
+        {{yield}}
+      </div>
+    </div>
+  </div>
+</div>

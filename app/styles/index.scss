@@ -1,9 +1,12 @@
-#welcome.jumbotron {
-  margin-top: -21px;
-}
 
-.feature-list {
-  padding-left: 15px;
+.jumbotron {
+  &.welcome {
+    margin-top: -21px;
+
+    h1 {
+      margin-top: 15px;
+    }
+  }
 }
 
 .game-collection {
