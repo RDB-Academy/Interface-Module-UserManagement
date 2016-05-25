@@ -1,2 +1,39 @@
-<h1>Home</h1>
 {{outlet}}
+<div class="jumbotron">
+  <div class="container">
+    <div class="page-header">
+      <h1>Hi {username}! <small>Haven't seen you in a while! </small></h1>
+      <p> daily status bla bla bla lorem ipsum </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="feature-list">
+    {{#thumbnail-vertical "SQL" "img/sql-Trainer.jpg"}}
+        Discription: <br>
+        last time played: <br>
+        current status: <br>
+        earned points: <br><br>
+        <p><a href="#" class="btn btn-default" role="button">Start Now</a></p>
+    {{/thumbnail-vertical}}
+    {{#thumbnail-vertical "Relational Algebra" "img/relationalalgebra-Trainer.jpg" true}}
+    Discription: <br>
+    last time played: <br>
+    current status: <br>
+    earned points: <br><br>
+        <p><a href="#" class="btn btn-default" role="button">Start Now</a></p>
+    {{/thumbnail-vertical}}
+    {{#thumbnail-vertical "SQL-Alchemist" "img/sql-Trainer.jpg"}}
+    Discription: <br>
+    last time played: <br><br>
+        <p><a href="https://sqlalchemist.ifis.cs.tu-bs.de/" class="btn btn-default" role="button">Go to SQL-Alchemist!</a></p>
+    {{/thumbnail-vertical}}
+    {{#thumbnail-vertical "Leaderboards" "img/icon__leaderboard.png" true}}
+    Discription: <br>
+    last time played: <br>
+    current status: <br>
+    earned points: <br><br>
+        <p><a href="#" class="btn btn-default" role="button">Start Now</a></p>
+    {{/thumbnail-vertical}}
+  </div>
+</div>
