@@ -1,25 +1,17 @@
 {{outlet}}
-<div class="container-fluid">
+
+<div class="container">
+  <div class="fb-profile">
+      <img align="left" class="fb-image-lg" src="/img/1-0.png"/>
+      <img align="left" class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
+      <div class="page-header">
+        <h1>{username} <small>{current status} </small></h1>
+        <p>some additional stuff</p>
+      </div>
+  </div>
   <div class="feature-list">
     <div class="well well-lg">
       <div class="row">
-        <div class="col-md-9">
-          <div class="thumbnail-vertical">
-            <div class="thumbnail-vertical-image image-left">
-              <img class="thumbnail-vertical-object img-circle" src="img/gamification-word-cloud.jpg"/>
-            </div>
-            <div class="thumbnail-vertical-body body-right">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h2 class="panel-title">Username</h2>
-                </div>
-                <div class="panel-body">
-                  Blabla
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="col-md-3 col-xs-6">
           {{profile-chart}}
         </div>
