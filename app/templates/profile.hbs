@@ -1,22 +1,40 @@
 {{outlet}}
-
 <div class="container">
   <div class="fb-profile">
       <img align="left" class="fb-image-lg" src="/img/1-0.png"/>
       <img align="left" class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
-      <div class="page-header">
+      <div class="page-header" style="margin-bottom: 4em;">
         <h1>{username} <small>{current status} </small></h1>
         <p>some additional stuff</p>
       </div>
   </div>
   <div class="feature-list">
-    <div class="well well-lg">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        your stats
+      </div>
       <div class="row">
-        <div class="col-md-3 col-xs-6">
+        <div class="col-md-5 col-xs-6" style="float: right;">
           {{profile-chart}}
         </div>
+        <div class="col-md-5">
+          <table class="table table-striped table-hover">
+            <tbody>
+            {{#each array as |x|}}
+              <tr>
+                <td>bla</td>
+                <td>asd</td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </div>
       </div>
-      <h4>Recent Achievements</h4>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Recent Achievements
+      </div>
       <div class="row">
           {{#each array as |x|}}
               <div class="col-md-1 col-xs-3">
@@ -29,22 +47,10 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        Your stats
+        some fancy carousel
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-md-5">
-            <table class="table table-striped table-hover">
-              <tbody>
-              {{#each array as |x|}}
-                <tr>
-                  <td>bla</td>
-                  <td>asd</td>
-                </tr>
-              {{/each}}
-              </tbody>
-            </table>
-          </div>
           <div class="col-md-3"/>
           <div class="col-md-4">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -90,6 +96,9 @@
       </div>
     </div>
     <div class="panel panel-default">
+      <div class="panel-heading">
+        some fancy chart
+      </div>
       {{profile-chart-bottom}}
     </div>
   </div> <!-- /.Feature-List -->
