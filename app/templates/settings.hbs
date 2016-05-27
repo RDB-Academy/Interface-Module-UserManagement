@@ -1,3 +1,100 @@
-<h1>Settings</h1>
-
+<div class="jumbotron">
+  <div class="container">
+    <div class="page-header">
+      <h1>Settings <small>Subtext for header</small></h1>
+    </div>
+  </div>
+</div>
 {{outlet}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                              <span class="glyphicon glyphicon-file">
+                              </span> General settings
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                      <label>Change Username:</label>
+                                      <input type="text" class="form-control" placeholder="new username" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <form class="form form-inline ">
+                                    <div class="form-group">
+                                        <a href="#" class="btn btn-info"><span class="glyphicon glyphicon-floppy-disk">
+                                        </span> Submit</a>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="col-md-10">
+                                  <div class="form-group">
+                                    <label>Change password:</label>
+                                    <input  type="passwords" class="form-control" placeholder="new password" required>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <form class="form form-inline ">
+                                    <div class="form-group">
+                                        <a href="#" class="btn btn-info"><span class="glyphicon glyphicon-floppy-disk">
+                                        </span> Submit</a>
+                                    </div>
+                                  </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- further stuff for changing in general setting-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th-list">
+                            </span> other settings</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="lorem ipsum 1" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="lorem ipsum 2" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="leave comment" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="well well-sm well-primary">
+                                        <form class="form form-inline " role="form">
+                                        <div class="form-group">
+                                            <a href="#" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk">
+                                            </span>Save</a>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
