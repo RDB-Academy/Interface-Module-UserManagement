@@ -43,6 +43,9 @@ export default Ember.Component.extend({
           ticks: {
             display: false
           }
+        },
+        legend: {
+          position: 'top'
         }
       }
     });
