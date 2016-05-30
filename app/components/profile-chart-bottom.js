@@ -5,21 +5,20 @@ export default Ember.Component.extend({
 
   didRender(){
     Chart.defaults.global.legend.position = "bottom";
-    //Chart.defaults.global.options.scale.ticks.suggestedMax = 1;
-    //Chart.defaults.global.options.scale.ticks.beginAtZero: true;
+    //Chart.defaults.global.legend.position.labels.padding = 0;
+    console.log(Chart.defaults.global.legend);
+
 
     var ctx = this.$()[0];
-    ctx.onselectstart = function() {
-      return false;
-    };
-    ctx.height = 1/3*ctx.width;
+    ctx.onselectstart = function() {return false};
+    ctx.height = 3/8*ctx.width;
     new Chart(ctx, {
       type: 'line',
       data : {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["6","5","4","3", "2","1","0"],
         datasets: [
           {
-            label: "My First dataset",
+            label: "You",
             fill: false,
             lineTension: 0.1,
             backgroundColor: "rgba(75,192,192,0.4)",
