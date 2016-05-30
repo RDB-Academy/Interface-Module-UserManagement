@@ -1,12 +1,26 @@
-#welcome.jumbotron {
-  margin-top: -21px;
-}
-
 .feature-list {
-  padding-left: 15px;
+  padding-bottom: 30px;
 }
 
 .game-collection {
   @extend .row;
-  margin-top: 50px;
+  padding-bottom: 30px;
+}
+
+.sticky-footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.sticky-footer-body {
+    position: relative;
+    padding-bottom: 3em;
+    margin: 0;
+    box-sizing: border-box;
+    min-height:100%
+}
+
+.sticky-footer-main {
+  min-height: 85vh;
 }

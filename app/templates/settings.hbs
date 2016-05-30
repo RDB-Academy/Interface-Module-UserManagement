@@ -1,3 +1,154 @@
-<h1>Settings</h1>
-
 {{outlet}}
+<div class="jumbotron top">
+  <div class="container">
+    <div class="page-header">
+      <h1>Settings <small>Subtext for header</small></h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-th-list">
+                          </span> Profile</a>
+                      </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                    <label> Username:</label>
+                                    <input type="text" class="form-control" placeholder="username"/>
+                                  </div>
+                                  <div class="form-group">
+                                    <label> Public email:</label>
+                                    <input type="text" class="form-control" placeholder="email"/>
+                                  </div>
+                                  <div class="form-group">
+                                    <label> URL:</label>
+                                    <input class="form-control" placeholder="url">
+                                  </div>
+                                  <div class="form-group">
+                                    <label> Company:</label>
+                                    <input class="form-control" placeholder="company">
+                                  </div>
+                                  <div class="form-group">
+                                    <label> Location:</label>
+                                    <input class="form-control" placeholder="location">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="well well-sm well-primary">
+                                      <form class="form form-inline " role="form">
+                                        <div class="form-group">
+                                            <a href="#" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk">
+                                              </span> Update profile
+                                            </a>
+                                        </div>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                              <span class="glyphicon glyphicon-file">
+                              </span> Account
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="form-group">
+                                      <label>Change password:</label>
+                                      <input  type="passwords" class="form-control" placeholder="old password" required>
+                                    </div>
+                                    <div class="form-group">
+                                      <input  type="passwords" class="form-control" placeholder="new password" required>
+                                    </div>
+                                    <div class="form-group">
+                                      <input  type="passwords" class="form-control" placeholder="confirm password" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12">
+                                      <div class="well well-sm well-primary">
+                                          <form class="form form-inline " role="form">
+                                            <div class="form-group">
+                                                <a href="#" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk">
+                                                </span> Change password
+                                                </a>
+                                            </div>
+                                          </form>
+                                      </div>
+                                  </div>
+                            </div>
+                              <label> Forgot your password? </label>
+                                <div class="form-group">
+                                  <input class="form-control" placeholder="email" required>
+                                </div>
+                                <div class="well well-sm well-primary">
+                                    <form class="form form-inline " role="form">
+                                      <div class="form-group">
+                                          <a href="#" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk">
+                                          </span> Reset password
+                                          </a>
+                                      </div>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-th-list">
+                            </span> other settings</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="lorem ipsum 1" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="lorem ipsum 2" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="leave comment" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="well well-sm well-primary">
+                                        <form class="form form-inline " role="form">
+                                        <div class="form-group">
+                                            <a href="#" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk">
+                                            </span>Save</a>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+.thumbnail-vertical {
+  @extend .row;
+  margin: 0 0 15px;
+
+  > .thumbnail-vertical-body {
+    @extend .col-sm-9;
+
+
+    &.body-left {
+      @extend .col-sm-pull-3;
+      padding-left: 0;
+      padding-right: 20px;
+    }
+
+    &.body-right {
+      padding-left: 20px;
+      padding-right: 0;
+    }
+
+    > .panel {
+      margin-bottom: 0;
+    }
+  }
+
+  > .thumbnail-vertical-image {
+    @extend .col-sm-3;
+    padding-left: 0;
+    padding-right: 0;
+
+    &.image-right {
+      @extend .col-sm-push-9;
+    }
+
+    .thumbnail-vertical-object {
+      width: 100%;
+    }
+  }
+}

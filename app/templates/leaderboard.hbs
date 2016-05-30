@@ -1,1 +1,37 @@
 {{outlet}}
+<div class="jumbotron top">
+  <div class="container">
+    <div class="page-header">
+      <h1>Leaderboards <small>Look who's da beeeeeest!</small></h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="text-center">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">SQL</button>
+      <button type="button" class="btn btn-default">RA</button>
+      <button type="button" class="btn btn-default">TRC</button>
+    </div>
+  </div>
+  <table class="table table-striped leaderboard-width">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>username</th>
+      <th>points</th>
+      <th>friends?</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each array as |x|}}
+      <tr>
+        <td>100</td>
+        <td>Mark Otto</td>
+        <td>123456</td>
+        <td><button type="button btn-default">+addAsFriend</button></td>
+      </tr>
+    {{/each}}
+  </tbody>
+  </table>
+</div>

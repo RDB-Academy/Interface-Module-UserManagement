@@ -48,6 +48,7 @@
               <li>{{#link-to "friends"}}friends <span class="badge pull-right">1</span>{{/link-to}}</li>
               <li>{{#link-to "leaderboard"}}leaderboard{{/link-to}}</li>
               <li>{{#link-to "achievements"}}achievements{{/link-to}}</li>
+              <li>{{#link-to "pretrainer"}}pretrainer{{/link-to}}</li>
               <li role="separator" class="divider"></li>
               <li><a href="#">log out</a></li>
             </ul> <!-- /.dropdown-menu -->
@@ -57,7 +58,7 @@
     </div><!-- /.container-fluid -->
   </nav>
 </header>
-<main>
+<main class="sticky-footer-main">
   {{outlet}}
   <!-- Modal -->
   <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
@@ -130,7 +131,7 @@
     </div>
   </div>
 </main>
-<footer style="background: #222222; color: #fff">
+<footer class="sticky-footer" style="background: #222222; color: #fff">
   <div class="container">
     <div class="footer">
       <div class="footer-column">

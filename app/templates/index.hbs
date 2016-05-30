@@ -1,60 +1,33 @@
-{{outlet}}
-<div class="jumbotron" id="welcome">
+<div class="jumbotron welcome">
   <div class="container">
-    <h1>Hello, world!</h1>
-    <p>...</p>
+    <h1>Poeblis:Academy</h1>
+    <p>einfach mal kein Lorem ipsum, oh no doch, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
 </div>
 <div class="container">
+  <h1>Features</h1>
   <div class="feature-list">
-    <div class="thumbnail-vertical">
-      <div class="thumbnail-vertical-image image-right">
-        <img class="thumbnail-vertical-object" src="img/gamification-word-cloud.jpg"/>
-      </div>
-      <div class="thumbnail-vertical-body body-left">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Gamification</h3>
-          </div>
-          <div class="panel-body">
-            One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops
-          </div>
-        </div>
-      </div>
-    </div>
+    {{#thumbnail-vertical "Gameification" "img/gamification-word-cloud.jpg"}}
+      One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops
+    {{/thumbnail-vertical}}
+    {{#thumbnail-vertical "Irgendwas tolles ?" "img/gamification-word-cloud.jpg" true}}
+      One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops
+    {{/thumbnail-vertical}}
   </div> <!-- /.Feature-List -->
+  {{outlet}}
+  <h1>Applications</h1>
   <div class="game-collection">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="img/gamification-word-cloud.jpg" alt="...">
-        <div class="caption">
-          <h3>Thumbnail label</h3>
-          <p>...</p>
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="img/gamification-word-cloud.jpg" alt="...">
-        <div class="caption">
-          <h3>Thumbnail label</h3>
-          <p>...</p>
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="img/gamification-word-cloud.jpg" alt="...">
-        <div class="caption">
-          <h3>Thumbnail label</h3>
-          <p>...</p>
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-        </div>
-      </div>
-    </div>
+    {{#thumbnail-horizontal "Title" "img/gamification-word-cloud.jpg"}}
+      ...
+    {{/thumbnail-horizontal}}
+    {{#thumbnail-horizontal "Title" "img/gamification-word-cloud.jpg"}}
+      ...
+    {{/thumbnail-horizontal}}
+    {{#thumbnail-horizontal "Title" "img/gamification-word-cloud.jpg"}}
+      ...
+    {{/thumbnail-horizontal}}
   </div> <!-- /.Games -->
+  <h1>Top 3</h1>
   <div class="DataPorn">
     <table class="table table-condensed table-hover">
       <thead>

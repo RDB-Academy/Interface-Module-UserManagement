@@ -1,10 +1,16 @@
 @import 'poebli.theme';
 
 @import 'global';
+
+@import 'components/thumbnail-vertical';
+
 @import 'index';
 @import 'aboutus';
 @import 'friends';
-@import 'achievments';
+@import 'achievements';
+@import 'impressum';
+@import 'profile';
+@import 'leaderboard';
 
 .cs-breakline {
   background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.0) 100%);
@@ -15,33 +21,4 @@
   height: 1px;
   margin: 4px 0;
   width: 100%;
-}
-
-.thumbnail-vertical {
-  @extend .row;
-
-  > .thumbnail-vertical-body {
-    @extend .col-sm-9;
-    padding: 0;
-
-    &.body-left {
-      @extend .col-sm-pull-3;
-    }
-
-    > .panel {
-      margin-bottom: 0;
-    }
-  }
-
-  > .thumbnail-vertical-image {
-    @extend .col-sm-3;
-
-    &.image-right {
-      @extend .col-sm-push-9;
-    }
-
-    .thumbnail-vertical-object {
-      width: 100%;
-    }
-  }
 }

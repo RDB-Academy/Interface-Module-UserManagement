@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('friends');
   this.route('impressum');
   this.route('settings');
+  this.route('pretrainer');
 });
 
 export default Router;
