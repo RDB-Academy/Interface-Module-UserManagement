@@ -15,7 +15,6 @@
 
 .sticky-footer-body {
     position: relative;
-    padding-bottom: 3em;
     margin: 0;
     box-sizing: border-box;
     min-height:100%
@@ -23,4 +22,5 @@
 
 .sticky-footer-main {
   min-height: 85vh;
+  padding-bottom: 6em;
 }
