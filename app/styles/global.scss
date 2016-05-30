@@ -3,13 +3,13 @@ body {
 }
 
 main {
-  margin-top: -21px;
-  padding-top: 21px;
   background-color: #fff;
+  padding-top: 21px;
+  margin-top: -21px;
 }
 
 footer {
-  background-color: #222222;
+  background-color: #222;
   color: #fff;
 
   .footer {
@@ -21,8 +21,17 @@ footer {
   }
 }
 
-.jumbotron.top {
+.jumbotron {
   margin-top: -21px;
+
+  &.pagetron {
+    height: 100%;
+  }
+
+  &.deceptitron {
+    padding: 0;
+  }
+
 }
 
 .vcenter {
