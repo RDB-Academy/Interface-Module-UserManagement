@@ -10,7 +10,7 @@ export default Ember.Component.extend({
 
 
     var ctx = this.$()[0];
-    ctx.onselectstart = function() {return false};
+    ctx.onselectstart = function() {return false;};
     ctx.height = 3/8*ctx.width;
     new Chart(ctx, {
       type: 'line',
