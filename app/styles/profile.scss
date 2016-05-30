@@ -3,10 +3,17 @@
     border-radius:50%;
 }
 
+
 .profile-stats {
-
-
   >tbody>tr>td {
     padding: 4px;
   }
+}
+
+.carousel-indicators li {
+  border-color: #222222;
+}
+
+.carousel-indicators .active {
+  background-color: #222222;
 }
