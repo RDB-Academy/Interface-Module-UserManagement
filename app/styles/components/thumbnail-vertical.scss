@@ -4,10 +4,17 @@
 
   > .thumbnail-vertical-body {
     @extend .col-sm-9;
-    padding: 0;
+
 
     &.body-left {
       @extend .col-sm-pull-3;
+      padding-left: 0;
+      padding-right: 20px;
+    }
+
+    &.body-right {
+      padding-left: 20px;
+      padding-right: 0;
     }
 
     > .panel {
@@ -17,6 +24,8 @@
 
   > .thumbnail-vertical-image {
     @extend .col-sm-3;
+    padding-left: 0;
+    padding-right: 0;
 
     &.image-right {
       @extend .col-sm-push-9;
