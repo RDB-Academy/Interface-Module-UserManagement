@@ -1,24 +1,12 @@
-.fb-profile img.fb-image-lg{
+.fb-image-profile {
     width: 100%;
-    margin-bottom: 10px;
-}
-
-.fb-image-profile
-{
-    margin: -80px 10px 0px 50px;
-    width: 20%;
     border-radius:50%;
 }
 
-@media (max-width:768px)
-{
+.profile-stats {
 
 
-.fb-image-profile
-{
-    margin: -35px 10px 0px 25px;
-    z-index: 9;
-    width: 20%;
-    border-radius:50%;
-}
+  >tbody>tr>td {
+    padding: 4px;
+  }
 }
