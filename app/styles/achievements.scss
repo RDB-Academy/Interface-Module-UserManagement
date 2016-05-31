@@ -1,0 +1,87 @@
+
+.achievements-view {
+  @extend .panel;
+
+  .achievements-list {
+    padding: 0;
+  }
+
+}
+
+.icon-frame {
+  background-color: #000;
+  background-position: 1px 1px;
+  background-repeat: no-repeat;
+  border: 1px solid #434445;
+  border-radius: 3px;
+  display: inline-block;
+  overflow: hidden;
+  padding: 1px;
+
+  img {
+    display: block;
+    vertical-align: bottom;
+  }
+}
+
+.icon-frame-50 {
+  height: 50px;
+  width: 50px;
+}
+
+.achievement {
+  border: $gray-darker 1px solid;
+  display: block;
+  list-style-type: none;
+  position: relative;
+
+  p {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0 20px;
+    position: static;
+    width: 50%;
+
+    strong {
+      display: block;
+      font-size: 16px;
+      position: relative;
+    }
+  }
+
+  .icon-frame {
+    display: block;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+  }
+
+  .points {
+    background-color: rgba(0,0,0,0.25);
+    border-radius: 8px;
+    height: 60px;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+    top: 13px;
+    width: 72px;
+
+    strong {
+      color: #fff;
+      font-size: 33px;
+      letter-spacing: -.05em;
+      position: relative;
+      top: -3px;
+    }
+
+    .date {
+      display: block;
+      font-size: 10px;
+      font-weight: normal;
+      letter-spacing: 0;
+      line-height: 12px;
+      position: relative;
+      top: -9px;
+    }
+  }
+}
