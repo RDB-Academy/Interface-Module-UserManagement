@@ -30,37 +30,44 @@
 }
 
 .achievement {
-  border: $gray-darker 1px solid;
+  border: $gray-light 1px solid;
+  border-radius: 2px;
   display: block;
   list-style-type: none;
+  min-height: 100px;
   position: relative;
 
   .indicator {
+    left: 10px;
+    position: absolute;
+    top: 74px;
+
     .glyphicon {
       display: none;
     }
+
     .glyphicon-minus {
-      display: block;;
+      display: block;
     }
   }
 
-  &.collapsed {
-    .indicator {
-      .glyphicon-plus {
-        display: block;
-      }
-      .glyphicon-minus {
-        display: none;
-      }
+  &.collapsed > .indicator {
+    .glyphicon-plus {
+      display: block;
+    }
+
+    .glyphicon-minus {
+      display: none;
     }
   }
 
-  p {
+  .achievement-text {
+    background-color: green;
     display: block;
-    margin: 0 auto;
-    padding: 15px 0 20px;
+    margin: 0 95px 0 75px;
+    padding: 10px 0 0;
     position: static;
-    width: 50%;
+    min-height: 100px;
 
     strong {
       display: block;
@@ -78,16 +85,16 @@
 
   .points {
     background-color: rgba(0,0,0,0.25);
-    border-radius: 8px;
+    border-radius: 5px;
     height: 60px;
     position: absolute;
-    right: 15px;
+    right: 10px;
     text-align: center;
-    top: 13px;
+    top: 10px;
     width: 72px;
 
     strong {
-      color: #fff;
+      color: $white;
       font-size: 33px;
       letter-spacing: -.05em;
       position: relative;
@@ -103,5 +110,14 @@
       position: relative;
       top: -9px;
     }
+  }
+
+  .achievement-metadata {
+    border-top: $gray-lighter 1px solid;
+
+    > .row {
+      margin-top: 10px;
+    }
+
   }
 }
