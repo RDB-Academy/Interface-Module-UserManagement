@@ -1,19 +1,24 @@
 body {
-  background-color: #222222;
+  background-color: $gray-darker;
+  position: relative;
 }
 
 main {
-  background-color: #fff;
-  padding-top: 21px;
+  background-color: $body-bg;
   margin-top: -21px;
+  min-height: 85vh;
+  padding-bottom: 51px;
 }
 
 footer {
-  background-color: #222;
-  color: #fff;
+  background-color: $gray-darker;
+  color: $body-bg;
+  position: absolute;
+  width: 100%;
 
   .footer {
     @extend .row;
+
     > .footer-column {
       @extend .col-sm-4;
       padding-left: 20px;
@@ -25,8 +30,8 @@ footer {
   margin-top: -21px;
 
   &.pagetron {
-    padding-top: 100px;
     padding-bottom: 100px;
+    padding-top: 100px;
   }
 
   &.deceptitron {
@@ -36,7 +41,7 @@ footer {
 }
 
 .vertical-center {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
+  display: inline-block;
+  float: none;
+  vertical-align: middle;
 }

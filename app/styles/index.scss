@@ -6,21 +6,3 @@
   @extend .row;
   padding-bottom: 30px;
 }
-
-.sticky-footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
-}
-
-.sticky-footer-body {
-    position: relative;
-    margin: 0;
-    box-sizing: border-box;
-    min-height:100%
-}
-
-.sticky-footer-main {
-  min-height: 85vh;
-  padding-bottom: 6em;
-}
