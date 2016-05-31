@@ -1,3 +1,6 @@
+//
+
+
 .thumbnail-vertical {
   @extend .row;
   margin: 0 0 15px;
@@ -33,6 +36,14 @@
 
     .thumbnail-vertical-object {
       width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-xs-max) {
+  .thumbnail-vertical > .thumbnail-vertical-body {
+    &.body-left, &.body-right {
+      padding: 10px 0;
     }
   }
 }

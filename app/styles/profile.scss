@@ -1,13 +1,13 @@
-.fb-profile img.fb-image-lg{
+.fb-image-profile {
     width: 100%;
-    margin-bottom: 10px;
+    border-radius:50%;
 }
 
-.fb-image-profile
-{
-    margin: -80px 10px 0px 50px;
-    width: 20%;
-    border-radius:50%;
+
+.profile-stats {
+  >tbody>tr>td {
+    padding: 4px;
+  }
 }
 
 .carousel-indicators li {
@@ -16,17 +16,4 @@
 
 .carousel-indicators .active {
   background-color: #222222;
-}
-
-@media (max-width:768px)
-{
-
-
-.fb-image-profile
-{
-    margin: -35px 10px 0px 25px;
-    z-index: 9;
-    width: 20%;
-    border-radius:50%;
-}
 }

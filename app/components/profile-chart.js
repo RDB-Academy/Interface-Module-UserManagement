@@ -45,7 +45,7 @@ export default Ember.Component.extend({
           }
         },
         legend: {
-          position: 'top'
+          position: 'bottom'
         }
       }
     });
