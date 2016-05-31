@@ -35,6 +35,26 @@
   list-style-type: none;
   position: relative;
 
+  .indicator {
+    .glyphicon {
+      display: none;
+    }
+    .glyphicon-minus {
+      display: block;;
+    }
+  }
+
+  &.collapsed {
+    .indicator {
+      .glyphicon-plus {
+        display: block;
+      }
+      .glyphicon-minus {
+        display: none;
+      }
+    }
+  }
+
   p {
     display: block;
     margin: 0 auto;
