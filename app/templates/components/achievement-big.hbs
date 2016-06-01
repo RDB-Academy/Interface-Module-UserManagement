@@ -1,0 +1,33 @@
+<li class="achievement collapsed {{if achievement.done "done"}}" data-toggle="collapse" data-target="#{{achievement.id}}">
+  <p class="achievement-text">
+    <strong>{{achievement.title}}</strong>
+    <span>{{achievement.description}}</span>
+  </p>
+  <span class="icon-frame icon-frame-50">
+    <img src="{{achievement.image}}" height="50" width="50">
+  </span>
+  <div class="points">
+    <strong>
+      {{achievement.points}}
+    </strong>
+    <span class="date">
+      {{achievement.achievedAt}}
+    </span>
+  </div>
+    <div class="indicator">
+      <div class="glyphicon glyphicon-plus"></div>
+      <div class="glyphicon glyphicon-minus"></div>
+    </div>
+  <div id="{{achievement.id}}" class="achievement-metadata collapse">
+    <div class="row">
+      <div class="col-xs-10 col-xs-push-1">
+        <p >Progress:</p>
+        <div class="progress">
+          <div class="progress-bar {{if achievement.progressLarger50 "progress-bar-success"}}" role="progressbar" aria-valuenow="{{achievement.progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{achievement.progress}}%">
+            {{achievement.progressString}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
