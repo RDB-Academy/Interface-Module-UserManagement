@@ -10,6 +10,7 @@ var achievements = [
     done: true,
     achievedAt: "01.06.2016",
     progress: "100",
+    progressWidth: 'width: 100%',
     progressLarger50: true,
     progressString: "1000/1000",
     points: 20
@@ -21,6 +22,7 @@ var achievements = [
     image: "img/achievement-logo-01.jpg",
 
     progress: "50",
+    progressWidth: 'width: 50%',
     progressLarger50: true,
     progressString: "500/1000",
     points: 20
@@ -32,6 +34,7 @@ var achievements = [
     image: "img/achievement-points-01.png",
 
     progress: "10",
+    progressWidth: 'width: 10%',
     progressLarger50: false,
     progressString: "100/1000",
     points: 50
