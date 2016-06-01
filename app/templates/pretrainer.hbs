@@ -1,18 +1,76 @@
 {{outlet}}
+<div class="jumbotron deceptitron">
+  <div class="container">
+    <div class="page-header">
+      <h1>SQL-Trainer <small>Choose triainer configuration...</small></h1>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <div class="panel panel-default">
-
-
-    <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-primary active">
-        <input type="radio" name="options" id="option1" autocomplete="off" checked> beginner
-      </label>
-      <label class="btn btn-success">
-        <input type="radio" name="options" id="option2" autocomplete="off"> intermidiate
-      </label>
-      <label class="btn btn-danger">
-        <input type="radio" name="options" id="option3" autocomplete="off"> advanced
-      </label>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Difficulty:
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> beginner
+          </label>
+          <label class="btn btn-success">
+            <input type="radio" name="options" id="option2" autocomplete="off"> intermidiate
+          </label>
+          <label class="btn btn-danger">
+            <input type="radio" name="options" id="option3" autocomplete="off"> advanced
+          </label>
+          <label class="btn btn-danger">
+            <input type="radio" name="options" id="option5" autocomplete="off"> expert
+          </label>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Categories:
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-primary">
+            <input type="checkbox" autocomplete="off" checked> Joins
+          </label>
+          <label class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Outer-Joins
+          </label>
+          <label class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Aggregation
+          </label>
+          <label class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Select
+          </label>
+          <label class="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Grouping
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Leaderbord SQL
+        </div>
+        <ul class="table-leaderboard">
+          {{#table-leaderboard "1" "username" "12345" "img/achievement-logo-01.jpg"}}
+          {{/table-leaderboard}}
+          {{#table-leaderboard "2" "username" "12345" "img/achievement-logo-01.jpg"}}
+          {{/table-leaderboard}}
+          {{#table-leaderboard "3" "username" "12345" "img/achievement-logo-01.jpg"}}
+          {{/table-leaderboard}}
+          {{#table-leaderboard "4" "username" "12345" "img/achievement-logo-01.jpg"}}
+          {{/table-leaderboard}}
+          {{#table-leaderboard "5" "username" "12345" "img/achievement-logo-01.jpg"}}
+          {{/table-leaderboard}}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
