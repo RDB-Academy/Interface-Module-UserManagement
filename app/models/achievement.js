@@ -6,9 +6,9 @@ export default Model.extend({
   title:        attr('string'),
   description:  attr('string'),
   image:        attr('string'),
-  //achievedAt:   attr('date'),
-  minValue:     attr('number'),
-  maxValue:     attr('number'),
-  value:        attr('number'),
+  achievedAt:   attr('date'),
+  valueMin:     attr('number'),
+  valueMax:     attr('number'),
+  valueNow:     attr('number'),
   points:       attr('number')
 });

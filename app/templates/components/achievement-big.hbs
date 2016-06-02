@@ -10,7 +10,9 @@
     {{achievement.points}}
   </strong>
   <span class="date">
-    {{achievement.achievedAt}}
+    {{#if done}}
+      {{moment-format achievement.achievedAt "DD.MM.YYYY"}}
+    {{/if}}
   </span>
 </div>
   <div class="indicator">
@@ -21,7 +23,7 @@
   <div class="row">
     <div class="col-xs-10 col-xs-push-1">
       {{#bs-progress}}
-        {{bs-progress-bar maxValue=achievement.maxValue minValue=achievement.minValue value=achievement.value text=true}}
+        {{bs-progress-bar maxValue=achievement.valueMax minValue=achievement.valueMin value=achievement.valueNow text=true}}
       {{/bs-progress}}
     </div>
   </div>

@@ -34,10 +34,10 @@ export default function() {
             title: "Master of SQL",
             description: "Do 1000 SQL Statements",
             image: "img/achievement-logo-01.jpg",
-            achievedAt: "01.06.2016",
-            minValue: 0,
-            maxValue: 1000,
-            value: 1000,
+            'achieved-at': "01.06.2016",
+            'value-min': 0,
+            'value-max': 1000,
+            'value-now': 1000,
             points: 20
           }
         },
@@ -48,9 +48,9 @@ export default function() {
             title: "Master of RA",
             description: "Do 1000 RA Statements",
             image: "img/achievement-logo-01.jpg",
-            minValue: 0,
-            maxValue: 1000,
-            value: 100,
+            'value-min': 0,
+            'value-max': 1000,
+            'value-now': 100,
             points: 20
           }
         },
@@ -61,9 +61,9 @@ export default function() {
             title: "Master of TRC",
             description: "Do 1000 TRC Tasks",
             image: "img/achievement-points-01.png",
-            minValue: 0,
-            maxValue: 1000,
-            value: 0,
+            'value-min': 0,
+            'value-max': 1000,
+            'value-now': 0,
             points: 50
           }
         }

@@ -14,15 +14,9 @@ const AchievementBig = Ember.Component.extend({
   dataToggle: 'collapse',
 
   progress: Ember.computed('achievement', function() {
-    let progressNow  = this.get('achievement').value;
-    let progressMax  = this.get('achievement').maxValue;
+    let progressNow  = this.get('achievement').get('valueNow');
+    let progressMax  = this.get('achievement').get('valueMax');
     return progressNow / progressMax * 100;
-  }),
-
-  progressString: Ember.computed('achievement', function() {
-    let progressNow  = this.get('achievement').value;
-    let progressMax  = this.get('achievement').maxValue;
-    return progressNow + "/" + progressMax;
   }),
 
   done: Ember.computed('progress', function() {
