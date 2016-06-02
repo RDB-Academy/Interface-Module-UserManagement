@@ -6,13 +6,11 @@ var achievements = [
     title: "Master of SQL",
     description: "Do 1000 SQL Statements",
     image: "img/achievement-logo-01.jpg",
-
-    done: true,
     achievedAt: "01.06.2016",
-    progress: "100",
-    progressWidth: 'width: 100%',
-    progressLarger50: true,
-    progressString: "1000/1000",
+
+    minValue: 0,
+    maxValue: 1000,
+    value: 1000,
     points: 20
   },
   {
@@ -20,11 +18,10 @@ var achievements = [
     title: "Master of RA",
     description: "Do 1000 RA Statements",
     image: "img/achievement-logo-01.jpg",
+    minValue: 0,
+    maxValue: 1000,
+    value: 100,
 
-    progress: "50",
-    progressWidth: 'width: 50%',
-    progressLarger50: true,
-    progressString: "500/1000",
     points: 20
   },
   {
@@ -33,10 +30,10 @@ var achievements = [
     description: "Do 1000 TRC Tasks",
     image: "img/achievement-points-01.png",
 
-    progress: "10",
-    progressWidth: 'width: 10%',
-    progressLarger50: false,
-    progressString: "100/1000",
+    minValue: 0,
+    maxValue: 1000,
+    value: 0,
+
     points: 50
   }
 ];
