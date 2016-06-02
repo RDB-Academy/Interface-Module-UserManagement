@@ -18,7 +18,6 @@ export default Ember.Component.extend({
   }),
 
   isLargerThan50: Ember.computed('percent', function() {
-    console.log(this.get('percent') >= 50);
     return this.get('percent') >= 50;
   }),
 

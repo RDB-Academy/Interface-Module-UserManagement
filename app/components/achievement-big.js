@@ -27,7 +27,7 @@ const AchievementBig = Ember.Component.extend({
 
   done: Ember.computed('progress', function() {
     let percent = this.get("progress");
-    return percent == 100;
+    return percent === 100;
   }),
 
   style: Ember.computed('progress', function() {
