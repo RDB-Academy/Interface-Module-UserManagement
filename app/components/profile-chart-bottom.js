@@ -6,8 +6,6 @@ export default Ember.Component.extend({
   didRender(){
     Chart.defaults.global.legend.position = "bottom";
     //Chart.defaults.global.legend.position.labels.padding = 0;
-    console.log(Chart.defaults.global.legend);
-
 
     var ctx = this.$()[0];
     ctx.onselectstart = function() {return false;};
