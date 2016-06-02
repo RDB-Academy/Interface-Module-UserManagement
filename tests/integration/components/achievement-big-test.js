@@ -1,23 +1,23 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
 
 moduleForComponent('achievement-big', 'Integration | Component | achievement big', {
   integration: true
 });
 
 test('it renders', function(assert) {
-  let achievement = {
+  let achievement = Ember.Object.create({
     id: 1,
     title: "Master of SQL",
     description: "Do 1000 SQL Statements",
     image: "img/achievement-logo-01.jpg",
-    achievedAt: "01.06.2016",
-
-    minValue: 0,
-    maxValue: 1000,
-    value: 1000,
+    achievedAt: "2014-04-25T01:32:21.196Z",
+    valueMin: 0,
+    valueMax: 1000,
+    valueNow: 1000,
     points: 20
-  };
+  });
 
   this.set('achievement', achievement);
   // Set any properties with this.set('myProperty', 'value');

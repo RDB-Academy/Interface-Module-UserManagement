@@ -34,7 +34,7 @@ export default function() {
             title: "Master of SQL",
             description: "Do 1000 SQL Statements",
             image: "img/achievement-logo-01.jpg",
-            'achieved-at': "01.06.2016",
+            'achieved-at': "2014-04-25T01:32:21.196Z",
             'value-min': 0,
             'value-max': 1000,
             'value-now': 1000,
