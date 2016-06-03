@@ -1,22 +1,40 @@
 
-.achievements-view {
+.panel-menu {
+  border: black 1px solid;
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      border: gray 1px solid;
+    }
+  }
+
+  .panel-body {
+    padding: 0;
+  }
+}
+
+.achievement-list {
   @extend .panel;
 
-  .achievements-list {
+  .achievement-list-body {
     padding: 0;
   }
 
 }
 
 .icon-frame {
-  background-color: #000;
   background-position: 1px 1px;
   background-repeat: no-repeat;
-  border: 1px solid #434445;
+  border: 1px solid $gray-light;
   border-radius: 3px;
+  box-shadow: $gray 0 0 1px;
   display: inline-block;
   overflow: hidden;
   padding: 1px;
+
 
   img {
     display: block;
@@ -25,116 +43,6 @@
 }
 
 .icon-frame-50 {
-  height: 50px;
-  width: 50px;
-}
-
-.achievement {
-  @include opacity(.6);
-  border: $gray-light 1px solid;
-  border-radius: 2px;
-  display: block;
-  list-style-type: none;
-  margin-bottom: 10px;
-  min-height: 100px;
-  position: relative;
-
-  &.done {
-    @include opacity(1);
-
-    .points > strong {
-      top: -6px;
-    }
-  }
-
-  .indicator {
-    left: 10px;
-    position: absolute;
-    top: 74px;
-
-    .glyphicon {
-      display: none;
-    }
-
-    .glyphicon-minus {
-      display: block;
-    }
-  }
-
-  &.collapsed > .indicator {
-    .glyphicon-plus {
-      display: block;
-    }
-
-    .glyphicon-minus {
-      display: none;
-    }
-  }
-
-  .achievement-text {
-    display: block;
-    margin: 0 70px 0 75px;
-    min-height: 100px;
-    padding: 10px 0 0;
-    position: static;
-
-    strong {
-      display: block;
-      font-size: 16px;
-      position: relative;
-    }
-  }
-
-  .icon-frame {
-    display: block;
-    left: 10px;
-    position: absolute;
-    top: 10px;
-  }
-
-  .points {
-    background-color: rgba(0, 0, 0, .25);
-    border-radius: 5px;
-    height: 50px;
-    position: absolute;
-    right: 10px;
-    text-align: center;
-    top: 10px;
-    width: 50px;
-
-    strong {
-      color: $white;
-      font-size: 33px;
-      letter-spacing: -.05em;
-      position: relative;
-    }
-
-    .date {
-      display: block;
-      font-size: 10px;
-      font-weight: normal;
-      letter-spacing: 0;
-      line-height: 12px;
-      position: relative;
-      top: -13px;
-    }
-  }
-
-  .achievement-metadata {
-    border-top: $gray-lighter 1px solid;
-
-    > .row {
-      margin-top: 10px;
-    }
-
-    .progress {
-      height: 15px;
-
-      .progress-bar {
-        font-size: 13px;
-        line-height: 15px;
-      }
-    }
-
-  }
+  height: 54px;
+  width: 54px;
 }

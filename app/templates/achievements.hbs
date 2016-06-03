@@ -9,44 +9,29 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">Category</h2>
-        </div>
-        <div class="panel-body">
-          <ul>
-            <li>
-              General
-            </li>
-            <li>
-              SQL Trainer
-              <ul>
-                <li>
-                  Statements
-                </li>
-              </ul>
-            </li>
-            <li>
-              RA Trainer
-              <ul>
-                <li>
-                  Statements
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+      {{#bs-accordion-menu}}
+        {{#bs-accordion-menu-item "Achievement"}}
+          {{#bs-accordion-menu}}
+            {{#bs-accordion-menu-item "General"}}
+            {{/bs-accordion-menu-item}}
+            {{#bs-accordion-menu-item "Trainer"}}
+            {{/bs-accordion-menu-item}}
+            {{#bs-accordion-menu-item "Social"}}
+            {{/bs-accordion-menu-item}}
+          {{/bs-accordion-menu}}
+        {{/bs-accordion-menu-item}}
+        {{#bs-accordion-menu-item "Rewards"}}
+        {{/bs-accordion-menu-item}}
+      {{/bs-accordion-menu}}
     </div>
     <div class="col-sm-8">
-      <div class="achievements-view">
+      <div class="achievement-list">
         <div class="panel-heading">
           <h3 class="panel-title">
             SQL Trainer General
           </h3>
         </div>
-        <ul class="achievements-list">
-
+        <ul class="achievement-list-body">
           {{#each model as |achievement|}}
             {{#achievement-big achievement}}
             {{/achievement-big}}
