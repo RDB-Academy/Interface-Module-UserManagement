@@ -1,6 +1,19 @@
 <div class="panel-heading">
-  <h2 class="panel-title">{{title}}</h2>
+  <h2 class="panel-title">
+    <a role="button" data-toggle="collapse" data-parent="#{{dataParent}}" href="#{{title}}Body" aria-expanded="{{if isActive "true" "false"}}" aria-controlls="{{title}}Body">
+      {{title}}
+    </a>
+  </h2>
 </div>
-<div class="panel-body">
-  {{yield}}
+<div id="{{title}}Body" class="accordion-menu-item-body panel-collapse collapse {{if isActive "in"}}">
+  {{#if hasChildren}}
+    <div class="fieser-mieser-effekt">
+      {{yield}}
+    </div>
+  {{else}}
+    {{yield}}
+  {{/if}}
+</div>
+<div class="accordion-menu-item-footer">
+
 </div>

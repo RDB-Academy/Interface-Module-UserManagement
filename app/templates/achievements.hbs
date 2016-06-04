@@ -9,20 +9,57 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      {{#bs-accordion-menu}}
-        {{#bs-accordion-menu-item "Achievement"}}
-          {{#bs-accordion-menu}}
-            {{#bs-accordion-menu-item "General"}}
+      <div class="category-menu">
+        <div class="panel-heading">
+          <h3 class="panel-title">Category</h3>
+        </div>
+        <div class="panel-body">
+          {{#bs-accordion-menu "categoryMenu"}}
+            {{#bs-accordion-menu-item "Achievement" "categoryMenu" true true}}
+              {{#bs-accordion-menu "AchievementMenu"}}
+                {{#bs-accordion-menu-item "General" "AchievementMenu" true}}
+                  {{#bs-accordion-menu}}
+                    {{#bs-accordion-menu-item "SQL Trainer"}}
+                    {{/bs-accordion-menu-item}}
+                    {{#bs-accordion-menu-item "RA Trainer"}}
+                    {{/bs-accordion-menu-item}}
+                    {{#bs-accordion-menu-item "TRC Trainer"}}
+                    {{/bs-accordion-menu-item}}
+                    {{#bs-accordion-menu-item "DRC Trainer"}}
+                    {{/bs-accordion-menu-item}}
+                  {{/bs-accordion-menu}}
+                {{/bs-accordion-menu-item}}
+                {{#bs-accordion-menu-item "Trainer" "AchievementMenu" true}}
+                  {{#bs-accordion-menu}}
+                    {{#bs-accordion-menu-item "SQL Trainer"}}
+                    {{/bs-accordion-menu-item}}
+                    {{#bs-accordion-menu-item "RA Trainer"}}
+                    {{/bs-accordion-menu-item}}
+                    {{#bs-accordion-menu-item "TRC Trainer"}}
+                    {{/bs-accordion-menu-item}}
+                    {{#bs-accordion-menu-item "DRC Trainer"}}
+                    {{/bs-accordion-menu-item}}
+                  {{/bs-accordion-menu}}
+                {{/bs-accordion-menu-item}}
+                {{#bs-accordion-menu-item "Social" "AchievementMenu"}}
+                {{/bs-accordion-menu-item}}
+              {{/bs-accordion-menu}}
             {{/bs-accordion-menu-item}}
-            {{#bs-accordion-menu-item "Trainer"}}
-            {{/bs-accordion-menu-item}}
-            {{#bs-accordion-menu-item "Social"}}
+            {{#bs-accordion-menu-item "Rewards" "categoryMenu" true}}
+              {{#bs-accordion-menu}}
+                {{#bs-accordion-menu-item "SQL Trainer"}}
+                {{/bs-accordion-menu-item}}
+                {{#bs-accordion-menu-item "RA Trainer"}}
+                {{/bs-accordion-menu-item}}
+                {{#bs-accordion-menu-item "TRC Trainer"}}
+                {{/bs-accordion-menu-item}}
+                {{#bs-accordion-menu-item "DRC Trainer"}}
+                {{/bs-accordion-menu-item}}
+              {{/bs-accordion-menu}}
             {{/bs-accordion-menu-item}}
           {{/bs-accordion-menu}}
-        {{/bs-accordion-menu-item}}
-        {{#bs-accordion-menu-item "Rewards"}}
-        {{/bs-accordion-menu-item}}
-      {{/bs-accordion-menu}}
+        </div>
+      </div>
     </div>
     <div class="col-sm-8">
       <div class="achievement-list">

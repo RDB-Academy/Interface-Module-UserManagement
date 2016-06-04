@@ -1,6 +1,17 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+const BsAccordionMenu = Ember.Component.extend({
   tagName: 'div',
-  classNames: ['panel-group']
+  classNames: ['panel-group'],
+  attributeBindings: ['role', 'ariaMultiselectable'],
+
+  role: "tablist",
+  ariaMultiselectable: "true"
+
 });
+
+BsAccordionMenu.reopenClass({
+  positionalParams: ['elementId']
+})
+
+export default BsAccordionMenu;
