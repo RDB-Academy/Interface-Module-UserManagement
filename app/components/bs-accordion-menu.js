@@ -12,6 +12,6 @@ const BsAccordionMenu = Ember.Component.extend({
 
 BsAccordionMenu.reopenClass({
   positionalParams: ['elementId']
-})
+});
 
 export default BsAccordionMenu;
