@@ -8,7 +8,7 @@
   <h1>Features</h1>
   <div class="feature-list">
     {{#each model.features as |feature index|}}
-      {{#thumbnail-vertical feature.title feature.image (index-align-features index)}}
+      {{#thumbnail-vertical feature.title feature.image (is-odd index)}}
         {{feature.description}}
       {{/thumbnail-vertical}}
     {{/each}} -->
