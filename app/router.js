@@ -16,6 +16,8 @@ Router.map(function() {
   this.route('settings');
   this.route('pretrainer');
   this.route('404', {path: '/*wildcard'});
+  this.route('login');
+  this.route('signup');
 });
 
 export default Router;
