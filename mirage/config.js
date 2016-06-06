@@ -129,4 +129,35 @@ export default function() {
       ]
     }
   })
+
+  this.get('/profile-friends', function() {
+    return {
+      data: [
+        {
+          type: 'profile-friends',
+          id: 1,
+          attributes: {
+            username: 'Username1',
+            image: 'img/identicon.png'
+          }
+        },
+        {
+          type: 'profile-friends',
+          id: 2,
+          attributes: {
+            username: 'Username2',
+            image: 'img/identicon.png'
+          }
+        },
+        {
+          type: 'profile-friends',
+          id: 3,
+          attributes: {
+            username: 'Username3',
+            image: 'img/identicon.png'
+          }
+        }
+      ]
+    }
+  });
 }

@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return [1,2,3];
+    return this.store.findAll('profile-friend');
   }
 });

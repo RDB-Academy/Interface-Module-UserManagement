@@ -14,6 +14,15 @@
       </form>
       <br>
       <h1>Friend Requests</h1>
+			{{#each model as |profile|}}
+				{{#friend-profile profile}}
+					<div class="btn-group" role="group" align="right">
+						<button class="button" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i></button>
+						<button class="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+					</div>
+			  {{/friend-profile}}
+			{{/each}}
+			<!--
       <table class="table table-striped">
         <tbody>
           <tr>
@@ -48,10 +57,17 @@
           </tr>
         </tbody>
       </table>
+		-->
     </div>
 		<div class="col-md-8 col-sm-pull-4">
       <h1>Friends</h1>
-      <table class="table table-striped">
+			{{#each model as |profile|}}
+				{{#friend-profile profile}}
+					<button class="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+			  {{/friend-profile}}
+			{{/each}}
+
+		<!--	<table class="table table-striped">
         <tbody>
           <tr>
             <td width="60"><img height="50" width="50" class="img-circle" src="img/identicon.png"/></td>
@@ -68,7 +84,7 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
     </div>
 	</div>
 </div>

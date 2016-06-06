@@ -1,4 +1,11 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+const FriendProfile = Ember.Component.extend({
+
 });
+
+FriendProfile.reopenClass({
+  positionalParams: ['friend-profile']
+});
+
+export default FriendProfile;

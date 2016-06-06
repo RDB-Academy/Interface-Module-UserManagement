@@ -1,1 +1,11 @@
-{{yield}}
+<div class="row">
+  <div class="col-xs-2">
+    <img align=left class="fb-image-profile thumbnail img-circle" src="{{friend-profile.image}}"/>
+  </div>
+  <div class="col-xs-6">
+    {{friend-profile.username}}
+  </div>
+  <div class="col-xs-4">
+    {{yield}}
+  </div>
+</div>
