@@ -7,31 +7,37 @@
   </div>
 </div>
 <div class="container">
-  <div class="text-center">
-    <div class="btn-group">
-      <button type="button" class="btn btn-default">SQL</button>
-      <button type="button" class="btn btn-default">RA</button>
-      <button type="button" class="btn btn-default">TRC</button>
-    </div>
-  </div>
-  <table class="table table-striped leaderboard-width">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>username</th>
-      <th>points</th>
-      <th>friends?</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each array as |x|}}
+  <ul class="nav nav-tabs">
+    <li role="presentation">
+      <button {{action "setState" 'sql'}} class={{isSQLActive}} >SQL</button>
+    </li>
+    <li role="presentation" class="">
+      <button {{action "setState" 'ra'}} class="btn btn-default">RA</button>
+    </li>
+    <li role="presentation" class="">
+      <button {{action "setState" 'trc'}} class="btn btn-default">TRC</button>
+    </li>
+  </ul>
+  <div class="table-responsive">
+    <table class="table table-striped leaderboard-width">
+    <thead>
       <tr>
-        <td>100</td>
-        <td>Mark Otto</td>
-        <td>123456</td>
-        <td><button type="button btn-default">+addAsFriend</button></td>
+        <th>#</th>
+        <th>username</th>
+        <th>points</th>
+        <th class="hidden-xs">friends?</th>
       </tr>
-    {{/each}}
-  </tbody>
-  </table>
+    </thead>
+    <tbody>
+      {{#each array as |x|}}
+        <tr>
+          <td>100</td>
+          <td>Mark Otto</td>
+          <td>123456</td>
+          <td class="hidden-xs"><button type="button btn-default">+Add</button></td>
+        </tr>
+      {{/each}}
+    </tbody>
+    </table>
+  </div>
 </div>
