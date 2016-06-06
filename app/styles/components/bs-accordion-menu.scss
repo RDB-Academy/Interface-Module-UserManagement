@@ -1,6 +1,10 @@
 .category-menu {
   @extend .panel;
 
+  background: 0;
+  border: 0;
+  box-shadow: none;
+
   .panel-body {
     padding: 0;
   }
@@ -10,7 +14,9 @@
   margin-bottom: 0;
 
   .panel {
-    & + .panel {
+    box-shadow: none;
+
+    + .panel {
       margin-top: 10px;
     }
   }
@@ -21,11 +27,13 @@
     .panel-heading {
       border: $gray-light 1px solid;
       border-bottom: $gray-lighter 1px solid;
+      border-radius: 2px 2px 0 0;
       box-shadow: $gray 0 0 3px;
     }
 
     .accordion-menu-item-body {
       @extend .panel-body;
+
       margin: 0;
       overflow: hidden;
     }
@@ -33,17 +41,19 @@
     .fieser-mieser-effekt {
       box-shadow: $gray 0 0 3px;
       margin: 0 5px;
-      padding: 5px 5px;
+      padding: 5px;
     }
 
 
     .accordion-menu-item-footer {
       @extend .panel-footer;
 
+      background-color: $gray-lighter;
       border: $gray-light 1px solid;
+      border-radius: 0 0 2px 2px;
       border-top: 0;
       box-shadow: $gray 0 0 3px;
-      padding: 8px 0;
+      padding: 4px 0;
     }
   }
 }

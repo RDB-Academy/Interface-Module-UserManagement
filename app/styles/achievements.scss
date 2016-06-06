@@ -19,6 +19,10 @@
 .achievement-list {
   @extend .panel;
 
+  background: 0;
+  border: 0;
+  box-shadow: none;
+
   .achievement-list-body {
     padding: 0;
   }
