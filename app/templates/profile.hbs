@@ -26,27 +26,33 @@
       {{profile-chart}}
     </div>
     <div class="clearfix"/>
-    <div class="col-xs-12 col-md-12 well">
+    <div class="col-xs-12 col-md-12">
       <div class="col-md-8 hidden-xs" style="position:absolute;top:-90px">
         <h3>Recent Achievements</h3>
         <hr>
       </div>
-      <div class="visible-xs">
-        <h3>Recent Achievements</h3>
-        <hr>
-      </div>
-      {{#each array as |x|}}
-          <div class="col-sm-2 col-xs-3">
-              <div class="thumbnail">
-                  <img class="thumbnail-object" src="img/gamification-word-cloud.jpg"/>
-              </div>
-          </div>
-      {{/each}}
     </div>
   </div>
 
 
+
+
   <div class="feature-list">
+    <div class="visible-xs">
+      <h3>Recent Achievements</h3>
+      <hr>
+    </div>
+    <div class="well">
+      <div class="row">
+        {{#each array as |x|}}
+            <div class="col-sm-2 col-xs-3">
+                <div class="thumbnail">
+                    <img class="thumbnail-object" src="img/gamification-word-cloud.jpg"/>
+                </div>
+            </div>
+        {{/each}}
+      </div>
+    </div>
 
 
     <div class="panel panel-default">
