@@ -1,47 +1,54 @@
 {{outlet}}
 <div class="container">
   <div class="row">
-    <div class="col-sm-3 col-xs-5">
-      <img align="left" class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
+    <div class="col-sm-4 hidden-xs" style="height:100%">
+      <img class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
     </div>
-    <div class="col-xs-7 col-sm-9">
+    <div class="col-xs-9 col-sm-8">
       <h1>{username}<br class="visible-xs"><small> {current status} </small></h1><hr>
     </div>
-    <div class="col-xs-7 col-sm-9">
-      <div class="row">
-        <div class="col-sm-7">
-          <table class="table table-striped table-hover profile-stats">
-            <tbody>
-            {{#each array as |x|}}
-              <tr>
-                <td>bla</td>
-                <td>asd</td>
-              </tr>
-            {{/each}}
-            </tbody>
-          </table>
-        </div>
-        <div class="col-sm-5">
-          {{profile-chart}}
-        </div>
+    <div class="col-xs-3 visible-xs">
+      <img align="right" class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <table class="table table-striped table-hover profile-stats">
+        <tbody>
+          {{#each array as |x|}}
+            <tr>
+              <td>bla</td>
+              <td>asd</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4 hidden-xs">
+      {{profile-chart}}
+    </div>
+    <div class="clearfix"/>
+    <div class="col-xs-12 col-md-12 well">
+      <div class="col-md-8 hidden-xs" style="position:absolute;top:-90px">
+        <h3>Recent Achievements</h3>
+        <hr>
       </div>
+      <div class="visible-xs">
+        <h3>Recent Achievements</h3>
+        <hr>
+      </div>
+      {{#each array as |x|}}
+          <div class="col-sm-2 col-xs-3">
+              <div class="thumbnail">
+                  <img class="thumbnail-object" src="img/gamification-word-cloud.jpg"/>
+              </div>
+          </div>
+      {{/each}}
     </div>
   </div>
+
+
   <div class="feature-list">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        Recent Achievements
-      </div>
-      <div class="row">
-          {{#each array as |x|}}
-              <div class="col-md-1 col-sm-2 col-xs-3">
-                  <div class="thumbnail">
-                      <img class="thumbnail-object" src="img/gamification-word-cloud.jpg"/>
-                  </div>
-              </div>
-          {{/each}}
-      </div>
-    </div>
+
+
     <div class="panel panel-default">
       <div class="panel-heading">
         some fancy carousel
