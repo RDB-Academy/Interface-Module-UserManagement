@@ -13,7 +13,8 @@ const ProfileChartBottom = Ember.Component.extend({
   }.observes('chart_data'),
 
 
-  didRender(){
+  didInsertElement(){
+    console.log(this.get('chart_data'));
     Chart.defaults.global.legend.position = "bottom";
     //Chart.defaults.global.legend.position.labels.padding = 0;
 
@@ -63,15 +64,7 @@ const ProfileChartBottom = Ember.Component.extend({
         }
       })
     );
-
-    this.set('chart_data', [1,5,2,3,1,2,2])
   },
-
-  actions: {
-    userclickedIt() {
-    }
-  }
-
 
 });
 
