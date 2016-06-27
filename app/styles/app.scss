@@ -27,3 +27,35 @@
   margin: 4px 0;
   width: 100%;
 }
+
+footer {
+  background-color: rgb(38, 38, 38);
+}
+
+.footer {
+    margin-top: 1em;
+    a {
+      color: rgb(150, 150, 150);
+      &:hover{
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    .logo-column {
+      height: 13em;
+
+      img {
+        height: inherit;
+      }
+    }
+
+    .logo-column::before {
+        background: #717879;
+        content: "";
+        height: 100%;
+        left: -1em;
+        position: absolute;
+        width: 1px;
+    }
+}
