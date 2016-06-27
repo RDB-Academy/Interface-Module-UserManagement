@@ -64,7 +64,7 @@ const ProfileChartBottom = Ember.Component.extend({
       })
     );
 
-    this.set('chart_data', [1,5,2,3,1,2,2])
+    this.set('chart_data', [1,5,2,3,1,2,2]);
   },
 
   actions: {
@@ -77,6 +77,6 @@ const ProfileChartBottom = Ember.Component.extend({
 
 ProfileChartBottom.reopenClass({
   positionalParams: ['chart_data']
-})
+});
 
 export default ProfileChartBottom;
