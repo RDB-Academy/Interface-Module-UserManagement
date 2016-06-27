@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Poeblis:Academy</a>
+        <a class="navbar-brand" href="#">SQL:Academy</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,24 +62,58 @@
   {{outlet}}
 </main>
 <footer>
-  <div class="container">
+  <div class="container container-footer">
     <div class="footer">
       <div class="footer-column">
-        <b>Test</b>
-          <p>
-            {{#link-to "aboutus"}}
-              About Us
-            {{/link-to}}
-          </p>
+        <b>Information</b>
           <p>
             {{#link-to "impressum"}}
               Impressum
             {{/link-to}}
           </p>
+          <p>
+            {{#link-to "aboutus"}}
+              About Us
+            {{/link-to}}
+          </p>
       </div>
       <div class="footer-column">
-        <b>Test2</b>
-        <p> girls</p>
+        <b>Menu</b>
+        <p>
+          {{#link-to "home"}}
+            Home
+          {{/link-to}}
+        </p>
+        <p>
+          {{#link-to "profile"}}
+            Profile
+          {{/link-to}}
+        </p>
+        <p>
+          {{#link-to "friends"}}
+            Friends
+          {{/link-to}}
+        </p>
+        <p>
+          {{#link-to "leaderboard"}}
+            Leaderboard
+          {{/link-to}}
+        </p>
+        <p>
+          {{#link-to "achievements"}}
+            Achievements
+          {{/link-to}}
+        </p>
+        <p>
+          {{#link-to "settings"}}
+            Settings
+          {{/link-to}}
+        </p>
+      </div>
+      <div class="footer-column">
+        <div class="logo-column">
+          <img src="/img/TheSQLAlchemist_Logo_Weiss-3000x2100.png"/>
+        </div>
       </div>
     </div>
   </div> <!-- /.footer -->

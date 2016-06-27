@@ -70,6 +70,6 @@ const ProfileChartBottom = Ember.Component.extend({
 
 ProfileChartBottom.reopenClass({
   positionalParams: ['chart_data']
-})
+});
 
 export default ProfileChartBottom;
