@@ -1,15 +1,18 @@
 <li class="list-group-item">
-  <div class="col-sm-3">
-    <img class="img-responsive img-circle" src="{{image}}" height="50" width="50"/>
-  </div>
-  <div  class="col-sm-1 position">
+  <div  class="col-md-1 position">
     <span>{{position}}</span>
   </div>
-  <div class="col-sm-4 username">
+  <div class="col-md-2">
+    <img class="img-responsive img-circle" src="{{image}}" height="50" width="50"/>
+  </div>
+  <div class="col-md-3 username">
     <span>{{username}}{{yield}}</span>
   </div>
-  <div class="col-sm-4 points">
+  <div class="col-md-4 points">
     <span>{{points}}</span>
+  </div>
+  <div  class="col-md-2 friend">
+    <button><i class="glyphicon glyphicon-plus"></i></button>
   </div>
   <div class="clearfix"></div>
 </li>

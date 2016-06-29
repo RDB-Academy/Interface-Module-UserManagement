@@ -4,14 +4,57 @@
 
     .points {
       text-align: right;
+      font-size: 20px;
       margin-top: 15px;
     }
 
     .username {
+      font-size: 20px;
       margin-top: 15px;
     }
 
     .position {
+      text-align: right;
+      font-size: 20px;
       margin-top: 15px;
+    }
+
+    .friend {
+      margin-top: 11px;
+
+      button {
+         background-color: #346d77;
+         -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+                 border-radius: 50px;
+         max-width: 100%;
+         height: auto;
+         display: block;
+         align-self: center;
+         margin: auto;
+         border: solid #346d77;
+         padding-left: 7px;
+
+         i {
+           color: white;
+         }
+      }
+
+      button:hover {
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+        background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+        background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+        background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+        background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+        background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+        background-color:#408c99;
+      }
+
+      button:active {
+        position:relative;
+        top:1px;
+      }
+
     }
 }
