@@ -11,7 +11,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{profile-carousel}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.ok(this.$() !== null);
 
   // Template block usage:
   this.render(hbs`
@@ -20,5 +20,5 @@ test('it renders', function(assert) {
     {{/profile-carousel}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$().text().trim().indexOf('template block text') > -1);
 });

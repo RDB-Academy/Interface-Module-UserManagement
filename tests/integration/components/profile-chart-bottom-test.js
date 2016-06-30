@@ -9,16 +9,9 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{profile-chart-bottom}}`);
+  this.set('chart_data', [1,2,3,4,5,6]);
+
+  this.render(hbs`{{profile-chart-bottom chart_data}}`);
 
   assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#profile-chart-bottom}}
-      template block text
-    {{/profile-chart-bottom}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

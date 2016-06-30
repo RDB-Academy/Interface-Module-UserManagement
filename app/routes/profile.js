@@ -17,17 +17,17 @@ export default Ember.Route.extend({
             case 4:
               return [100,1,1,1,1,1];
           }
-          return [1,1,1,1,1,1]
+          return [1,1,1,1,1,1];
         }),
         array:[1,1,1,1,1,1],
 
-      }
+      };
   },
   dostuff: function() {
     console.log(this.get('chartData'));
   }.observes('chartData'),
   actions: {
-    chartDataChanger(data) {
+    chartDataChanger() {
       console.log(this.model);
       this.set("activeSet", (this.get("activeSet") % 4) + 1);
       this.refresh();
