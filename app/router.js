@@ -14,7 +14,6 @@ Router.map(function() {
   this.route('friends');
   this.route('impressum');
   this.route('settings', function() {
-    this.route('profile');
     this.route('account');
     this.route('authentication');
   });
