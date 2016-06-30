@@ -13,7 +13,11 @@ Router.map(function() {
   this.route('aboutus');
   this.route('friends');
   this.route('impressum');
-  this.route('settings');
+  this.route('settings', function() {
+    this.route('profile');
+    this.route('account');
+    this.route('authentication');
+  });
   this.route('pretrainer');
   this.route('404', {path: '/*wildcard'});
   this.route('login');
