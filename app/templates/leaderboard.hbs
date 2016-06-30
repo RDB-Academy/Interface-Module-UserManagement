@@ -18,26 +18,32 @@
       <button {{action "setState" 'trc'}} class="btn btn-default">TRC</button>
     </li>
   </ul>
-  <div class="table-responsive">
-    <table class="table table-striped leaderboard-width">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>username</th>
-        <th>points</th>
-        <th class="hidden-xs">friends?</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each array as |x|}}
-        <tr>
-          <td>100</td>
-          <td>Mark Otto</td>
-          <td>123456</td>
-          <td class="hidden-xs"><button type="button btn-default">+Add</button></td>
-        </tr>
-      {{/each}}
-    </tbody>
-    </table>
+  <div class="row">
+    <div class="col-md-10 col-md-push-1">
+      <div class="panel panel-default">
+        <div class="panel-heading leaderboard-header">
+          <div class="col-md-1 position">
+            <span>Position</span>
+          </div>
+          <div class="col-md-3 col-md-push-2 username">
+            <span>Username</span>
+          </div>
+          <div class="col-md-4 col-md-push-2 points">
+            <span>Points</span>
+          </div>
+          <div class="col-md-2 col-md-push-2 friend">
+            <span>Add as friend?</span>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <ul class="table-leaderboard">
+          {{#each array as |x|}}
+            {{#table-leaderboard "x" "username" "12345" "img/alchemist_logo.jpg"}}
+            {{/table-leaderboard}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
   </div>
 </div>

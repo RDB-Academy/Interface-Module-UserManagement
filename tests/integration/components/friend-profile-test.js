@@ -11,7 +11,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{friend-profile}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.ok(this.$().text !== '');
 
   // Template block usage:
   this.render(hbs`
