@@ -1,7 +1,9 @@
+
 .newsticker {
-  background-color: $white;
+  background-color: $gray-lighter;
   border-bottom: $gray-lighter 1px solid;
-  box-shadow: darken($jumbotron-bg, 10%) 0 1px 0;
+  padding-left: 50px;
+  padding-right: 50px;
 
   p {
     margin-bottom: 0;

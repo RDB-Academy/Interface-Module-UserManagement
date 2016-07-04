@@ -29,6 +29,7 @@ module.exports = function(defaults) {
 
 
   app.import('vendor/vTicker.js');
+  app.import('vendor/inewsticker.js');
 
   return app.toTree();
 };
