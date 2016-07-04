@@ -14,7 +14,13 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2', {
     destDir: 'fonts/bootstrap'
   });
+
+  /* Circular Progress around Achievements */
   app.import('bower_components/jquery-circle-progress/dist/circle-progress.js');
+
+  /* Newsticker */
+  app.import('vendor/vTicker.js');
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
@@ -29,7 +35,6 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
 
-  app.import('vendor/vTicker.js');
 
   return app.toTree();
 };
