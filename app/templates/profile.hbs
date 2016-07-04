@@ -44,11 +44,9 @@
     </div>
     <div class="well">
       <div class="row">
-        {{#each array as |x|}}
+        {{#each model.achievements as |achievement|}}
             <div class="col-sm-2 col-xs-3">
-                <div class="thumbnail">
-                    <img class="thumbnail-object" src="img/gamification-word-cloud.jpg"/>
-                </div>
+                {{achievement-small achievement}}
             </div>
         {{/each}}
       </div>

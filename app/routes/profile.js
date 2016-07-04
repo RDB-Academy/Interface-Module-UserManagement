@@ -20,7 +20,7 @@ export default Ember.Route.extend({
           return [1,1,1,1,1,1];
         }),
         array:[1,1,1,1,1,1],
-
+        achievements: this.store.findAll('achievement')
       };
   },
   dostuff: function() {
@@ -28,7 +28,6 @@ export default Ember.Route.extend({
   }.observes('chartData'),
   actions: {
     chartDataChanger() {
-      console.log(this.model);
       this.set("activeSet", (this.get("activeSet") % 4) + 1);
       this.refresh();
       //this.model.set('chartData', data)
