@@ -14,7 +14,6 @@ const ProfileChartBottom = Ember.Component.extend({
 
 
   didInsertElement(){
-    console.log(this.get('chart_data'));
     Chart.defaults.global.legend.position = "bottom";
     //Chart.defaults.global.legend.position.labels.padding = 0;
 
