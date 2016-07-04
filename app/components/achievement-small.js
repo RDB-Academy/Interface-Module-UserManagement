@@ -5,7 +5,7 @@ const AchievementSmall = Ember.Component.extend({
     return this.get('achievement').id;
   }),
 
-  style: "position:relative; width:80px; height:80px; ",
+  classNames: ['achievement-small'],
   classNameBindings: ['done'],
 
   progress: Ember.computed('achievement', function() {
@@ -22,7 +22,8 @@ const AchievementSmall = Ember.Component.extend({
     console.log(this.$());
     this.$().circleProgress({
       value: this.get('progress'),
-      size:80,
+      size:90,
+      startAngle: -Math.PI / 2,
       fill: {
         gradient: ["red", "orange"]
       }
