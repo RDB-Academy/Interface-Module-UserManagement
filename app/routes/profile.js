@@ -19,8 +19,16 @@ export default Ember.Route.extend({
           }
           return [1,1,1,1,1,1];
         }),
-        array:[1,1,1,1,1,1],
-
+        profileStats:{
+          a: "15.14.20165",
+          b: "5d 4h 32m 14s",
+          c: 334,
+          d: 158478,
+          e: 35355,
+          f: 123123,
+          g: "SQL-Training"
+        },
+        achievements: this.store.findAll('achievement')
       };
   },
   dostuff: function() {
@@ -28,7 +36,6 @@ export default Ember.Route.extend({
   }.observes('chartData'),
   actions: {
     chartDataChanger() {
-      console.log(this.model);
       this.set("activeSet", (this.get("activeSet") % 4) + 1);
       this.refresh();
       //this.model.set('chartData', data)
