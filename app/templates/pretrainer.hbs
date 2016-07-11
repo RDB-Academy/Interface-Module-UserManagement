@@ -55,16 +55,23 @@
       </div>
       <div class="checkbox -inline">
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="option1"> Hints
+        <input type="checkbox" id="inlineCheckbox1" value=option1 checked=Check1> Hints
       </label>
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox2" value="option2"> Highlighting
+        <input type="checkbox" id="inlineCheckbox2" value="option2" checked={{Check2}}> Highlighting
       </label>
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox3" value="option3"> Hot-Streak
+        <input type="checkbox" id="inlineCheckbox3" value="option3" checked=Check3> Hot-Streak
       </label>
       </div>
       <p class="text-right"><strong>130%</strong></p>
+      <br>
+      {{input type="checkbox" checked=checkMe}}
+      {{textarea value=importantinfo cols="40" rows="1"}}
+      {{textarea value=importantinfo2 cols="40" rows="1"}}
+      <button type="button" {{action "routeaction" checkMe Check2}}>route button</button>
+
+
     </div>
   </div>
   <div class="row">
