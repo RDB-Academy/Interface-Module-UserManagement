@@ -6,7 +6,7 @@
     </div>
   </div>
 </div>
-<div class="container pretrainer">
+<div class="container">
   <div class="col-sm-6">
     <div class="row">
       <div class="panel panel-default">
@@ -15,19 +15,19 @@
         </div>
         <div class="btn-group" data-toggle="buttons">
           <label class="btn btn-success active">
-            <input type="radio" name="options" id="option1" autocomplete="off" checked> beginner
+            <input type="radio" name="difficulty" id="option1" value="20" autocomplete="off" {{action "setDifficulty" on="change"}}> beginner
           </label>
           <label class="btn btn-primary">
-            <input type="radio" name="options" id="option2" autocomplete="off"> intermidiate
+            <input type="radio" name="difficulty" id="option2" value="40" autocomplete="off" {{action "setDifficulty" on="change"}}> intermidiate
           </label>
           <label class="btn btn-warning">
-            <input type="radio" name="options" id="option3" autocomplete="off"> advanced
+            <input type="radio" name="difficulty" id="option3" value="60" autocomplete="off" {{action "setDifficulty" on="change"}}> advanced
           </label>
           <label class="btn btn-danger">
-            <input type="radio" name="options" id="option4" autocomplete="off"> expert
+            <input type="radio" name="difficulty" id="option4" value="80" autocomplete="off" {{action "setDifficulty" on="change"}}> expert
           </label>
           <label class="btn btn-danger">
-            <input type="radio" name="options" id="option5" autocomplete="off"> impossible
+            <input type="radio" name="difficulty" id="option5" value="120" autocomplete="off" {{action "setDifficulty" on="change"}}> impossible
           </label>
         </div>
       </div>
@@ -37,39 +37,35 @@
         </div>
         <div class="btn-group" data-toggle="buttons">
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off" checked> Joins
+            <input type="checkbox" id="catCheckbox1" name="bonus1" value=2 autocomplete="off" {{action "setBonus" 1 on="change"}}> Joins
           </label>
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off"> Outer-Joins
+            <input type="checkbox" id="catCheckbox2" name="bonus2" value=2 autocomplete="off" {{action "setBonus" 2 on="change"}}> Outer-Joins
           </label>
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off"> Aggregation
+            <input type="checkbox" id="catCheckbox3" name="bonus3" value=3 autocomplete="off" {{action "setBonus" 3 on="change"}}> Aggregation
           </label>
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off"> Select
+            <input type="checkbox" id="catCheckbox4" name="bonus4" value=4 autocomplete="off" {{action "setBonus" 4 on="change"}}> Select
           </label>
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off"> Grouping
+            <input type="checkbox" id="catCheckbox5" name="bonus5" value=5 autocomplete="off" {{action "setBonus" 5 on="change"}}> Grouping
           </label>
         </div>
       </div>
       <div class="checkbox -inline">
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value=option1 checked=Check1> Hints
+        <input type="checkbox" id="inlineCheckbox1" name="bonus6" value=1 {{action "setBonus" 6 on="change"}}> Hints
       </label>
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox2" value="option2" checked={{Check2}}> Highlighting
+        <input type="checkbox" id="inlineCheckbox2" name="bonus7" value=2 {{action "setBonus" 7 on="change"}}> Highlighting
       </label>
       <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox3" value="option3" checked=Check3> Hot-Streak
+        <input type="checkbox" id="inlineCheckbox3" name="bonus8" value=30  {{action "setBonus" 8 on="change"}}> LückenText
       </label>
       </div>
-      <p class="text-right"><strong>130%</strong></p>
+      <p class="text-right" id= "score">{{multiplicator}}%</p>
       <br>
-      {{input type="checkbox" checked=checkMe}}
-      {{textarea value=importantinfo cols="40" rows="1"}}
-      {{textarea value=importantinfo2 cols="40" rows="1"}}
-      <button type="button" {{action "routeaction" checkMe Check2}}>route button</button>
 
 
     </div>
