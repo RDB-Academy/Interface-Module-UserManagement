@@ -94,22 +94,23 @@
   <div class="col-sm-6">
     <!-- ACHIEVEMENTS -->
     <div class="panel panel-default">
-      <div class="panel-heading">
-        Achievements
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          {{#each model.achievements as |achievement|}}
-            <div class="col-sm-3">
-              {{achievement-small achievement}}
-            </div>
-          {{/each}}
-        </div>
+      <h4>Achievements</h4>
+      <div class="row">
+        {{#each model.achievements as |achievement|}}
+          <div class="col-sm-3">
+            {{achievement-small achievement}}
+          </div>
+        {{/each}}
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <!-- QUESTS -->
-    <!-- HIER DEIN STUFF CARL -->
+    <div class="panel panel-default">
+      <h4> Quests </h4>
+      {{#each model.quests as |quest|}}
+        {{quest-general quest}}
+      {{/each}}
+    </div>
   </div>
 </div>
