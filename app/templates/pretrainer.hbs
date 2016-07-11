@@ -7,8 +7,9 @@
   </div>
 </div>
 <div class="container pretrainer">
-  <div class="col-sm-6">
-    <div class="row">
+  <div class="row">
+    <div class="col-sm-6">
+      <!-- PRETRAINER CHOICES -->
       <div class="panel panel-default">
         <div class="panel-heading">
           Difficulty:
@@ -54,9 +55,9 @@
         </div>
       </div>
       <div class="checkbox-inline">
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="option1"> Hints
-      </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox1" value="option1"> Hints
+        </label>
       <label class="checkbox-inline">
         <input type="checkbox" id="inlineCheckbox2" value="option2"> Highlighting
       </label>
@@ -66,9 +67,9 @@
       </div>
       <p class="text-right"><strong>130%</strong></p>
     </div>
-  </div>
-  <div class="row">
+
     <div class="col-sm-6">
+      <!-- LEADERBOARD -->
       <div class="panel panel-default">
         <div class="panel-heading">
           Leaderbord SQL
@@ -87,5 +88,28 @@
         </ul>
       </div>
     </div>
-</div>
+  </div>
+
+  <div class="clearfix"></div>
+  <div class="col-sm-6">
+    <!-- ACHIEVEMENTS -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Achievements
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          {{#each model.achievements as |achievement|}}
+            <div class="col-sm-3">
+              {{achievement-small achievement}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <!-- QUESTS -->
+    <!-- HIER DEIN STUFF CARL -->
+  </div>
 </div>
