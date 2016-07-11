@@ -1,27 +1,47 @@
-.leaderboard-header {
+.leaderboard {
+
+.panel-default {
+  border: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+
   .points {
-    text-align: right;
-    font-size: 20px;
-    margin-top: 15px;
     padding-right: 0;
+    text-align: right;
   }
 
   .username {
-    font-size: 20px;
-    margin-top: 15px;
     padding-left: 0;
   }
 
   .position {
     text-align: right;
-    font-size: 20px;
-    margin-top: 15px;
   }
 
   .friend {
     text-align: center;
-    font-size: 20px;
-    margin-top: 15px;
+  }
+
+  .nav {
+    display: block;
+    padding-left: 44%;
+    margin-bottom: 30px;
+    border: none;
+
+    .btn-default {
+      //background-color: #3e8996;
+
+      .btn-default:active{
+        //background-color: #346d77;  
+      }
+
+
+      //border-color: #346d77;
+      .btn:active {
+
+      }
+    }
 
   }
 

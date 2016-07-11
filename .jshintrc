@@ -4,7 +4,8 @@
     "document",
     "window",
     "-Promise",
-    "Chart"
+    "Chart",
+    "jQuery"
   ],
   "browser": true,
   "boss": true,
