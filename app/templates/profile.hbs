@@ -1,5 +1,5 @@
 {{outlet}}
-<div class="container">
+<div class="container profile">
   <div class="row">
     <div class="col-sm-4 hidden-xs" style="height:100%">
       <img class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
@@ -42,14 +42,12 @@
     </div>
     <div class="clearfix"/>
     <div class="col-xs-12 col-md-12">
-      <div class="col-md-8 hidden-xs" style="position:absolute;top:-90px">
+      <div class="col-md-8 hidden-xs" id="recent_achievements">
         <h3>Recent Achievements</h3>
         <hr>
       </div>
     </div>
   </div>
-
-
 
 
   <div class="feature-list">
@@ -58,7 +56,7 @@
       <hr>
     </div>
     <div class="well">
-      <div class="row">
+      <div class="row achievements">
         {{#each model.achievements as |achievement|}}
             <div class="col-sm-2 col-xs-3">
                 {{achievement-small achievement}}
@@ -66,7 +64,6 @@
         {{/each}}
       </div>
     </div>
-
 
     <div class="panel panel-default hidden-xs">
       <div class="panel-heading">

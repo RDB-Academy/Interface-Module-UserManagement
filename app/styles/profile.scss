@@ -1,19 +1,36 @@
-.fb-image-profile {
-    width: 100%;
-    border-radius:50%;
-}
+.profile {
 
-
-.profile-stats {
-  >tbody>tr>td {
-    padding: 4px;
+  .fb-image-profile {
+      width: 100%;
+      border-radius:50%;
   }
-}
 
-.carousel-indicators li {
-  border-color: #222222;
-}
+  #recent_achievements {
+    position: absolute;
+    top: -90px;
+    padding-left: 0;
+  }
 
-.carousel-indicators .active {
-  background-color: #222222;
+  .profile-stats {
+    >tbody>tr>td {
+      padding: 4px;
+    }
+  }
+
+  .carousel-indicators li {
+    border-color: #222222;
+  }
+
+  .achievement_small{
+    z-index: 10;
+  }
+
+  .carousel-indicators .active {
+    background-color: #222222;
+  }
+
+  .well {
+    background-color: rgba(53, 110, 121, 0.65);
+  }
+
 }
