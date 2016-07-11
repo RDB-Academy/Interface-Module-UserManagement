@@ -31,18 +31,10 @@ footer {
   margin-top: -21px;
 
   &.pagetron {
-    padding-bottom: 109px;
-    padding-top: 100px;
+    padding-bottom: 331px;;
     background-image: url("/img/triangles.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-
-    h1, p {
-      text-align: center;
-      margin-top: 100px;
-      font-size: 1000%;
-      color: white;
-    }
   }
 
   &.deceptitron {
@@ -50,6 +42,7 @@ footer {
     background-image: url("/img/triangles_small.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
+    color: white;
 
   }
 

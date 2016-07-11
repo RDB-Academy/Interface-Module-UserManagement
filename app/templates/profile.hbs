@@ -1,5 +1,5 @@
 {{outlet}}
-<div class="container">
+<div class="container profile">
   <div class="row">
     <div class="col-sm-4 hidden-xs" style="height:100%">
       <img class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
@@ -10,7 +10,7 @@
     <div class="col-xs-4 visible-xs">
       <img align="right" class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
     </div>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-4" id="table-col">
       <table class="table table-striped table-hover profile-stats">
         <tbody>
           <tr>
@@ -42,14 +42,12 @@
     </div>
     <div class="clearfix"/>
     <div class="col-xs-12 col-md-12">
-      <div class="col-md-8 hidden-xs" style="position:absolute;top:-90px">
+      <div class="col-md-8 hidden-xs" id="recent_achievements_header">
         <h3>Recent Achievements</h3>
         <hr>
       </div>
     </div>
   </div>
-
-
 
 
   <div class="feature-list">
@@ -58,20 +56,16 @@
       <hr>
     </div>
     <div class="well">
-      <div class="row">
+      <div class="row achievements">
         {{#each model.achievements as |achievement|}}
-            <div class="col-sm-1 col-xs-3">
+            <div class="col-sm-2 col-xs-3">
                 {{achievement-small achievement}}
             </div>
         {{/each}}
       </div>
     </div>
 
-
     <div class="panel panel-default hidden-xs">
-      <div class="panel-heading">
-        some fancy carousel
-      </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-8 vertical-center">
