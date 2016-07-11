@@ -5,11 +5,17 @@
       border-radius:50%;
   }
 
-  #recent_achievements {
+  #table-col {
+    padding-right: 0;
+  }
+
+  #recent_achievements_header {
     position: absolute;
     top: -90px;
     padding-left: 0;
   }
+
+
 
   .profile-stats {
     >tbody>tr>td {
@@ -30,7 +36,24 @@
   }
 
   .well {
-    background-color: rgba(53, 110, 121, 0.65);
+    //background-color: rgba(53, 110, 121, 0.65);
+    //background-color: #3e8996;
+    //background-image: url("/img/triangles_small.jpg");
+    //background-size: cover;
+    //background-repeat: no-repeat;
+  }
+
+
+  .panel-heading {
+    background-image: url("/img/triangles_small.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+  }
+
+  .panel-body {
+    padding-bottom: 0;
   }
 
 }
