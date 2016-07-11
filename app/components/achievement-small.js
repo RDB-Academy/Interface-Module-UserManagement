@@ -19,7 +19,6 @@ const AchievementSmall = Ember.Component.extend({
     return percent === 100;
   }),
   didInsertElement() {
-    console.log(this.$());
     this.$().circleProgress({
       value: this.get('progress'),
       size:90,
