@@ -71,6 +71,35 @@ export default function() {
     }
   })
 
+  this.get('/quests', function () {
+    return {
+      data: [
+        {
+          type: 'quests',
+          id: 1,
+          attributes: {
+            title: "Finish 5 Sql-Statements",
+            'value-min': 0,
+            'value-max': 5,
+            'value-now': 2,
+            points: 20
+          }
+        },
+        {
+          type: 'quests',
+          id: 2,
+          attributes: {
+            title: "Finish 3 Statements in under 20 seconds",
+            'value-min': 0,
+            'value-max': 3,
+            'value-now': 3,
+            points: 20
+          }
+        }
+      ]
+    }
+  })
+
   this.get('/module-applications', function() {
     return {
       data: [
@@ -130,31 +159,75 @@ export default function() {
     }
   })
 
-  this.get('/profile-friends', function() {
+  this.get('/friend-profiles', function() {
     return {
       data: [
         {
-          type: 'profile-friends',
+          type: 'friend-profiles',
           id: 1,
           attributes: {
             username: 'Username1',
-            image: 'img/identicon.png'
+            image: 'img/identicon.png',
+            points: 1000
+          //  <!--Time Spent, Total Tasks, Total Points -->
           }
         },
         {
-          type: 'profile-friends',
+          type: 'friend-profiles',
           id: 2,
           attributes: {
             username: 'Username2',
-            image: 'img/identicon.png'
+            image: 'img/identicon.png',
+            points: 1000
           }
         },
         {
-          type: 'profile-friends',
+          type: 'friend-profiles',
           id: 3,
           attributes: {
             username: 'Username3',
-            image: 'img/identicon.png'
+            image: 'img/identicon.png',
+            points: 1000
+          }
+        },
+        {
+          type: 'friend-profiles',
+          id: 4,
+          attributes: {
+            username: 'Username4',
+            image: 'img/identicon.png',
+            points: 1000
+          }
+        }
+      ]
+    }
+  })
+
+  this.get('/friend-requests', function() {
+    return {
+      data: [
+        {
+          type: 'friend-requests',
+          id: 1,
+          attributes: {
+          username: 'FriendRequest1',
+          image: 'img/identicon.png'
+          }
+        },
+        {
+          type: 'friend-requests',
+          id: 2,
+          attributes: {
+          username: 'FriendRequest2',
+          image: 'img/identicon.png'
+          }
+        },
+        {
+          type: 'friend-requests',
+          id: 3,
+          attributes: {
+          username: 'FriendRequest3',
+          image: 'img/identicon.png'
           }
         }
       ]

@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="row">
-    <div class="col-md-4 col-sm-push-8">
+    <div class="col-sm-4 col-sm-push-8">
       <!-- Placeholder Searchbar! -->
       <form action="#" method="get">
         <div class="input-group">
@@ -14,77 +14,23 @@
       </form>
       <br>
       <h1>Friend Requests</h1>
-			{{#each model as |profile|}}
-				{{#friend-profile profile}}
+			{{#each model.a as |profile|}}
+				{{#friend-request profile}}
 					<div class="btn-group" role="group" align="right">
 						<button class="button" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i></button>
 						<button class="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
 					</div>
-			  {{/friend-profile}}
+			  {{/friend-request}}
 			{{/each}}
-			<!--
-      <table class="table table-striped">
-        <tbody>
-          <tr>
-            <td width="60"><img height="40" width="40" class="img-circle" src="img/identicon.png"/></td>
-            <td width="120">UserName1</td>
-            <td align="right">
-              <div class="btn-group" role="group" aria-label="...">
-                <button class="button" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i></button>
-                <button class="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><img height="40" width="40" class="img-circle" src="img/identicon.png"/></td>
-            <td>UserName2</td>
-            <td align="right">
-              <div class="btn-group" role="group" aria-label="...">
-                <button class="button" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i></button>
-                <button class="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><img height="40" width="40" class="img-circle" src="img/identicon.png"/></td>
-            <td>UserName3</td>
-            <td align="right">
-              <div class="btn-group" role="group" aria-label="...">
-                <button class="button" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i></button>
-                <button class="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-		-->
     </div>
-		<div class="col-md-8 col-sm-pull-4">
+
+    <div class="col-sm-8 col-sm-pull-4">
       <h1>Friends</h1>
-			{{#each model as |profile|}}
+			{{#each model.b as |profile|}}
 				{{#friend-profile profile}}
 					<button class="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
 			  {{/friend-profile}}
 			{{/each}}
-
-		<!--	<table class="table table-striped">
-        <tbody>
-          <tr>
-            <td width="60"><img height="50" width="50" class="img-circle" src="img/identicon.png"/></td>
-            <td width="120">UserName1</td>
-            <td align="right">
-              <button class="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <td width="60"><img height="50" width="50" class="img-circle" src="img/identicon.png"/></td>
-            <td width="120">UserName1</td>
-            <td align="right">
-              <button class="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-            </td>
-          </tr>
-        </tbody>
-      </table> -->
     </div>
 	</div>
 </div>

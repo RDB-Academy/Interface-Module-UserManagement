@@ -6,9 +6,11 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="col-sm-6">
-    <div class="row">
+
+<div class="container pretrainer">
+  <div class="row">
+    <div class="col-sm-6">
+      <!-- PRETRAINER CHOICES -->
       <div class="panel panel-default">
         <div class="panel-heading">
           Difficulty:
@@ -54,24 +56,24 @@
         </div>
       </div>
       <div class="checkbox -inline">
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" name="bonus6" value=1 {{action "setBonus" 6 on="change"}}> Hints
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox2" name="bonus7" value=2 {{action "setBonus" 7 on="change"}}> Highlighting
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox3" name="bonus8" value=30  {{action "setBonus" 8 on="change"}}> LückenText
-      </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox1" name="bonus6" value=1 {{action "setBonus" 6 on="change"}}> Hints
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox2" name="bonus7" value=2 {{action "setBonus" 7 on="change"}}> Highlighting
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox3" name="bonus8" value=30  {{action "setBonus" 8 on="change"}}> LückenText
+        </label>
       </div>
       <p class="text-right" id= "score">{{multiplicator}}%</p>
       <br>
 
 
     </div>
-  </div>
-  <div class="row">
+
     <div class="col-sm-6">
+      <!-- LEADERBOARD -->
       <div class="panel panel-default">
         <div class="panel-heading">
           Leaderbord SQL
@@ -90,5 +92,29 @@
         </ul>
       </div>
     </div>
-</div>
+  </div>
+
+  <div class="clearfix"></div>
+  <div class="col-sm-6">
+    <!-- ACHIEVEMENTS -->
+    <div class="panel panel-default">
+      <h4>Achievements</h4>
+      <div class="row">
+        {{#each model.achievements as |achievement|}}
+          <div class="col-sm-3">
+            {{achievement-small achievement}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <!-- QUESTS -->
+    <div class="panel panel-default">
+      <h4> Quests </h4>
+      {{#each model.quests as |quest|}}
+        {{quest-general quest}}
+      {{/each}}
+    </div>
+  </div>
 </div>
