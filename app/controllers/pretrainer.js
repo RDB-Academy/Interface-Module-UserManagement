@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  difficulty: 100,
+  difficulty: 20,
   bonus: 1,
 
   multiplicator: Ember.computed('difficulty', 'bonus', function() {
@@ -20,13 +20,11 @@ export default Ember.Controller.extend({
     setBonus: function(id) {
       var value = $('input:checkbox[name="bonus'+id+'"]').val();
       var bonus = this.get('bonus');
-      console.log(value,bonus);
       if($('input:checkbox[name="bonus'+id+'"]')[0].checked){
-        this.set('bonus', bonus - (parseInt(value)/100));
-      }else{
         this.set('bonus', bonus + (parseInt(value)/100));
-      };
-      //console.log(bonus);
+      }else{
+        this.set('bonus', bonus - (parseInt(value)/100));
+      }
     }
   }
 });
