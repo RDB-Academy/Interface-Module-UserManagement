@@ -37,13 +37,12 @@
           <div class="clearfix"></div>
         </div>
         <ul class="table-leaderboard" id="leaderboard">
-          {{#each array as |x|}}
-            {{#table-leaderboard "x" "username" "12345" "img/alchemist_logo.jpg"}}
+          {{#each model as |table-leaderboard|}}
+            {{#table-leaderboard table-leaderboard}}
             {{/table-leaderboard}}
           {{/each}}
         </ul>
       </div>
     </div>
-
   </div>
 </div>

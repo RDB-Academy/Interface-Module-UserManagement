@@ -4,5 +4,5 @@ import attr from 'ember-data/attr';
 export default Model.extend({
   username:       attr('string'),
   image:          attr('string'),
-  points:          attr('number')
+  points:         attr('number')
 });

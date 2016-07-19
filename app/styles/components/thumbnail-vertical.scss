@@ -34,9 +34,10 @@
       @extend .col-sm-push-9;
     }
 
-    .thumbnail-vertical-object {
+    > .thumbnail-vertical-object {
       width: 100%;
     }
+
   }
 }
 

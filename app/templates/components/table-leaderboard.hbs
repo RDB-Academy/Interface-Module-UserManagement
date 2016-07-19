@@ -1,15 +1,16 @@
+{{yield}}
 <li class="list-group-item">
   <div  class="col-md-1 position">
-    <span>{{position}}</span>
+    <span>{{table-leaderboard.position}}</span>
   </div>
   <div class="col-md-2">
-    <img class="img-responsive img-circle profile-picture" src="{{image}}"/>
+    <img class="img-responsive img-circle profile-picture" src="{{table-leaderboard.image}}"/>
   </div>
   <div class="col-md-3 username">
-    <span>{{username}}{{yield}}</span>
+    <span>{{table-leaderboard.username}}</span>
   </div>
   <div class="col-md-4 points">
-    <span>{{points}}</span>
+    <span>{{table-leaderboard.value}}</span>
   </div>
   <div  class="col-md-2 friend">
     <button><i class="glyphicon glyphicon-plus"></i></button>

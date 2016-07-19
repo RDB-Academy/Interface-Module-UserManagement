@@ -232,5 +232,42 @@ export default function() {
         }
       ]
     }
-  });
+  })
+
+    this.get('/table-leaderboards', function() {
+      return {
+        data: [
+          {
+            type: 'table-leaderboards',
+            id: 1,
+            attributes:{
+            position: 1,
+            username: 'Fabio Mazzone',
+            image: 'img/identicon.png',
+            value: 123453
+            }
+          },
+          {
+            type: 'table-leaderboards',
+            id: 2,
+            attributes:{
+            position: 2,
+            username: 'Carl Mazzone',
+            image: 'img/identicon.png',
+            value: 1453
+            }
+          },
+          {
+            type: 'table-leaderboards',
+            id: 3,
+            attributes:{
+            position: 2,
+            username: 'Carl Van der Wall',
+            image: 'img/identicon.png',
+            value: 145
+            }
+          }
+        ]
+      }
+    });
 }

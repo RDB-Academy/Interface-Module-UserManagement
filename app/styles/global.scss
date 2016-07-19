@@ -31,10 +31,20 @@ footer {
   margin-top: -21px;
 
   &.pagetron {
-    padding-bottom: 331px;;
+
+    h1 {
+      color: transparent;;
+      font-size: 6em;
+      padding-bottom: 175px;
+    }
+    //margin-right: 0;
+    //margin-left: 0;
+    //padding: 15em;
+
     background-image: url("/img/triangles.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
   }
 
   &.deceptitron {
