@@ -18,3 +18,26 @@
     left: 0;
   }
 }
+
+.achievement-tooltip {
+  background-color: white;
+  border-radius: 6px;
+  bottom: 120%;
+  left: 50%;
+  margin-left: -240px;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  visibility: hidden;
+  width: 480px;
+  z-index: 1;
+
+  .achievement {
+    margin-bottom: 0;
+  }
+}
+
+
+.achievement-small:hover .achievement-tooltip {
+  visibility: visible;
+}

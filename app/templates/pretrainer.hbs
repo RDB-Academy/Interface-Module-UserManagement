@@ -6,28 +6,30 @@
     </div>
   </div>
 </div>
+
 <div class="container pretrainer">
-  <div class="col-sm-6">
-    <div class="row">
+  <div class="row">
+    <div class="col-sm-6">
+      <!-- PRETRAINER CHOICES -->
       <div class="panel panel-default">
         <div class="panel-heading">
           Difficulty:
         </div>
         <div class="btn-group" data-toggle="buttons">
-          <label class="btn active" id="beginner">
-            <input type="radio" name="options" id="beginner" autocomplete="off" checked> beginner
+          <label class="btn btn-success active">
+            <input type="radio" name="difficulty" id="option1" value="20" autocomplete="off" {{action "setDifficulty" on="change"}}> beginner
           </label>
-          <label class="btn" id="intermediate">
-            <input type="radio" name="options" id="intermediate" autocomplete="off"> intermediate
+          <label class="btn btn-primary">
+            <input type="radio" name="difficulty" id="option2" value="40" autocomplete="off" {{action "setDifficulty" on="change"}}> intermidiate
           </label>
-          <label class="btn" id="advanced">
-            <input type="radio" name="options" id="advanced" autocomplete="off"> advanced
+          <label class="btn btn-warning">
+            <input type="radio" name="difficulty" id="option3" value="60" autocomplete="off" {{action "setDifficulty" on="change"}}> advanced
           </label>
-          <label class="btn" id="expert">
-            <input type="radio" name="options" id="expert" autocomplete="off"> expert
+          <label class="btn btn-danger">
+            <input type="radio" name="difficulty" id="option4" value="80" autocomplete="off" {{action "setDifficulty" on="change"}}> expert
           </label>
-          <label class="btn" id="impossible">
-            <input type="radio" name="options" id="impossible" autocomplete="off"> impossible
+          <label class="btn btn-danger">
+            <input type="radio" name="difficulty" id="option5" value="120" autocomplete="off" {{action "setDifficulty" on="change"}}> impossible
           </label>
         </div>
       </div>
@@ -37,38 +39,41 @@
         </div>
         <div class="btn-group" data-toggle="buttons">
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off" checked> Joins
+            <input type="checkbox" id="catCheckbox1" name="bonus1" value=2 autocomplete="off" {{action "setBonus" 1 on="change"}}> Joins
           </label>
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off"> Outer-Joins
+            <input type="checkbox" id="catCheckbox2" name="bonus2" value=2 autocomplete="off" {{action "setBonus" 2 on="change"}}> Outer-Joins
           </label>
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off"> Aggregation
+            <input type="checkbox" id="catCheckbox3" name="bonus3" value=3 autocomplete="off" {{action "setBonus" 3 on="change"}}> Aggregation
           </label>
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off"> Select
+            <input type="checkbox" id="catCheckbox4" name="bonus4" value=4 autocomplete="off" {{action "setBonus" 4 on="change"}}> Select
           </label>
           <label class="btn btn-primary">
-            <input type="checkbox" autocomplete="off"> Grouping
+            <input type="checkbox" id="catCheckbox5" name="bonus5" value=5 autocomplete="off" {{action "setBonus" 5 on="change"}}> Grouping
           </label>
         </div>
       </div>
-      <div class="checkbox-inline">
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox1" value="option1"> Hints
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox2" value="option2"> Highlighting
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inlineCheckbox3" value="option3"> Hot-Streak
-      </label>
+      <div class="checkbox -inline">
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox1" name="bonus6" value=-5 {{action "setBonus" 6 on="change"}}> Hints
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox2" name="bonus7" value=-10 {{action "setBonus" 7 on="change"}}> Highlighting
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox3" name="bonus8" value=-30  {{action "setBonus" 8 on="change"}}> LückenText
+        </label>
       </div>
-      <p class="text-right"><strong>130%</strong></p>
+      <p class="text-right" id= "score">{{multiplicator}}%</p>
+      <br>
+
+
     </div>
-  </div>
-  <div class="row">
+
     <div class="col-sm-6">
+      <!-- LEADERBOARD -->
       <div class="panel panel-default">
         <div class="panel-heading">
           Leaderbord SQL
@@ -87,5 +92,29 @@
         </ul>
       </div>
     </div>
-</div>
+  </div>
+
+  <div class="clearfix"></div>
+  <div class="col-sm-6">
+    <!-- ACHIEVEMENTS -->
+    <div class="panel panel-default">
+      <h4>Achievements</h4>
+      <div class="row">
+        {{#each model.achievements as |achievement|}}
+          <div class="col-sm-3">
+            {{achievement-small achievement}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <!-- QUESTS -->
+    <div class="panel panel-default">
+      <h4> Quests </h4>
+      {{#each model.quests as |quest|}}
+        {{quest-general quest}}
+      {{/each}}
+    </div>
+  </div>
 </div>

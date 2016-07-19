@@ -71,6 +71,35 @@ export default function() {
     }
   })
 
+  this.get('/quests', function () {
+    return {
+      data: [
+        {
+          type: 'quests',
+          id: 1,
+          attributes: {
+            title: "Finish 5 Sql-Statements",
+            'value-min': 0,
+            'value-max': 5,
+            'value-now': 2,
+            points: 20
+          }
+        },
+        {
+          type: 'quests',
+          id: 2,
+          attributes: {
+            title: "Finish 3 Statements in under 20 seconds",
+            'value-min': 0,
+            'value-max': 3,
+            'value-now': 3,
+            points: 20
+          }
+        }
+      ]
+    }
+  })
+
   this.get('/module-applications', function() {
     return {
       data: [
