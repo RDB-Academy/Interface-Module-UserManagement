@@ -5,7 +5,8 @@
     "window",
     "-Promise",
     "Chart",
-    "jQuery"
+    "jQuery",
+    "Cookies"
   ],
   "browser": true,
   "boss": true,

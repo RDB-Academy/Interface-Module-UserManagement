@@ -23,7 +23,8 @@
     "currentURL",
     "currentPath",
     "currentRouteName",
-    "jQuery"
+    "jQuery",
+    "Cookies"
   ],
   "node": false,
   "browser": false,

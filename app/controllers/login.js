@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  application: Ember.inject.controller(),
+  name: Ember.computed.alias('application.name'),
+
   rememberMe: true,
 
   actions: {
