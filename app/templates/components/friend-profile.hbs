@@ -1,12 +1,18 @@
-<div class="row">
-  <div class="col-xs-2">
+<li class="list-group-item">
+  <div class="col-xs-2 image">
     <img align=left class="fb-image-profile thumbnail img-circle" src="{{friend-profile.image}}"/>
   </div>
-  <div class="col-xs-8">
-    {{friend-profile.username}}<br><br>
-    Total Score:{{friend-profile.points}}&emsp; Success Rate: 65%&emsp; More Information!&css
+  <div class="col-xs-8 user-information">
+    {{friend-profile.username}}
   </div>
   <div class="col-xs-2">
     {{yield}}
   </div>
-</div>
+  <div class="col-xs-6">
+    Title: {{friend-profile.title}}
+  </div>
+  <div class="col-xs-6">
+    Total Score: {{friend-profile.points}}
+  </div>
+  <div class="clearfix"></div>
+</li>

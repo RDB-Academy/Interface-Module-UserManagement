@@ -168,8 +168,8 @@ export default function() {
           attributes: {
             username: 'Username1',
             image: 'img/identicon.png',
+            title: 'Master of SQL',
             points: 1000
-          //  <!--Time Spent, Total Tasks, Total Points -->
           }
         },
         {
@@ -178,6 +178,7 @@ export default function() {
           attributes: {
             username: 'Username2',
             image: 'img/identicon.png',
+            title: 'Nerd',
             points: 1000
           }
         },
@@ -187,6 +188,7 @@ export default function() {
           attributes: {
             username: 'Username3',
             image: 'img/identicon.png',
+            title: 'Beginner',
             points: 1000
           }
         },
@@ -196,7 +198,8 @@ export default function() {
           attributes: {
             username: 'Username4',
             image: 'img/identicon.png',
-            points: 1000
+            points: 1000,
+            title: 'Caaaarl'
           }
         }
       ]
