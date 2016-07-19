@@ -7,18 +7,18 @@
     <form>
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="email" class="form-control" id="username" placeholder="Username">
+        {{input type="text" value=username class="form-control" id="username" placeholder="Username"}}
       </div>
       <div class="form-group">
         <label for="emailAddress">Email address</label>
-        <input type="email" class="form-control" id="emailAddress" placeholder="Email">
+        {{input type="email" value=emailAddress class="form-control" id="emailAddress" placeholder="Email"}}
       </div>
       <div class="form-group">
         <label for="passwordField">Password</label>
-        <input type="password" class="form-control" id="passwordField" placeholder="Password">
+        {{input type="password" value=password class="form-control" id="passwordField" placeholder="Password"}}
       </div>
       <div class="clearfix"></div>
-      <button type="submit" class="btn btn-default pull-right" style="width: 150px;">Submit</button>
+      <button type="submit" class="btn btn-default pull-right" style="width: 150px;" {{action "signUp"}}>Sign Up</button>
     </form>
   </div>
 </div>

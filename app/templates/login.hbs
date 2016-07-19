@@ -7,19 +7,19 @@
     <form>
       <div class="form-group">
         <label for="emailAddress">Email address</label>
-        <input type="email" class="form-control" id="emailAddress" placeholder="Email">
+        {{input type="email" value=emailAddress class="form-control" placeholder="Email"}}
       </div>
       <div class="form-group">
         <label for="passwordField">Password</label>
-        <input type="password" class="form-control" id="passwordField" placeholder="Password">
+        {{input type="password" value=password class="form-control" placeholder="Password"}}
       </div>
       <div class="checkbox pull-right">
         <label>
-          <input type="checkbox"> Check me out
+          {{input type="checkbox" name="rememberMe" checked=rememberMe}}Remember me
         </label>
       </div>
       <div class="clearfix"></div>
-      <button type="submit" class="btn btn-default pull-right" style="width: 150px;">Submit</button>
+      <button type="submit" class="btn btn-default pull-right" style="width: 150px;" {{action "login"}}>Submit</button>
     </form>
   </div>
 </div>
