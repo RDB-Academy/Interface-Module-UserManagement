@@ -1,6 +1,22 @@
 .pretrainer {
 
+    .well{
+      background-color: transparent;
+      border: 0px;
+    }
+    .slider.slider-horizontal {
+      width: 100%;
+      height: 20px;
+    }
+
     .btn-group {
+        .btn-block{
+          width: 260px;
+        }
+
+        .btn-check{
+          display:none;
+        }
 
         .btn {
             margin-left: 10px;

@@ -71,6 +71,21 @@ export default function() {
     }
   })
 
+  this.get('/pretrainer', function() {
+    return {
+      data: [
+        {
+          type: 'pretrainer',
+          id: 1,
+          attributes: {
+            title: "TEST",
+            difficulty: 20
+          }
+        }
+      ]
+    }
+  })
+
   this.get('/quests', function () {
     return {
       data: [

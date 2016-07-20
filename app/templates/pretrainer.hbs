@@ -6,69 +6,70 @@
     </div>
   </div>
 </div>
-
 <div class="container pretrainer">
   <div class="row">
     <div class="col-sm-6">
-      <!-- PRETRAINER CHOICES -->
       <div class="panel panel-default">
-        <div class="panel-heading">
-          Difficulty:
+        <!-- PRETRAINER CHOICES -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Difficulty:
+          </div>
+          {{bootstrap-slider onConfirm=(action "setDifficulty")}}
         </div>
-        <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-success active">
-            <input type="radio" name="difficulty" id="option1" value="20" autocomplete="off" {{action "setDifficulty" on="change"}}> beginner
+        <div class="panel panel-default" id="CustomizePanel">
+          <div class=btn-group>
+            <p>
+              <button type="button" class="btn btn-primary btn-lg btn-block" {{action "customize"}}>Customize</button>
+            </p>
+          </div>
+        </div>
+        <div class="panel panel-default" id="CategoriePanel" hidden=true>
+          <div class="panel-heading">
+            Categories:
+          </div>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary">
+              <input type="checkbox" id="catCheckbox1" name="bonus1" value=10 {{action "setCategorie" 1 on="change"}}> Joins
+            </label>
+            <label class="btn btn-primary">
+              <input type="checkbox" id="catCheckbox2" name="bonus2" value=10 {{action "setCategorie" 2 on="change"}}> Outer-Joins
+            </label>
+            <label class="btn btn-primary">
+              <input type="checkbox" id="catCheckbox3" name="bonus3" value=10 {{action "setCategorie" 3 on="change"}}> Aggregation
+            </label>
+            <label class="btn btn-primary">
+              <input type="checkbox" id="catCheckbox4" name="bonus4" value=20 {{action "setCategorie" 4 on="change"}}> Recursion
+            </label>
+            <label class="btn btn-primary">
+              <input type="checkbox" id="catCheckbox5" name="bonus5" value=20 {{action "setCategorie" 5 on="change"}}> Grouping
+            </label>
+            <label class="btn btn-primary">
+              <input type="checkbox" id="catCheckbox6" name="bonus6" value=10 {{action "setCategorie" 6 on="change"}}> Subquery
+            </label>
+          </div>
+        </div>
+        <div class="checkbox -inline">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" name="bonus7" value=5 {{action "setBonus" 7 on="change"}}> Hints
           </label>
-          <label class="btn btn-primary">
-            <input type="radio" name="difficulty" id="option2" value="40" autocomplete="off" {{action "setDifficulty" on="change"}}> intermidiate
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" name="bonus8" value=10 {{action "setBonus" 8 on="change"}}> Highlighting
           </label>
-          <label class="btn btn-warning">
-            <input type="radio" name="difficulty" id="option3" value="60" autocomplete="off" {{action "setDifficulty" on="change"}}> advanced
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" name="bonus9" value=30  {{action "setBonus" 9 on="change"}}> LückenText
           </label>
-          <label class="btn btn-danger">
-            <input type="radio" name="difficulty" id="option4" value="80" autocomplete="off" {{action "setDifficulty" on="change"}}> expert
-          </label>
-          <label class="btn btn-danger">
-            <input type="radio" name="difficulty" id="option5" value="120" autocomplete="off" {{action "setDifficulty" on="change"}}> impossible
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox4" name="bonus10" value=20  {{action "setBonus" 10 on="change"}}> Drag 'n' Drop
           </label>
         </div>
+        <div class=btn-group>
+          <p>
+            <button type="button" class="btn btn-primary btn-lg btn-block" {{action "start"}}>Start with: {{multiplicator}}%</button>
+          </p>
+        </div>
+        <br>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          Categories:
-        </div>
-        <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-primary">
-            <input type="checkbox" id="catCheckbox1" name="bonus1" value=2 autocomplete="off" {{action "setBonus" 1 on="change"}}> Joins
-          </label>
-          <label class="btn btn-primary">
-            <input type="checkbox" id="catCheckbox2" name="bonus2" value=2 autocomplete="off" {{action "setBonus" 2 on="change"}}> Outer-Joins
-          </label>
-          <label class="btn btn-primary">
-            <input type="checkbox" id="catCheckbox3" name="bonus3" value=3 autocomplete="off" {{action "setBonus" 3 on="change"}}> Aggregation
-          </label>
-          <label class="btn btn-primary">
-            <input type="checkbox" id="catCheckbox4" name="bonus4" value=4 autocomplete="off" {{action "setBonus" 4 on="change"}}> Select
-          </label>
-          <label class="btn btn-primary">
-            <input type="checkbox" id="catCheckbox5" name="bonus5" value=5 autocomplete="off" {{action "setBonus" 5 on="change"}}> Grouping
-          </label>
-        </div>
-      </div>
-      <div class="checkbox -inline">
-        <label class="checkbox-inline">
-          <input type="checkbox" id="inlineCheckbox1" name="bonus6" value=-5 {{action "setBonus" 6 on="change"}}> Hints
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" id="inlineCheckbox2" name="bonus7" value=-10 {{action "setBonus" 7 on="change"}}> Highlighting
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" id="inlineCheckbox3" name="bonus8" value=-30  {{action "setBonus" 8 on="change"}}> LückenText
-        </label>
-      </div>
-      <p class="text-right" id= "score">{{multiplicator}}%</p>
-      <br>
-
 
     </div>
 
