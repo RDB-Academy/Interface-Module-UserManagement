@@ -2,36 +2,38 @@
 <div class="jumbotron deceptitron">
   <div class="container">
     <div class="page-header">
-      <h1>Leaderboards <small>Look who's da beeeeeest!</small></h1>
+      <h1>Leaderboards <small class="hidden-xs hidden-sm"> Look who's da beeeeeest!</small></h1>
     </div>
   </div>
 </div>
 <div class="container leaderboard">
-  <ul class="nav nav-tabs">
-    <li role="presentation">
-      <button {{action "setState" 'sql'}} class={{isSQLActive}} >SQL</button>
-    </li>
-    <li role="presentation" class="">
-      <button {{action "setState" 'ra'}} class="btn btn-default">RA</button>
-    </li>
-    <li role="presentation" class="">
-      <button {{action "setState" 'trc'}} class="btn btn-default">TRC</button>
-    </li>
-  </ul>
   <div class="row">
+    <ul class="nav nav-tabs">
+      <li role="presentation">
+        <button {{action "setState" 'sql'}} class={{isSQLActive}} >SQL</button>
+      </li>
+      <li role="presentation" class="">
+        <button {{action "setState" 'ra'}} class="btn btn-default">RA</button>
+      </li>
+      <li role="presentation" class="">
+        <button {{action "setState" 'trc'}} class="btn btn-default">TRC</button>
+      </li>
+    </ul>
+  </div>
+    <div class="row">
     <div class="col-md-10 col-md-push-1">
       <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="col-md-1 position">
-            <span>Position</span>
+        <div class="panel-heading hidden-xs">
+          <div class="col-xs-1 position">
+            <span> Position</span>
           </div>
-          <div class="col-md-3 col-md-push-2 username">
+          <div class="col-xs-3 col-xs-push-2 username">
             <span>Username</span>
           </div>
-          <div class="col-md-4 col-md-push-2 points">
+          <div class="col-xs-4 col-xs-push-2 points">
             <span>Points</span>
           </div>
-          <div class="col-md-2 col-md-push-2 friend">
+          <div class="col-xs-2 col-xs-push-2 friend">
             <span>Add as friend?</span>
           </div>
           <div class="clearfix"></div>

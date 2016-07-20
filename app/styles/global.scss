@@ -31,20 +31,40 @@ footer {
   margin-top: -21px;
 
   &.pagetron {
-
-    h1 {
-      color: transparent;;
-      font-size: 6em;
-      padding-bottom: 175px;
-    }
-    //margin-right: 0;
-    //margin-left: 0;
-    //padding: 15em;
-
-    background-image: url("/img/triangles.jpg");
-    background-size: cover;
+    background-image: url("/img/Triangles.png");
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+
+    div {
+      #pagetron-logo {
+        height: 175px;
+        display: block;
+        margin: auto;
+      }
+      @media (max-width: $screen-xs-max) {
+        #pagetron-logo {
+          height: 175px;
+          display: block;
+          margin: auto;
+        }
+      }
+      @media (max-width: $screen-sm-max) {
+        #pagetron-logo {
+          height: 175px;
+          display: block;
+          margin: auto;
+        }
+      }
+      @media (max-width: $screen-md-max) {
+        #pagetron-logo {
+          height: 370px;
+          display: block;
+          margin: auto;
+
+        }
+      }
+    }
   }
 
   &.deceptitron {

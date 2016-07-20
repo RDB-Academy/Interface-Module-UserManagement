@@ -13,24 +13,23 @@
   .panel-heading {
     color: white;
     background-image: url("/img/triangles_small.jpg");
-  }
 
+    .points {
+      padding-right: 0;
+      text-align: right;
+    }
 
-  .points {
-    padding-right: 0;
-    text-align: right;
-  }
+    .username {
+      padding-left: 0;
+    }
 
-  .username {
-    padding-left: 0;
-  }
+    .position {
+      text-align: right;
+    }
 
-  .position {
-    text-align: right;
-  }
-
-  .friend {
-    text-align: center;
+    .friend {
+      text-align: center;
+    }
   }
 
   .nav-tabs  {
@@ -41,7 +40,6 @@
 
     li {
       padding: 2px;
-
     }
 
     .btn-default {
@@ -58,6 +56,12 @@
       }
     }
 
+  }
+
+  @media (max-width: $screen-xs-max) {
+    .nav-tabs {
+      padding-left: 0;
+    }
   }
 
 }
