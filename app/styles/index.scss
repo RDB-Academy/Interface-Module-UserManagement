@@ -1,8 +1,19 @@
-.feature-list {
-  padding-bottom: 30px;
-}
+.index {
 
-.game-collection {
-  @extend .row;
-  padding-bottom: 30px;
+  .feature-list {
+    padding-bottom: 30px;
+
+    .panel-heading {
+      color: white;
+      background-image: url("/img/triangles_small.jpg");
+      
+    }
+
+  }
+
+  .game-collection {
+    @extend .row;
+    padding-bottom: 30px;
+  }
+
 }
