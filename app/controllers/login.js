@@ -1,19 +1,24 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  application: Ember.inject.controller(),
-  name: Ember.computed.alias('application.name'),
+  session: Ember.inject.service('session'),
 
-  rememberMe: true,
+  emailAddress: "",
+  password: "",
 
   actions: {
     login() {
       var email = this.get('emailAddress');
       var password = this.get('password');
-      var rememberMe = this.get('rememberMe');
+
+      this.get('session').authenticate('authenticator:default', email, password).catch((reason) => {
+        console.log(reason);
+      });
+
+      console.log(this.get('session.data'));
+
       console.log(email);
       console.log(password);
-      console.log(rememberMe);
     }
   }
 });
