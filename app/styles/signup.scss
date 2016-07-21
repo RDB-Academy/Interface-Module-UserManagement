@@ -1,0 +1,44 @@
+.signup-username-inputfield, .signup-emailAddress-inputfield {
+  display: flex;
+  position: relative;
+
+  .error-indicator {
+    color: red;
+    font-size: x-large;
+    height: 43px;
+    padding: 8px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-shadow: 1px 1px 5px grey;
+    width: 43px;
+  }
+}
+
+.statusbar {
+  width: 100%;
+  height: 3px;
+  background: red;
+
+  &.ok {
+    background: #24ff57;
+  }
+}
+
+.statusbar-progress {
+  height: 4px;
+  width: 100%;
+
+  .indicator {
+    background: #24ff57;
+    height: 4px;
+    margin-right: 1%;
+    width: 19%;
+    float:left;
+
+    &:last-child {
+      margin-right: 0;
+      width: 20%;
+    }
+  }
+}
