@@ -1,5 +1,5 @@
 {{outlet}}
-<div class="panel panel-default" style="width: 500px; margin: 0 auto;">
+<div class="panel panel-default sign-up-form">
   <div class="panel-heading">
     <h3 class="panel-title text-center">Sign Up</h3>
   </div>
@@ -8,32 +8,36 @@
       <div class="form-group">
         <label for="username">Username</label>
         <div class="signup-username-inputfield">
-          {{input type="text" value=username class="form-control" placeholder="Username" key-press="usernameChanged"}}
-          <div class="error-indicator">
-            <span class="glyphicon glyphicon-remove"></span>
-          </div>
+          {{input type="text" value=username class="form-control" placeholder="Username"}}
+          {{#if usernameHasError}}
+            <div class="error-indicator">
+              <span class="glyphicon glyphicon-remove"></span>
+            </div>
+          {{/if}}
         </div>
-        <div class="statusbar"></div>
+        {{#if showUsernameIndicator}}
+          <div class="statusbar {{if isUsernameValid "ok"}}"></div>
+        {{/if}}
       </div>
       <div class="form-group">
         <label for="emailAddress">Email address</label>
         <div class="signup-emailAddress-inputfield">
-          {{input type="email" value=emailAddress class="form-control" placeholder="Email" key-press="emailAddressChanged"}}
-          <div class="error-indicator">
-            <span class="glyphicon glyphicon-remove"></span>
-          </div>
+          {{input type="email" value=emailAddress class="form-control" placeholder="Email"}}
+          {{#if emailAddressHasError}}
+            <div class="error-indicator">
+              <span class="glyphicon glyphicon-remove"></span>
+            </div>
+          {{/if}}
         </div>
-        <div class="statusbar ok"></div>
+        {{#if showEmailAddressIndicator}}
+          <div class="statusbar {{if isEmailAddressValid "ok"}}"></div>
+        {{/if}}
       </div>
       <div class="form-group">
         <label for="passwordField">Password</label>
-        {{input type="password" value=password class="form-control" placeholder="Password" key-press="passwordChanged"}}
-        <div class="statusbar-progress" {{bind-attr class="passwordscore"}}>
-          <div class="indicator"></div>
-          <div class="indicator"></div>
-          <div class="indicator"></div>
-          <div class="indicator"></div>
-          <div class="indicator"></div>
+        {{input type="password" value=password class="form-control" placeholder="Password"}}
+        <div class="statusbar-progress ">
+          <div class="indicator status-{{passwordDifficulty}}"></div>
         </div>
       </div>
       <div class="clearfix"></div>

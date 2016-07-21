@@ -19,6 +19,7 @@
   width: 100%;
   height: 3px;
   background: red;
+  transition: .5s;
 
   &.ok {
     background: #24ff57;
@@ -30,15 +31,63 @@
   width: 100%;
 
   .indicator {
-    background: #24ff57;
+    float: left;
     height: 4px;
-    margin-right: 1%;
-    width: 19%;
-    float:left;
+    width: 0;
+    transition: .5s;
 
-    &:last-child {
-      margin-right: 0;
+    &.status-1 {
+      background: #FF0000;
       width: 20%;
     }
+
+    &.status-2 {
+      background: #CC4000;
+      width: 40%;
+    }
+
+    &.status-3 {
+      background: #998000;
+      width: 60%;
+    }
+
+    &.status-4 {
+      background: #66BF00;
+      width: 80%;
+    }
+
+    &.status-5 {
+      background: #33FF00;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes invalid
+{
+  0% {left:8px;}
+  10% {left:-8px;}
+  30% {left:8px;}
+  60% {left:-8px;}
+  100% {left:0px;}
+}
+
+@-webkit-keyframes invalid /* Safari and Chrome */
+{
+  0% {left:8px;}
+  10% {left:-8px;}
+  30% {left:8px;}
+  60% {left:-8px;}
+  100% {left:0px;}
+}
+
+.sign-up-form {
+  margin: 0 auto;
+  position: relative;
+  width: 500px;
+
+  &.invalid {
+    animation: invalid .5s;
+    -webkit-animation: invalid .5s;
   }
 }

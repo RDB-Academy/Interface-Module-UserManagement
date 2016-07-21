@@ -21,6 +21,8 @@ module.exports = function(defaults) {
   /* Newsticker */
   app.import('vendor/vTicker.js');
 
+  /* Jquery-effects */
+
 
   /* Password Validation */
   app.import('bower_components/zxcvbn/dist/zxcvbn.js');

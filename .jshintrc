@@ -5,7 +5,8 @@
     "window",
     "-Promise",
     "Chart",
-    "jQuery"
+    "jQuery",
+    "zxcvbn"
   ],
   "browser": true,
   "boss": true,
