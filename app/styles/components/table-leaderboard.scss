@@ -6,82 +6,100 @@
     	transition: .2s ease-in-out;
     }
 
+    .list-group-item {
+      padding: 3px;
+      margin-top: 2px;
+
+            .points {
+              text-align: right;
+              padding-right: 0;
+              margin-top: 10px;
+            }
+
+            .username {
+              padding-left: 0;
+              margin-top: 10px;
+            }
+
+            .position {
+              text-align: right;
+              margin-top: 10px;
+              padding-left: 0;
+            }
+
+            @media (max-width: $screen-xs-max $screen-sm-max) {
+              .position {
+                text-align: center;
+                margin: 0;
+                padding: 10px;
+              }
+              .username {
+                text-align: center;
+                padding: 0;
+                margin: 0;
+              }
+              .points {
+                text-align: right;
+                padding: 10px;
+                margin: 0;
+              }
+
+              .friend {
+                margin: 0;
+                padding: 0;
+              }
+
+            }
+
+            .profile-picture {
+              display: block;
+              margin: auto;
+              width: 50%;
+            }
+
+            .friend {
+              margin-top: 8px;
+
+              button {
+                 background-color: #346d77;
+                 -webkit-border-radius: 50px;
+                    -moz-border-radius: 50px;
+                         border-radius: 50px;
+                 max-width: 100%;
+                 height: auto;
+                 display: block;
+                 margin: auto;
+                 border: solid #346d77;
+                 padding-left: 7px;
+
+                 i {
+                   color: white;
+                 }
+              }
+
+              button:hover {
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+                background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+                background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+                background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+                background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+                background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+                background-color:#408c99;
+              }
+
+              button:active {
+                position:relative;
+                top:1px;
+              }
+
+            }
+    }
+
     li:hover {
       -webkit-transform: scale3d(1.02,1.02,1);
     	transform: scale3d(1.02,1.02,1);
       z-index: 3;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    .list-group-item {
-      padding: 3px;
-      margin-top: 2px;
-
-      @media (max-width: $screen-xs) {
-        .username {
-          text-align: center;
-        }
-      }
-
-      .points {
-        text-align: right;
-        padding-right: 0;
-        margin-top: 20px;
-
-      }
-
-      .username {
-        padding-left: 0;
-        margin-top: 20px;
-      }
-
-      .position {
-        text-align: right;
-        margin-top: 20px;
-      }
-
-      .profile-picture {
-        display: block;
-        margin: auto;
-        width: 50%;
-      }
-
-      .friend {
-        margin-top: 15px;
-
-        button {
-           background-color: #346d77;
-           -webkit-border-radius: 50px;
-              -moz-border-radius: 50px;
-                   border-radius: 50px;
-           max-width: 100%;
-           height: auto;
-           display: block;
-           margin: auto;
-           border: solid #346d77;
-           padding-left: 7px;
-
-           i {
-             color: white;
-           }
-        }
-
-        button:hover {
-          background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
-          background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
-          background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
-          background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
-          background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
-          background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-          filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
-          background-color:#408c99;
-        }
-
-        button:active {
-          position:relative;
-          top:1px;
-        }
-
-      }
     }
 }

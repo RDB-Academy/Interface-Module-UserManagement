@@ -21,8 +21,14 @@ module.exports = function(defaults) {
   /* Newsticker */
   app.import('vendor/vTicker.js');
 
+
   /* Password Validation */
   app.import('bower_components/zxcvbn/dist/zxcvbn.js');
+
+  /* bootstrap-slider*/
+  app.import('vendor/bootstrap-slider.min.js');
+  app.import('vendor/bootstrap-slider.min.css');
+
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
