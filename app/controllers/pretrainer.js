@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   difficulty: 20,
   categorie: 20,
-  bonus: 1,
+  bonus: 2,
   customize: false,
 
   multiplicator: Ember.computed('difficulty', 'bonus', 'categorie', function() {
@@ -16,6 +16,8 @@ export default Ember.Controller.extend({
       return Math.ceil((value1) * value3);
     }
   }),
+
+
 
   actions: {
     setDifficulty: function() {
@@ -37,11 +39,27 @@ export default Ember.Controller.extend({
     setCategorie: function(id) {
       var value = parseInt(jQuery('input:checkbox[name="bonus'+id+'"]').val());
       var categorie = this.get('categorie');
-      if(jQuery('input:checkbox[name="bonus'+id+'"]')[0].checked){
-        this.set('categorie', categorie + value);
-      }else{
-        this.set('categorie', categorie - value);
+      if (id%2==1){
+        if (!jQuery('input:checkbox[name="bonus'+(id+1)+'"]')[0].checked){
+          if (jQuery('input:checkbox[name="bonus'+id+'"]')[0].checked){
+            this.set('categorie', categorie + value);
+          } else {
+            this.set('categorie', categorie - value);
+          }
+        }
+      } else {
+        var factor = 1;
+        if (!jQuery('input:checkbox[name="bonus'+(id-1)+'"]')[0].checked){
+          factor = 2;
+        }
+        if (jQuery('input:checkbox[name="bonus'+id+'"]')[0].checked){
+          this.set('categorie', categorie + value*factor);
+        } else {
+          this.set('categorie', categorie - value*factor);
+        }
       }
+
+      jQuery('#ex1').slider('setValue', Math.floor(this.get('categorie')/20), true);
     },
     start: function() {
       console.log(jQuery('#ex1').val());
@@ -50,7 +68,8 @@ export default Ember.Controller.extend({
       jQuery('#CategoriePanel')[0].hidden = false;
       jQuery('#CustomizePanel')[0].hidden = true;
 
-      jQuery('#ex1')[0].value = 1;
+      jQuery('#ex1').slider('setValue', this.get('categorie')/20, true);
+      console.log(jQuery('#ex1')[0].value);
       this.set('difficulty', 20);
       this.set('customize',true);
 

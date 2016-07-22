@@ -3,78 +3,65 @@
     .well{
       background-color: transparent;
       border: 0px;
+      margin-bottom: 0px;
+    }
+    .slider-selection {
+	      background: #548dA7;
+    }
+    .slider-tick.in-selection{
+        background-image: linear-gradient(to bottom,#548dA7 0,#548dA7 100%);
+    }
+    .slider-handle{
+      background-image: linear-gradient(to bottom,#249bdf 0,#346d77 80%);
     }
     .slider.slider-horizontal {
       width: 100%;
       height: 20px;
     }
 
-    .btn-group {
-        .btn-block{
-          width: 260px;
-        }
+    .no-margin{
+      margin-bottom: 0px;
+    }
+    .p {
+    margin: 0 0 -5px;
+    }
 
-        .btn-check{
-          display:none;
-        }
+    .bttn-group {
 
         .btn {
             margin-left: 10px;
             margin-top: 10px;
-            margin-bottom: 10px;
             background-color: #346d77;
             color: white;
         }
-
+        .btn-checks{
+          margin-bottom: 10px;
+        }
         label.active {
           background-color: #3e8996;
           border-color: #346d77;
           text-decoration: underline;
         }
-
-        #beginner {
-          background-color: #3498DB;
+        .btn-block{
+          margin-left: 0px;
+          width: 100%;
         }
 
-        #beginner.active {
-          background-color: #4b62b3;
-          border-color: #3498DB;
-        }
+    }
+    .btn-group {
 
-        #intermediate {
-          background-color: #3FC380;
+        .btn {
+            margin-left: 10px;
+            margin-top: 10px;
+            background-color: #346d77;
+            color: white;
         }
-
-        #intermediate.active {
-          background-color: #40aa58;
-          border-color: #3FC380;
+        .btn-checks{
+          margin-bottom: 10px;
         }
-
-        #advanced {
-          background-color: #E9D460;
-        }
-
-        #advanced.active {
-          background-color: #e1e42e;
-          border-color: #E9D460;
-        }
-
-        #expert {
-          background-color:#E87E04;
-        }
-
-        #expert.active {
-          background-color: rgb(246, 131, 11);
-          border-color: #E87E04;
-        }
-
-        #impossible {
-          background-color:#D64541;
-        }
-
-        #impossible.active {
-          background-color: #ff0909;
-          border-color: #D64541;
+        .btn-block{
+          margin-left: 0px;
+          width: 100%;
         }
 
     }
