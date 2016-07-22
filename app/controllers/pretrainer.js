@@ -39,7 +39,7 @@ export default Ember.Controller.extend({
     setCategorie: function(id) {
       var value = parseInt(jQuery('input:checkbox[name="bonus'+id+'"]').val());
       var categorie = this.get('categorie');
-      if (id%2==1){
+      if ((id%2)===1){
         if (!jQuery('input:checkbox[name="bonus'+(id+1)+'"]')[0].checked){
           if (jQuery('input:checkbox[name="bonus'+id+'"]')[0].checked){
             this.set('categorie', categorie + value);

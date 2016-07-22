@@ -1,4 +1,4 @@
-.signup-username-inputfield, .signup-emailAddress-inputfield {
+.signup-username-inputfield, .signup-emailAddress-inputfield, .password-inputfield {
   display: flex;
   position: relative;
 
@@ -81,7 +81,7 @@
   100% {left:0px;}
 }
 
-.sign-up-form {
+.sign-up-form, .login-form {
   margin: 0 auto;
   position: relative;
   width: 500px;

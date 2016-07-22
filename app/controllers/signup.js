@@ -6,12 +6,15 @@ export default Ember.Controller.extend({
   password: "",
 
   showUsernameIndicator: 0,
+  usernameHasError: 0,
   isUsernameValid: 0,
 
   showEmailAddressIndicator: 0,
+  emailAddressHasError: 0,
   isEmailAddressValid: 0,
 
   passwordScore: -1,
+  passwordHasError: 0,
   passwordDifficulty: Ember.computed('passwordScore', function() {
     var score = this.get('passwordScore');
     score = score + 1;
@@ -22,7 +25,7 @@ export default Ember.Controller.extend({
 
   usernameObserver: Ember.observer('username', function() {
     var username = this.get('username');
-    if(username.length > 5) {
+    if(username.length > 3) {
       this.set('showUsernameIndicator', 1);
       Ember.run.debounce(this, this.validateUsername, 250);
     } else if(username.length === 0) {
@@ -59,7 +62,22 @@ export default Ember.Controller.extend({
         console.log(username);
         console.log(emailAddress);
         console.log(password);
+
+
+
       } else {
+        if(Ember.isEmpty(username)) {
+          this.set('usernameHasError', 1);
+        }
+
+        if(Ember.isEmpty(emailAddress)) {
+          this.set('emailAddressHasError', 1);
+        }
+
+        if(Ember.isEmpty(password)) {
+          this.set('passwordHasError', 1);
+        }
+
         jQuery('.sign-up-form').addClass('invalid');
       }
       Ember.run.debounce(this, this.resetInvalidStatus, 500);
@@ -68,13 +86,19 @@ export default Ember.Controller.extend({
 
   validateUsername: function() {
     var username = this.get('username');
+    var _that = this;
     var re = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-)[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
     if(re.test(username)) {
-      // Call Backend
-      // If everything is ok
-      this.set('isUsernameValid', 1);
-      // else
-      // isNotValid
+      jQuery.ajax({
+        type:   "HEAD",
+        async:  true,
+        url:    "/profile/"+username
+      }).done(function( data, status, jqXHR ) {
+        _that.set('isUsernameValid', 0);
+      }).fail(function(jqXHR) {
+        _that.set('usernameHasError', 0);
+        _that.set('isUsernameValid', 1);
+      });
     } else {
       this.set('isUsernameValid', 0);
     }
@@ -86,6 +110,7 @@ export default Ember.Controller.extend({
     if(re.test(emailAddress)) {
       // Call Backend
       // If everything is ok
+      this.set('emailAddressHasError', 0);
       this.set('isEmailAddressValid', 1);
     } else {
       this.set('isEmailAddressValid', 0);
@@ -95,7 +120,7 @@ export default Ember.Controller.extend({
   validatePassword: function() {
     var password = this.get('password');
     var result = zxcvbn(password);
-    console.log(result);
+    this.set('passwordHasError', 0);
     this.set('passwordScore', result.score);
   },
 

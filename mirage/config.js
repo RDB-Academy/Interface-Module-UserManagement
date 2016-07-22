@@ -1,3 +1,5 @@
+import Mirage from 'ember-cli-mirage';
+
 export default function() {
 
   // These comments are here to help you get started. Feel free to delete them.
@@ -23,6 +25,16 @@ export default function() {
 
     http://www.ember-cli-mirage.com/docs/v0.2.0-beta.7/shorthands/
   */
+
+  this.head('/profile/:username', (schema, request) => {
+    console.log(request.params.username);
+    var users = schema.users.where({username: request.params.username});
+    console.log(users.models.length);
+    if(users.models.length === 0 && request.params.username != "test1") {
+      return new Mirage.Response(404);
+    }
+    return new Mirage.Response(200);
+  })
 
   this.get('/achievements', function() {
     return {

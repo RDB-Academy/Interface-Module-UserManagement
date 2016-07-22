@@ -35,7 +35,14 @@
       </div>
       <div class="form-group">
         <label for="passwordField">Password</label>
-        {{input type="password" value=password class="form-control" placeholder="Password"}}
+        <div class="password-inputfield">
+          {{input type="password" value=password class="form-control" placeholder="Password"}}
+          {{#if passwordHasError}}
+            <div class="error-indicator">
+              <span class="glyphicon glyphicon-remove"></span>
+            </div>
+          {{/if}}
+        </div>
         <div class="statusbar-progress ">
           <div class="indicator status-{{passwordDifficulty}}"></div>
         </div>
