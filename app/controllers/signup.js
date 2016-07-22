@@ -92,12 +92,16 @@ export default Ember.Controller.extend({
       jQuery.ajax({
         type:   "HEAD",
         async:  true,
-        url:    "/profile/"+username
+        url:    "/user?username="+username
       }).done(function( data, status, jqXHR ) {
         _that.set('isUsernameValid', 0);
       }).fail(function(jqXHR) {
-        _that.set('usernameHasError', 0);
-        _that.set('isUsernameValid', 1);
+        if(jqXHR.status = 404) {
+          _that.set('usernameHasError', 0);
+          _that.set('isUsernameValid', 1);
+        } else {
+          console.log("Error while validating Username");
+        }
       });
     } else {
       this.set('isUsernameValid', 0);
@@ -106,12 +110,23 @@ export default Ember.Controller.extend({
 
   validateEmailAddress: function() {
     var emailAddress = this.get('emailAddress');
+    var _that = this;
     var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if(re.test(emailAddress)) {
-      // Call Backend
-      // If everything is ok
-      this.set('emailAddressHasError', 0);
-      this.set('isEmailAddressValid', 1);
+      jQuery.ajax({
+        type:   "HEAD",
+        async:  true,
+        url:    "/user?emailAddress="+emailAddress
+      }).done(function (data, status, jqXHR) {
+        _that.set('isEmailAddressValid', 0);
+      }).fail(function(jqXHR) {
+        if(jqXHR.status = 404) {
+          _that.set('emailAddressHasError', 0);
+          _that.set('isEmailAddressValid', 1);
+        } else {
+          console.log("Error while validating emailAddress");
+        }
+      });
     } else {
       this.set('isEmailAddressValid', 0);
     }

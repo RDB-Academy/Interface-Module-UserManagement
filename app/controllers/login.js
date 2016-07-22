@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
       var email = this.get('emailAddress');
       var password = this.get('password');
 
-      if(!(Ember.isEmpty(email) || Ember.isEmpty(emailAddress))) {
+      if(!(Ember.isEmpty(email) || Ember.isEmpty(email))) {
         console.log(email);
         console.log(password);
 
