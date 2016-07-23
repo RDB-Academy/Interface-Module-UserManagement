@@ -21,7 +21,9 @@ export default Ember.Controller.extend({
     return score;
   }),
 
-
+  submit() {
+    console.log("Submit Action!!");
+  },
 
   usernameObserver: Ember.observer('username', function() {
     var username = this.get('username');
