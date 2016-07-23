@@ -1,6 +1,9 @@
 import Ember from 'ember';
+import {isNotFoundError} from 'ember-ajax/errors';
 
 export default Ember.Controller.extend({
+  ajax: Ember.inject.service(),
+
   username: "",
   emailAddress: "",
   password: "",
@@ -69,17 +72,16 @@ export default Ember.Controller.extend({
     var _that = this;
     var re = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-)[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
     if(re.test(username)) {
-      jQuery.ajax({
-        type:   "HEAD",
-        async:  true,
-        url:    "/user?username="+username
-      }).done(function() {
+      this.get('ajax').request('/user?username=' + username, {
+        method: 'HEAD'
+      }).then(() => {
         _that.set('usernameError', 1);
-      }).fail(function(jqXHR) {
-        if(jqXHR.status = 404) {
+      }).catch((error) => {
+        if(isNotFoundError(error)) {
           _that.set('usernameError', 0);
         } else {
-          console.log("Error while validating Username");
+          console.log("Error - validateUsername");
+          console.log(error);
         }
       });
     } else {
@@ -92,17 +94,17 @@ export default Ember.Controller.extend({
     var _that = this;
     var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if(re.test(emailAddress)) {
-      jQuery.ajax({
-        type:   "HEAD",
-        async:  true,
-        url:    "/user?emailAddress="+emailAddress
-      }).done(function () {
+      this.get('ajax').request('/user?emailAddress=' + emailAddress, {
+        method: 'HEAD'
+      }).then(() => {
         _that.set('emailAddressError', 1);
-      }).fail(function(jqXHR) {
-        if(jqXHR.status = 404) {
+      }).catch(function(error) {
+        console.log(error);
+        if(isNotFoundError(error)) {
           _that.set('emailAddressError', 0);
         } else {
-          console.log("Error while validating emailAddress");
+          console.log("Error - validatingEmailAddress");
+          console.log(error);
         }
       });
     } else {
