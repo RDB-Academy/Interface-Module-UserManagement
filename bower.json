@@ -11,6 +11,7 @@
     "zxcvbn": "^4.3.0"
   },
   "devDependencies": {
-    "bootstrap-sass": "bootstrap-sass-official#^3.3.6"
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.6",
+    "ember-qunit-notifications": "0.1.0"
   }
 }

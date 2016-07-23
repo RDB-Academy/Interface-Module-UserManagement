@@ -6,14 +6,12 @@ export default Ember.Controller.extend({
   password: "",
 
   usernameError: -1,
-
   emailAddressError: -1,
-
   passwordError: -1,
 
   usernameObserver: Ember.observer('username', function() {
     var username = this.get('username');
-    var usernameError = this.get('usernameError');
+
     if(username.length > 3) {
       Ember.run.debounce(this, this.validateUsername, 250);
     } else {
@@ -23,7 +21,7 @@ export default Ember.Controller.extend({
 
   emailAddressObserver: Ember.observer('emailAddress', function() {
     var emailAddress = this.get('emailAddress');
-    var emailAddressError = this.get('emailAddressError');
+
     if(emailAddress.length > 4 ) {
       Ember.run.debounce(this, this.validateEmailAddress, 250);
     } else {
@@ -42,21 +40,21 @@ export default Ember.Controller.extend({
       var emailAddressError = this.get('emailAddressError');
       var passwordError     = this.get('passwordError');
 
-      if((usernameError == 0 && emailAddressError == 0 && password.length > 3)) {
+      if((usernameError === 0 && emailAddressError === 0 && password.length > 3)) {
         console.log(username);
         console.log(emailAddress);
         console.log(password);
 
       } else {
-        if(usernameError != 0) {
+        if(usernameError !== 0) {
           this.set('usernameError', 1);
         }
 
-        if(emailAddressError != 0) {
+        if(emailAddressError !== 0) {
           this.set('emailAddressError', 1);
         }
 
-        if(passwordError != 0) {
+        if(passwordError !== 0) {
           this.set('passwordError', 1);
         }
 

@@ -10,10 +10,9 @@ const InputFieldPassword = Ember.Component.extend({
   valueError: -1,
   passwordScore: -1,
 
-  indicatorStatus: "",
-
   valueObserver: Ember.observer('value', function() {
     var value = this.get('value');
+
     if(value.length > 3) {
       this.set('valueError', 0);
       if(this.get('showPasswordDifficulty')) {
@@ -27,9 +26,9 @@ const InputFieldPassword = Ember.Component.extend({
   indicatorStatus: Ember.computed('valueError', 'passwordScore', 'showPasswordDifficulty', function() {
     var valueError = this.get('valueError');
     var showPasswordDifficulty = this.get('showPasswordDifficulty');
-    
-    if(valueError != 0) {
-      return (valueError == 1) ? "status-error" : "";
+
+    if(valueError !== 0) {
+      return (valueError === 1) ? "status-error" : "";
     }
     if(showPasswordDifficulty) {
       var score = this.get('passwordScore');
