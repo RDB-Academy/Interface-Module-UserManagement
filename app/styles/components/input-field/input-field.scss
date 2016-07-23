@@ -1,0 +1,39 @@
+// StyleSheets
+// | - Input-Field
+// ----------------------------------------------
+
+$input-field-focus-border: #aaa;
+$input-field-focus-box-shadow: rgba(0, 0, 0, .075);
+
+$input-field-indicator-status-ok-color: #3f0;
+$input-field-indicator-status-error-color: #f00;
+
+.form-control:focus {
+  border-color: $input-field-focus-border;
+  box-shadow: inset 0 1px 1px $input-field-focus-box-shadow;
+  outline: none;
+}
+
+.input-field {
+  .input-field-statusbar {
+    height: 4px;
+    width: 100%;
+
+    .indicator {
+      height: 4px;
+      transition: .5s;
+    }
+  }
+}
+
+.indicator {
+  &.status-ok {
+    background: $input-field-indicator-status-ok-color;
+    width: 100%;
+  }
+
+  &.status-error {
+    background: $input-field-indicator-status-error-color;
+    width: 100%;
+  }
+}

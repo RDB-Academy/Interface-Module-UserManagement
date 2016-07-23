@@ -26,43 +26,6 @@
   }
 }
 
-.statusbar-progress {
-  height: 4px;
-  width: 100%;
-
-  .indicator {
-    float: left;
-    height: 4px;
-    width: 0;
-    transition: .5s;
-
-    &.status-1 {
-      background: #FF0000;
-      width: 20%;
-    }
-
-    &.status-2 {
-      background: #CC4000;
-      width: 40%;
-    }
-
-    &.status-3 {
-      background: #998000;
-      width: 60%;
-    }
-
-    &.status-4 {
-      background: #66BF00;
-      width: 80%;
-    }
-
-    &.status-5 {
-      background: #33FF00;
-      width: 100%;
-    }
-  }
-}
-
 @keyframes invalid
 {
   0% {left:8px;}
