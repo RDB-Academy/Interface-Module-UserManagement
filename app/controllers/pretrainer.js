@@ -39,7 +39,7 @@ export default Ember.Controller.extend({
     setCategorie: function(id) {
       var value = parseInt(jQuery('input:checkbox[name="bonus'+id+'"]').val());
       var categorie = this.get('categorie');
-      if (id%2==1){
+      if (id%2===1){
         if (!jQuery('input:checkbox[name="bonus'+(id+1)+'"]')[0].checked){
           if (jQuery('input:checkbox[name="bonus'+id+'"]')[0].checked){
             this.set('categorie', categorie + value);
@@ -69,7 +69,7 @@ export default Ember.Controller.extend({
       jQuery('#CustomizePanel')[0].hidden = true;
 
       jQuery('#ex1').slider('setValue', this.get('categorie')/20, true);
-      console.log(jQuery('#ex1')[0].value);
+
       this.set('difficulty', 20);
       this.set('customize',true);
 
