@@ -8,8 +8,9 @@ export default Base.extend({
 
   restore(data) {
     return new Promise((resolve, reject) => {
+      console.log("restore");
       console.log(data);
-      resolve({username: "FabioMazzone"});
+      resolve(data);
       reject("Dummy");
     });
   },
@@ -23,8 +24,8 @@ export default Base.extend({
         })
       }).then((data) => {
         console.log(data);
-        reject(data);
-        //resolve({username: "FabioMazzone"});
+        //resolve(data);
+        reject("");
       }).catch((error) => {
         console.log(error);
         reject(error);

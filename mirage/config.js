@@ -31,7 +31,9 @@ export default function() {
 \*****************************************************************************************************/
   this.post('/login', (schema, request) => {
     var data = JSON.parse(request.requestBody);
-    var user, userQuery, response;
+    var userQuery, sessionQuery;
+    var user, session;
+    var response;
 
     if(  typeof data.emailAddress === 'undefined'
       || typeof data.password     === 'undefined') {
@@ -43,7 +45,7 @@ export default function() {
       emailAddress: data.emailAddress
     });
 
-    if(userQuery.models.length === 0) {
+    if(userQuery.models.length === 0 || userQuery.models[0].attrs.password !== data.password) {
       response = new Mirage.Response(400, {}, {
         errors: [
           {
@@ -57,21 +59,30 @@ export default function() {
 
     user = userQuery.models[0].attrs;
 
-    if(user.password !== data.password) {
-      response = new Mirage.Response(400, {}, {
-        errors: [
-          {
-            field: "loginForm",
-            error: "Wrong Email or Password"
-          }
-        ]
-      });
-      return response;
+    sessionQuery = schema.sessions.where({
+      userId: user.id
+    });
+
+    console.log(schema.sessions.all());
+
+    if(sessionQuery.models.length > 0) {
+      console.log("Session/s found");
     }
 
-    delete user.password;
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    session = schema.sessions.create({
+      id: schema.sessions.all().models.length,
+      token: guid(),
+      userId: user.id,
+      expiresAt: tomorrow,
+      createdAt: new Date(),
+      isActive: 1
+    });
 
-    return user;
+    console.log(session);
+
+    return response;
   })
 
 /*****************************************************************************************************\
@@ -141,7 +152,6 @@ export default function() {
     if(responseIterator > 0) {
       return new Mirage.Response(400, {}, response);
     }
-    console.log(response);
 
     user = schema.users.create(data);
     return {userId: user.id};
@@ -415,4 +425,16 @@ export default function() {
         ]
       }
     });
+
+
+
+  function guid() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
+  }
 }
