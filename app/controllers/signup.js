@@ -1,105 +1,118 @@
 import Ember from 'ember';
+import {isNotFoundError} from 'ember-ajax/errors';
 
 export default Ember.Controller.extend({
+  ajax: Ember.inject.service(),
+
   username: "",
   emailAddress: "",
   password: "",
 
-  showUsernameIndicator: 0,
-  isUsernameValid: 0,
-
-  showEmailAddressIndicator: 0,
-  isEmailAddressValid: 0,
-
-  passwordScore: -1,
-  passwordDifficulty: Ember.computed('passwordScore', function() {
-    var score = this.get('passwordScore');
-    score = score + 1;
-    return score;
-  }),
-
-
+  usernameError: -1,
+  emailAddressError: -1,
+  passwordError: -1,
 
   usernameObserver: Ember.observer('username', function() {
     var username = this.get('username');
-    if(username.length > 5) {
-      this.set('showUsernameIndicator', 1);
+
+    if(username.length > 3) {
       Ember.run.debounce(this, this.validateUsername, 250);
-    } else if(username.length === 0) {
-      this.set('showUsernameIndicator', 0);
+    } else {
+      this.set('usernameError', -1);
     }
   }),
 
   emailAddressObserver: Ember.observer('emailAddress', function() {
     var emailAddress = this.get('emailAddress');
+
     if(emailAddress.length > 4 ) {
-      this.set('showEmailAddressIndicator', 1);
       Ember.run.debounce(this, this.validateEmailAddress, 250);
     } else {
-      this.set('showEmailAddressIndicator', 0);
+      this.set('emailAddressError', -1);
     }
 
-  }),
-
-  passwordObserver: Ember.observer('password', function() {
-    var password = this.get('password');
-    if(password.length > 3) {
-      Ember.run.debounce(this, this.validatePassword, 250);
-    } else {
-      this.set('passwordScore', -1);
-    }
   }),
 
   actions: {
     submit() {
-      var username = this.get('username');
-      var emailAddress = this.get('emailAddress');
-      var password = this.get('password');
-      if(!(Ember.isEmpty(username) || Ember.isEmpty(emailAddress) || Ember.isEmpty(password))) {
+      var username          = this.get('username');
+      var emailAddress      = this.get('emailAddress');
+      var password          = this.get('password');
+
+      var usernameError     = this.get('usernameError');
+      var emailAddressError = this.get('emailAddressError');
+      var passwordError     = this.get('passwordError');
+
+      if((usernameError === 0 && emailAddressError === 0 && password.length > 3)) {
         console.log(username);
         console.log(emailAddress);
         console.log(password);
+
       } else {
+        if(usernameError !== 0) {
+          this.set('usernameError', 1);
+        }
+
+        if(emailAddressError !== 0) {
+          this.set('emailAddressError', 1);
+        }
+
+        if(passwordError !== 0) {
+          this.set('passwordError', 1);
+        }
+
         jQuery('.sign-up-form').addClass('invalid');
       }
       Ember.run.debounce(this, this.resetInvalidStatus, 500);
     }
   },
 
-  validateUsername: function() {
+  validateUsername() {
     var username = this.get('username');
+    var _that = this;
     var re = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-)[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
     if(re.test(username)) {
-      // Call Backend
-      // If everything is ok
-      this.set('isUsernameValid', 1);
-      // else
-      // isNotValid
+      this.get('ajax').request('/user?username=' + username, {
+        method: 'HEAD'
+      }).then(() => {
+        _that.set('usernameError', 1);
+      }).catch((error) => {
+        if(isNotFoundError(error)) {
+          _that.set('usernameError', 0);
+        } else {
+          console.log("Error - validateUsername");
+          console.log(error);
+        }
+      });
     } else {
-      this.set('isUsernameValid', 0);
+      this.set('usernameError', 1);
     }
   },
 
-  validateEmailAddress: function() {
+  validateEmailAddress() {
     var emailAddress = this.get('emailAddress');
+    var _that = this;
     var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if(re.test(emailAddress)) {
-      // Call Backend
-      // If everything is ok
-      this.set('isEmailAddressValid', 1);
+      this.get('ajax').request('/user?emailAddress=' + emailAddress, {
+        method: 'HEAD'
+      }).then(() => {
+        _that.set('emailAddressError', 1);
+      }).catch(function(error) {
+        console.log(error);
+        if(isNotFoundError(error)) {
+          _that.set('emailAddressError', 0);
+        } else {
+          console.log("Error - validatingEmailAddress");
+          console.log(error);
+        }
+      });
     } else {
-      this.set('isEmailAddressValid', 0);
+      this.set('emailAddressError', 1);
     }
   },
 
-  validatePassword: function() {
-    var password = this.get('password');
-    var result = zxcvbn(password);
-    console.log(result);
-    this.set('passwordScore', result.score);
-  },
-
-  resetInvalidStatus: function() {
+  resetInvalidStatus() {
     jQuery('.sign-up-form').removeClass('invalid');
   }
 });

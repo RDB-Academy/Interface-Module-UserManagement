@@ -8,6 +8,7 @@
 @import 'components/achievement-small';
 @import 'components/bs-progress-bar';
 @import 'components/bs-accordion-menu';
+@import 'components/input-field';
 
 @import 'index';
 @import 'home';
@@ -30,12 +31,6 @@
   height: 1px;
   margin: 4px 0;
   width: 100%;
-}
-
-input.form-control:focus {
-  border-color: #ccc;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  outline: none;
 }
 
 .footer {
