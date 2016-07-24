@@ -3,14 +3,15 @@ import {isNotFoundError} from 'ember-ajax/errors';
 
 export default Ember.Controller.extend({
   ajax: Ember.inject.service(),
+  session: Ember.inject.service('session'),
 
-  username: "",
-  emailAddress: "",
-  password: "",
+  username: "test",
+  emailAddress: "test@test.de",
+  password: "test",
 
-  usernameError: -1,
-  emailAddressError: -1,
-  passwordError: -1,
+  usernameError: 0,
+  emailAddressError: 0,
+  passwordError: 0,
 
   usernameObserver: Ember.observer('username', function() {
     var username = this.get('username');
@@ -44,9 +45,20 @@ export default Ember.Controller.extend({
       var passwordError     = this.get('passwordError');
 
       if((usernameError === 0 && emailAddressError === 0 && password.length > 3)) {
-        console.log(username);
-        console.log(emailAddress);
-        console.log(password);
+        this.get('ajax').post('/users', {
+          data: JSON.stringify({
+            username: username,
+            emailAddress: emailAddress,
+            password: password
+          })
+        }).then((data) => {
+          console.log(data);
+          this.get('session').authenticate('authenticator:default', emailAddress, password).catch((reason) => {
+            console.log(reason);
+          });
+        }).catch((error) => {
+          console.log(error);
+        });
 
       } else {
         if(usernameError !== 0) {
@@ -72,7 +84,7 @@ export default Ember.Controller.extend({
     var _that = this;
     var re = /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-)[a-zA-Z0-9])*[a-zA-Z0-9]+$/;
     if(re.test(username)) {
-      this.get('ajax').request('/user?username=' + username, {
+      this.get('ajax').request('/users?username=' + username, {
         method: 'HEAD'
       }).then(() => {
         _that.set('usernameError', 1);
@@ -94,12 +106,11 @@ export default Ember.Controller.extend({
     var _that = this;
     var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if(re.test(emailAddress)) {
-      this.get('ajax').request('/user?emailAddress=' + emailAddress, {
+      this.get('ajax').request('/users?emailAddress=' + emailAddress, {
         method: 'HEAD'
       }).then(() => {
         _that.set('emailAddressError', 1);
       }).catch(function(error) {
-        console.log(error);
         if(isNotFoundError(error)) {
           _that.set('emailAddressError', 0);
         } else {

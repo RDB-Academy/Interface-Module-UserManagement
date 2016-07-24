@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
 
-  emailAddress: "",
-  password: "",
+  emailAddress: "test@test.de",
+  password: "test",
 
   actions: {
     submit() {
@@ -12,9 +12,6 @@ export default Ember.Controller.extend({
       var password = this.get('password');
 
       if(!(Ember.isEmpty(email) || Ember.isEmpty(email))) {
-        console.log(email);
-        console.log(password);
-
         this.get('session').authenticate('authenticator:default', email, password).catch((reason) => {
           console.log(reason);
         });

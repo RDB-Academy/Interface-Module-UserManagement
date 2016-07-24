@@ -27,9 +27,16 @@ export default function() {
   */
 
 /*****************************************************************************************************\
+|*  Auth API
+\*****************************************************************************************************/
+  this.post('/login', (schema, request) => {
+    
+  })
+
+/*****************************************************************************************************\
 |*  User API
 \*****************************************************************************************************/
-  this.head('/user', (schema, request) => {
+  this.head('/users', (schema, request) => {
     if(typeof request.queryParams != 'undefined') {
       var users;
       if(typeof request.queryParams.username != 'undefined') {
@@ -48,8 +55,19 @@ export default function() {
     return new Mirage.Response(400);
   })
 
-  this.post('/user', (schema, request) => {
-    
+  this.post('/users', (schema, request) => {
+    var data = JSON.parse(request.requestBody)
+    var user;
+
+    if(  typeof data.username === 'undefined'
+      || typeof data.emailAddress === 'undefined'
+      || typeof data.password === 'undefined') {
+
+      return new Mirage.Response(400);
+    }
+
+    user = schema.users.create(data);
+    return {userId: user.id};
   })
 
 /*****************************************************************************************************\
