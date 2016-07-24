@@ -30,7 +30,48 @@ export default function() {
 |*  Auth API
 \*****************************************************************************************************/
   this.post('/login', (schema, request) => {
-    
+    var data = JSON.parse(request.requestBody);
+    var user, userQuery, response;
+
+    if(  typeof data.emailAddress === 'undefined'
+      || typeof data.password     === 'undefined') {
+
+        return new Mirage.Response(400);
+      }
+
+    userQuery = schema.users.where({
+      emailAddress: data.emailAddress
+    });
+
+    if(userQuery.models.length === 0) {
+      response = new Mirage.Response(400, {}, {
+        errors: [
+          {
+            field: "loginForm",
+            error: "Wrong Email or Password"
+          }
+        ]
+      });
+      return response;
+    }
+
+    user = userQuery.models[0].attrs;
+
+    if(user.password !== data.password) {
+      response = new Mirage.Response(400, {}, {
+        errors: [
+          {
+            field: "loginForm",
+            error: "Wrong Email or Password"
+          }
+        ]
+      });
+      return response;
+    }
+
+    delete user.password;
+
+    return user;
   })
 
 /*****************************************************************************************************\
@@ -58,13 +99,49 @@ export default function() {
   this.post('/users', (schema, request) => {
     var data = JSON.parse(request.requestBody)
     var user;
+    var response = {errors: []};
+    var responseIterator = 0;
+    var userWithUsername, userWithEmailAddress;
 
     if(  typeof data.username === 'undefined'
       || typeof data.emailAddress === 'undefined'
       || typeof data.password === 'undefined') {
 
-      return new Mirage.Response(400);
+      return new Mirage.Response(400, {
+        errors: [
+          {
+            field: "username",
+            error: "username is required"
+          },
+          {
+            field: "emailAddress",
+            error: "emailAddress is required"
+          },
+          {
+            field: "password",
+            error: "password is required"
+          }
+        ]
+      });
     }
+
+    userWithUsername = schema.users.where({
+      username:  data.username
+    });
+    userWithEmailAddress = schema.users.where({
+      emailAddress:  data.emailAddress
+    });
+
+    if(userWithUsername.models.length) {
+      response.errors[responseIterator++] = {field: "username", error: "username is already in use"};
+    }
+    if(userWithEmailAddress.models.length) {
+      response.errors[responseIterator++] = {field: "emailAddress", error: "email is already in use"};
+    }
+    if(responseIterator > 0) {
+      return new Mirage.Response(400, {}, response);
+    }
+    console.log(response);
 
     user = schema.users.create(data);
     return {userId: user.id};

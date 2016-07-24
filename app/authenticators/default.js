@@ -23,7 +23,8 @@ export default Base.extend({
         })
       }).then((data) => {
         console.log(data);
-        resolve({username: "FabioMazzone"});
+        reject(data);
+        //resolve({username: "FabioMazzone"});
       }).catch((error) => {
         console.log(error);
         reject(error);

@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import {isNotFoundError} from 'ember-ajax/errors';
+import {isBadRequestError, isNotFoundError} from 'ember-ajax/errors';
 
 export default Ember.Controller.extend({
   ajax: Ember.inject.service(),
@@ -53,11 +53,31 @@ export default Ember.Controller.extend({
           })
         }).then((data) => {
           console.log(data);
-          this.get('session').authenticate('authenticator:default', emailAddress, password).catch((reason) => {
-            console.log(reason);
-          });
+          //this.get('session').authenticate('authenticator:default', emailAddress, password).catch((reason) => {
+          //  console.log(reason);
+          //});
         }).catch((error) => {
-          console.log(error);
+          if(isBadRequestError(error)) {
+            var errors = error.errors;
+            for(var i = 0; i < errors.length; i++) {
+              // ToDo
+              switch (errors[i].field) {
+                case 'username':
+                  this.set('usernameError', 1);
+                  break;
+                case 'emailAddress':
+                  this.set('emailAddressError', 1);
+                  break;
+                case 'password':
+                  this.set('passwordError', 1);
+                  break;
+                default:
+
+              }
+            }
+          } else {
+            console.log(error);
+          }
         });
 
       } else {
