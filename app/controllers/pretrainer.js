@@ -62,6 +62,7 @@ export default Ember.Controller.extend({
       jQuery('#ex1').slider('setValue', Math.floor(this.get('categorie')/20), true);
     },
     start: function() {
+      window.location.href = 'http://www.google.com';
       console.log(jQuery('#ex1').val());
     },
     customize: function() {

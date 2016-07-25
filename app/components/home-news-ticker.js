@@ -12,7 +12,7 @@ export default Ember.Component.extend({
         ul.children('li:nth-child(3)').css("opacity", 0);
       }
 
-      this.$('#before-tick').vTicker({showItems: 2, padding: 0, pause: 5000});
+      this.$('#before-tick').vTicker({showItems: 2, padding: 0, pause: 3000});
       setInitialOpacities();
       this.$('#before-tick').on('vticker.beforeTick', function() {
           var ul = jQuery('#before-tick ul');
