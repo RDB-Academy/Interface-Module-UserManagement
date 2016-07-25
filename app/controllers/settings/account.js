@@ -10,10 +10,10 @@ export default Ember.Controller.extend({
       //console.log(newPassword1);
       //console.log(newPassword2);
 
-      if (newPassword1 != newPassword2) {
+      if (newPassword1 !== newPassword2) {
         console.log("Password confirmation incorrect");
       } else {
-        if (oldPassword == newPassword1) {
+        if (oldPassword === newPassword1) {
           console.log("Old and new Password are the same");
           return;
         }
