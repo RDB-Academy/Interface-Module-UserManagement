@@ -100,7 +100,27 @@ export default function() {
     return response;
   })
 
+  this.post('/logout', (schema, request) => {
+    var data = JSON.parse(request.requestBody);
+    var sessionQuery;
+    var session;
 
+    if(typeof data.sessionToken === 'undefined') {
+      return new Mirage.Response(400);
+    }
+
+    sessionQuery = schema.sessions.where({token: data.sessionToken});
+
+    if(sessionQuery.models.lengt === 0) {
+      return new Mirage.Response(404);
+    }
+
+    session = sessionQuery.models[0];
+
+    session.isActive = 0;
+    session.isInvalid = 1;
+    session.save();
+  })
 
   this.post('/restore', (schema, request) => {
     var data = JSON.parse(request.requestBody);
@@ -119,6 +139,11 @@ export default function() {
 
     sessionModel = sessionQuery.models[0];
     session = sessionModel.attrs;
+
+    if(session.isInvalid === 1) {
+      console.log("invalid");
+      return new Mirage.Response(400);
+    }
     session.user = sessionModel.user.attrs;
     delete session.user.password;
 
