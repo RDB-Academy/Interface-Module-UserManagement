@@ -39,9 +39,9 @@
                       <img src="img/identicon.png" class="img-circle"/>
                     </a>
                     <div class="profile-text" >
-                      {{#link-to "profile" class="test"}}{{user.username}}{{/link-to}}
+                      {{#link-to 'profile' user}}{{user.username}}{{/link-to}}
                         <span class="cs-breakline"></span>
-                      {{#link-to "settings"}}Settings{{/link-to}}
+                      {{#link-to 'settings'}}Settings{{/link-to}}
                     </div>
                   </div> <!-- /.navbar-profile -->
                 </li>
@@ -83,7 +83,7 @@
         <b>Menu</b>
         <p>
           {{#link-to "index"}}
-            index
+            Index
           {{/link-to}}
         </p>
         <p>
