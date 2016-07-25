@@ -59,14 +59,19 @@ export default function() {
 
     user = userQuery.models[0].attrs;
 
+    delete user.password;
+
     sessionQuery = schema.sessions.where({
       userId: user.id
     });
 
-    console.log(schema.sessions.all());
-
     if(sessionQuery.models.length > 0) {
       console.log("Session/s found");
+      for(var i = 0; i < sessionQuery.models.length; i++) {
+        var sessionI = sessionQuery.models[i];
+        sessionI.isActive = 0;
+        sessionI.save();
+      }
     }
 
     var tomorrow = new Date();
@@ -80,7 +85,9 @@ export default function() {
       isActive: 1
     });
 
-    console.log(session);
+    response = session.attrs;
+
+    response.user = user;
 
     return response;
   })

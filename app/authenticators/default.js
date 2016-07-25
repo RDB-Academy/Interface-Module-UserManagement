@@ -23,9 +23,7 @@ export default Base.extend({
           password: password
         })
       }).then((data) => {
-        console.log(data);
-        //resolve(data);
-        reject("");
+        resolve(data);
       }).catch((error) => {
         console.log(error);
         reject(error);

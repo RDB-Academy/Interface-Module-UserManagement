@@ -5,6 +5,8 @@ export default Ember.Controller.extend({
   array: [1,2,3,4,5,6],
 
   init: function() {
-    console.log(this.get('session'));
+    console.log("session Data");
+    console.log(this.get('session.data.authenticated'));
+    console.log("End Session Data");
   }
 });
