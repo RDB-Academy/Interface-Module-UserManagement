@@ -266,18 +266,18 @@ export default function() {
           type: 'module-applications',
           id: 1,
           attributes: {
-            title: 'App1',
+            title: 'SQL',
             description: 'description1',
-            image: 'img/gamification-word-cloud.jpg'
+            image: 'img/sql_blue.png'
           },
         },
         {
           type: 'module-applications',
           id: 2,
           attributes: {
-            title: 'App2',
+            title: 'RA',
             description: 'description2',
-            image: 'img/gamification-word-cloud.jpg'
+            image: 'img/sql_red.png'
           },
         },
         {
@@ -286,7 +286,7 @@ export default function() {
           attributes: {
             title: 'App3',
             description: 'description3',
-            image: 'img/gamification-word-cloud.jpg'
+            image: 'img/sql_green.png'
           },
         },
       ]

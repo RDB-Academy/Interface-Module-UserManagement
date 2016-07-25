@@ -2,6 +2,7 @@
 
 
 .thumbnail-vertical {
+
   @extend .row;
   margin: 0 0 15px;
 
@@ -31,11 +32,12 @@
     padding-right: 0;
 
     &.image-right {
+
       @extend .col-sm-push-9;
     }
 
-    > .thumbnail-vertical-object {
-      width: 100%;
+    > .image {
+      height: 260px;
     }
 
   }
