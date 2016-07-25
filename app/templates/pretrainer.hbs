@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class=bttn-group>
-            <button type="button" class="btn btn-primary btn-lg btn-block" {{action "start"}}>Start with: {{multiplicator}}% point gain</button>
+            <button href="#" type="button" class="btn btn-primary btn-lg btn-block" {{action "start"}}>Start with: {{multiplicator}}% point gain</button>
         </div>
       </div>
 
@@ -77,42 +77,39 @@
           Leaderbord SQL
         </div>
         <ul class="table-leaderboard">
-          {{#table-leaderboard "1" "username" "12345" "img/achievement-logo-01.jpg"}}
-          {{/table-leaderboard}}
-          {{#table-leaderboard "2" "username" "12345" "img/achievement-logo-01.jpg"}}
-          {{/table-leaderboard}}
-          {{#table-leaderboard "3" "username" "12345" "img/achievement-logo-01.jpg"}}
-          {{/table-leaderboard}}
-          {{#table-leaderboard "4" "username" "12345" "img/achievement-logo-01.jpg"}}
-          {{/table-leaderboard}}
-          {{#table-leaderboard "5" "username" "12345" "img/achievement-logo-01.jpg"}}
-          {{/table-leaderboard}}
+          <ul class="table-leaderboard" id="leaderboard">
+            {{#each model.leaderboard as |table-leaderboard|}}
+              {{#table-leaderboard table-leaderboard}}
+              {{/table-leaderboard}}
+            {{/each}}
+          </ul>
         </ul>
       </div>
     </div>
   </div>
-
-  <div class="clearfix"></div>
-  <div class="col-sm-6">
-    <!-- ACHIEVEMENTS -->
-    <div class="panel panel-default">
-      <h4>Achievements</h4>
-      <div class="row">
-        {{#each model.achievements as |achievement|}}
-          <div class="col-sm-3">
-            {{achievement-small achievement}}
-          </div>
-        {{/each}}
+  <div class="row">
+    <div class="clearfix"></div>
+    <div class="col-sm-6">
+      <!-- ACHIEVEMENTS -->
+      <div class="panel panel-default">
+        <h4>Achievements</h4>
+        <div class="row">
+          {{#each model.achievements as |achievement|}}
+            <div class="col-sm-3">
+              {{achievement-small achievement}}
+            </div>
+          {{/each}}
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6">
-    <!-- QUESTS -->
-    <div class="panel panel-default">
-      <h4> Quests </h4>
-      {{#each model.quests as |quest|}}
-        {{quest-general quest}}
-      {{/each}}
+    <div class="col-sm-6">
+      <!-- QUESTS -->
+      <div class="panel panel-default">
+        <h4> Quests </h4>
+        {{#each model.quests as |quest|}}
+          {{quest-general quest}}
+        {{/each}}
+      </div>
     </div>
   </div>
 </div>

@@ -437,7 +437,7 @@ export default function() {
             id: 1,
             attributes:{
             position: 1,
-            username: 'Fabio Mazzone',
+            username: 'Nicole Friebe',
             image: 'img/identicon.png',
             value: 123453
             }
@@ -447,7 +447,7 @@ export default function() {
             id: 2,
             attributes:{
             position: 2,
-            username: 'Carl Mazzone',
+            username: 'Gabriel Mazzone',
             image: 'img/identicon.png',
             value: 1453
             }
@@ -456,10 +456,50 @@ export default function() {
             type: 'table-leaderboards',
             id: 3,
             attributes:{
-            position: 2,
+            position: 3,
             username: 'Carl Van der Wall',
             image: 'img/identicon.png',
             value: 145
+            }
+          },
+          {
+            type: 'table-leaderboards',
+            id: 4,
+            attributes:{
+            position: 4,
+            username: 'Ronja Naßkz',
+            image: 'img/identicon.png',
+            value: 15
+            }
+          },
+          {
+            type: 'table-leaderboards',
+            id: 5,
+            attributes:{
+            position: 5,
+            username: 'Fabio Ahlers',
+            image: 'img/identicon.png',
+            value: 4
+            }
+          },
+          {
+            type: 'table-leaderboards',
+            id: 6,
+            attributes:{
+            position: 6,
+            username: 'Sören Schiller',
+            image: 'img/identicon.png',
+            value: 1
+            }
+          },
+          {
+            type: 'table-leaderboards',
+            id: 7,
+            attributes:{
+            position: 7,
+            username: 'Vincent',
+            image: 'img/identicon.png',
+            value: 0
             }
           }
         ]
