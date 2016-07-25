@@ -1,8 +1,10 @@
 import Ember from 'ember';
+import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
   activeSet: 1,
-  model() {
+  model(params) {
+    console.log(params);
     var _this = this;
       return {
         chartData: Ember.computed('dataset', function () {

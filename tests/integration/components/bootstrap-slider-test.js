@@ -11,14 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{bootstrap-slider}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#bootstrap-slider}}
-      template block text
-    {{/bootstrap-slider}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), 'Difficulty: 1');
 });

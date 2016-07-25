@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
-      <span class="glyphicon glyphicon-th-list"></span> Profile
+      <span class="glyphicon glyphicon-th-list"></span> Change Profile Information
     </h4>
   </div>
   <div class="panel-body">
@@ -9,13 +9,13 @@
       <div class="form-group">
         <label for="profileUsername" class="col-sm-2 control-label">Username:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="profileUsername" placeholder="{Username}">
+          {{input type="text" value=changeUsername class="form-control" id="profileChangeUsername" placeholder="{Username}"}}
         </div>
       </div>
       <div class="form-group">
         <label for="profileEmail" class="col-sm-2 control-label">E-Mail:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="profileEmail" placeholder="{E-Mail}">
+          {{input type="text" value=changeUsername class="form-control" id="profileChangeEmail" placeholder="{E-Mail}"}}
         </div>
       </div>
       <div class="form-group">
@@ -33,11 +33,11 @@
     </h4>
   </div>
   <div class="panel-body">
-    <form class="form-horizontal">
+    <form class="form-horizontal" {{action "checkAccountReset" on="submit"}}>
       <div class="form-group">
         <label for="resetProfile" class="col-sm-2 control-label">Password:</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="resetProfile" placeholder="">
+          {{input type="password" value=passwordR class="form-control" placeholder=""}}
         </div>
       </div>
       <div class="form-group">
@@ -48,6 +48,29 @@
     </form>
   </div>
 </div>
+<div id="resetModal" class="modal fade reset-profile-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Profile reset</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <form {{action "resetProfile" on="submit"}}>
+            Are you sure that you want to reset your profile? This action is irreversible!<br>
+            By typing 'RESET' in the text field you agree that your entire account will be reset.<br><br>
+            <div class="col-xs-8">
+              {{input value=resetProfile class="form-control" id="resetProfile" placeholder=""}}
+            </div>
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-warning" data-dismiss="modal" data-target=".reset-profile-modal">ResetProfile</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
@@ -55,11 +78,11 @@
     </h4>
   </div>
   <div class="panel-body">
-    <form class="form-horizontal">
+    <form class="form-horizontal" {{action "checkAccountDeletion" on="submit"}} >
       <div class="form-group">
-        <label for="deleteProfile" class="col-sm-2 control-label">Password:</label>
+        <label class="col-sm-2 control-label">Password:</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="deleteProfile" placeholder="">
+          {{input type="password" value=passwordD class="form-control" placeholder=""}}
         </div>
       </div>
       <div class="form-group">
@@ -68,6 +91,29 @@
         </div>
       </div>
     </form>
+  </div>
+</div>
+<div id="deleteModal" class="modal fade delete-profile-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Profile deletion</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <form {{action "deleteProfile" on="submit"}}>
+            Are you sure that you want to delete your profile? This action is irreversible!<br>
+            By typing 'DELETE' in the text field you agree that your entire account will be deleted.<br><br>
+            <div class="col-xs-8">
+              {{input value=deleteProfile class="form-control" id="deleteProfile" placeholder=""}}
+            </div>
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-danger" data-dismiss="modal" data-target=".delete-profile-modal">DeleteProfile</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {{outlet}}
