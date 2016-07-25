@@ -6,6 +6,11 @@ export default Ember.Controller.extend({
     return this.get('session.data.authenticated.user');
   }),
 
+  navbarBrandTarget: Ember.computed('session.isAuthenticated', function() {
+    var isAuthenticated = this.get('session.isAuthenticated');
+    return (isAuthenticated) ? 'home' : 'index';
+  }),
+
 
   actions: {
     invalidateSession() {
