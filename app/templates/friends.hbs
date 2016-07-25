@@ -1,5 +1,12 @@
 {{outlet}}
 
+<div class="jumbotron deceptitron">
+  <div class="container">
+    <div class="page-header">
+      <h1>Friends <small class="hidden-xs">Look at all your fancy mates!</small></h1>
+    </div>
+  </div>
+</div>
 <div class="container">
 	<div class="row">
     <div class="col-sm-4 col-sm-push-8">
@@ -13,23 +20,21 @@
         </div>
       </form>
       <br>
-      <h1>Friend Requests</h1>
-			{{#each model.a as |profile|}}
-				{{#friend-request profile}}
-					<div class="btn-group" role="group" align="right">
-						<button class="button" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i></button>
-						<button class="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-					</div>
-			  {{/friend-request}}
-			{{/each}}
+      <h1>Requests <br><small>want to be friends?</small></h1>
+			<ul class="friend-request">
+				{{#each model.a as |profile|}}
+					{{#friend-request profile}}
+				  {{/friend-request}}
+				{{/each}}
+			</ul>
     </div>
     <div class="col-sm-8 col-sm-pull-4">
-      <h1>Friends</h1>
-			{{#each model.b as |profile|}}
-				{{#friend-profile profile}}
-					<button class="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
-			  {{/friend-profile}}
-			{{/each}}
+			<ul>
+				{{#each model.b as |profile|}}
+					{{#friend-profile profile}}
+				  {{/friend-profile}}
+				{{/each}}
+			</ul>
     </div>
 	</div>
 </div>

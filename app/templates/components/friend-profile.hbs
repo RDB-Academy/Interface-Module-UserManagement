@@ -1,12 +1,12 @@
 <li class="list-group-item">
   <div class="col-xs-2 image">
-    <img align=left class="fb-image-profile thumbnail img-circle" src="{{friend-profile.image}}"/>
+    <img align=left class="img-responsive img-circle img-circle" src="{{friend-profile.image}}"/>
   </div>
   <div class="col-xs-8 user-information">
     {{friend-profile.username}}
   </div>
   <div class="col-xs-2">
-    {{yield}}
+    <button class="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
   </div>
   <div class="col-xs-6">
     Title: {{friend-profile.title}}

@@ -9,6 +9,7 @@
 @import 'components/bs-progress-bar';
 @import 'components/bs-accordion-menu';
 @import 'components/input-field';
+@import 'components/thumbnail-horizontal';
 
 @import 'index';
 @import 'home';
@@ -21,6 +22,7 @@
 @import 'settings';
 @import 'pretrainer';
 @import 'signup';
+
 
 .cs-breakline {
   background: -moz-linear-gradient(left,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0.0) 100%);
@@ -44,7 +46,7 @@
     }
 
     .logo-column {
-      height: 13em;
+      height: 12em;
 
       img {
         height: inherit;

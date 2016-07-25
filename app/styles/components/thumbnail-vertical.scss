@@ -1,7 +1,5 @@
-//
-
-
 .thumbnail-vertical {
+
   @extend .row;
   margin: 0 0 15px;
 
@@ -9,19 +7,23 @@
     @extend .col-sm-9;
 
 
+
     &.body-left {
       @extend .col-sm-pull-3;
       padding-left: 0;
       padding-right: 20px;
+      margin-top: 2em;
     }
 
     &.body-right {
       padding-left: 20px;
       padding-right: 0;
+      margin-top: 2em
     }
 
     > .panel {
       margin-bottom: 0;
+
     }
   }
 
@@ -34,8 +36,8 @@
       @extend .col-sm-push-9;
     }
 
-    > .thumbnail-vertical-object {
-      width: 100%;
+    > .image {
+      height: auto;
     }
 
   }

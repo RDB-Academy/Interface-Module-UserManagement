@@ -4,16 +4,14 @@
   </div>
 </div>
 <div class="container index">
-  <h1>Features</h1>
   <div class="feature-list">
     {{#each model.features as |feature index|}}
       {{#thumbnail-vertical feature.title feature.image (is-odd index)}}
         {{feature.description}}
       {{/thumbnail-vertical}}
-    {{/each}} -->
+    {{/each}}
   </div> <!-- /.Feature-List -->
   {{outlet}}
-  <h1>Applications</h1>
   <div class="game-collection">
     {{#each model.applications as |application|}}
       {{#thumbnail-horizontal application.title application.image}}
@@ -21,48 +19,13 @@
       {{/thumbnail-horizontal}}
     {{/each}}
   </div> <!-- /.Games -->
-  <h1>Top 3</h1>
+  <h1 id="index-header">Top 3</h1>
   <div class="container">
-    <table class="table table-condensed table-hover">
-      <thead>
-        <tr>
-          <th>rank</th>
-          <th>username</th>
-          <th>points</th>
-          <th>successrate</th>
-          <th>achievementpoints</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>12</td>
-          <th>fabiomazzone</th>
-          <td>12839012</td>
-          <td>100%</td>
-          <td>1280</td>
-        </tr>
-        <tr>
-          <td>12</td>
-          <th>fabiomazzone</th>
-          <td>12839012</td>
-          <td>100%</td>
-          <td>1280</td>
-        </tr>
-        <tr>
-          <td>12</td>
-          <th>fabiomazzone</th>
-          <td>12839012</td>
-          <td>100%</td>
-          <td>1280</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="pagination">
-      <ol class="pagination-indicators">
-        <li></li>
-        <li></li>
-        <li></li>
-      </ol>
-    </div>
+    <ul class="table-leaderboard" id="leaderboard">
+      {{#each model.leaderboards as |table-leaderboard index|}}
+          {{#table-leaderboard table-leaderboard}}
+          {{/table-leaderboard}}
+      {{/each}}
+    </ul>
   </div>
 </div>

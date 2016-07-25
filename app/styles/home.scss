@@ -1,9 +1,11 @@
-
 .newsticker {
-  //background-color: $gray-lighter;
-  //border-bottom: $gray-lighter 1px solid;
-  padding-left: 50px;
-  padding-right: 50px;
+  font-size: large;
+  margin-top: -40px;
+  padding-bottom: 10px;
+
+  ul {
+    width: 100%;
+  }
 
   p {
     margin-bottom: 0;

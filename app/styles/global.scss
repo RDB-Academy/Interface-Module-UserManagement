@@ -38,7 +38,7 @@ footer {
 
     div {
       #pagetron-logo {
-        height: 175px;
+        height: 375px;
         display: block;
         margin: auto;
       }
@@ -49,28 +49,13 @@ footer {
           margin: auto;
         }
       }
-      @media (max-width: $screen-sm-max) {
-        #pagetron-logo {
-          height: 175px;
-          display: block;
-          margin: auto;
-        }
-      }
-      @media (max-width: $screen-md-max) {
-        #pagetron-logo {
-          height: 370px;
-          display: block;
-          margin: auto;
-
-        }
-      }
     }
   }
 
   &.deceptitron {
     padding: 0;
     background-image: url("/img/triangles_small.jpg");
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     color: white;
 
