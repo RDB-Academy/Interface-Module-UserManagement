@@ -4,8 +4,8 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model(params) {
     return Ember.RSVP.hash({
-      profile: this.store.findRecord('profile', 1),
-      achievements: this.store.findAll('achievement')
+      profile: this.store.findRecord('profile', params.username),
+      //achievements: this.store.findAll('achievement')
     });
 
 /*
