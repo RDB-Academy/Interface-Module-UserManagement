@@ -5,13 +5,13 @@ export default Ember.Controller.extend({
   ajax: Ember.inject.service(),
   session: Ember.inject.service('session'),
 
-  username: "test",
-  emailAddress: "test@test.de",
-  password: "test",
+  username: "",
+  emailAddress: "",
+  password: "",
 
-  usernameError: 0,
-  emailAddressError: 0,
-  passwordError: 0,
+  usernameError: -1,
+  emailAddressError: -1,
+  passwordError: -1,
 
   usernameObserver: Ember.observer('username', function() {
     var username = this.get('username');
@@ -92,7 +92,7 @@ export default Ember.Controller.extend({
         if(passwordError !== 0) {
           this.set('passwordError', 1);
         }
-        
+
         this.set('isInvalid', "invalid");
       }
       Ember.run.debounce(this, this.resetInvalidStatus, 500);

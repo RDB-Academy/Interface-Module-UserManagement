@@ -1,3 +1,3 @@
 export default [
-  {id: 1, username: "MaxMusterman", emailAddress: "max.musterman@mail.de", password: "password"}
+  {id: 1, username: "MaxMustermann", emailAddress: "max.mustermann@mail.de", password: "password"}
 ];

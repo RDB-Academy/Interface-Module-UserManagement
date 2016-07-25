@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
 
-  emailAddress: "max.musterman@mail.de",
+  emailAddress: "max.mustermann@mail.de",
   password: "password",
 
   isInvalid: false,
