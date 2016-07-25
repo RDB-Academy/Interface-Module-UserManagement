@@ -1,12 +1,15 @@
 <li class="list-group-item">
-  <div class="col-xs-2">
-    <img align=left class="fb-image-profile thumbnail img-circle" src="{{friend-request.image}}"/>
+  <div class="col-xs-2 hidden-xs">
+    <img align=left class="img-responsive img-circle" src="{{friend-request.image}}"/>
   </div>
   <div class="col-xs-5">
     {{friend-request.username}}
   </div>
   <div class="col-xs-5">
-    {{yield}}
+    <div class="btn-group" role="group" align="right">
+      <button class="button" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i></button>
+      <button class="button" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+    </div>
   </div>
   <div class="clearfix"></div>
 </li>
