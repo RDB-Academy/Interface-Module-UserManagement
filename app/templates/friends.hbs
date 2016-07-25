@@ -1,4 +1,12 @@
 {{outlet}}
+
+<div class="jumbotron deceptitron">
+  <div class="container">
+    <div class="page-header">
+      <h1>Friends <small class="hidden-xs">Look at all your fancy mates!</small></h1>
+    </div>
+  </div>
+</div>
 <div class="container">
 	<div class="row">
     <div class="col-sm-4 col-sm-push-8">
@@ -12,7 +20,7 @@
         </div>
       </form>
       <br>
-      <h1>Friend Requests <br><small>want to be friends?</small></h1>
+      <h1>Requests <br><small>want to be friends?</small></h1>
 			<ul class="friend-request">
 				{{#each model.a as |profile|}}
 					{{#friend-request profile}}
@@ -21,7 +29,6 @@
 			</ul>
     </div>
     <div class="col-sm-8 col-sm-pull-4">
-      <h1>Friends</h1>
 			<ul>
 				{{#each model.b as |profile|}}
 					{{#friend-profile profile}}
