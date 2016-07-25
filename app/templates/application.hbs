@@ -31,7 +31,7 @@
               <div class="navbar-avatar-container">
                 <img src="img/identicon.png" class="avatar-image" />
               </div>
-              <a class="dropdown-toggle  hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="navbar-badge badge">1</span>{{user.username}} <span class="caret"></span></a>
+              <a class="dropdown-toggle  hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="navbar-badge badge">1</span>{{profile.username}} <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="navbar-profile">
@@ -39,7 +39,7 @@
                       <img src="img/identicon.png" class="img-circle"/>
                     </a>
                     <div class="profile-text" >
-                      {{#link-to 'profile' user}}{{user.username}}{{/link-to}}
+                      {{#link-to 'profile' profile.username}}{{profile.username}}{{/link-to}}
                         <span class="cs-breakline"></span>
                       {{#link-to 'settings'}}Settings{{/link-to}}
                     </div>

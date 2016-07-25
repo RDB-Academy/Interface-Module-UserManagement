@@ -2,8 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
-  user: Ember.computed('session.data.authenticated.user', function() {
-    return this.get('session.data.authenticated.user');
+  profile: Ember.computed('session.data.authenticated.profile', function() {
+    return this.get('session.data.authenticated.profile');
   }),
 
   navbarBrandTarget: Ember.computed('session.isAuthenticated', function() {

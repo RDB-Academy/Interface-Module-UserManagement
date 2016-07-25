@@ -2,9 +2,14 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-  activeSet: 1,
   model(params) {
-    console.log(params);
+    return Ember.RSVP.hash({
+      profile: this.store.findRecord('profile', 1),
+      achievements: this.store.findAll('achievement')
+    });
+
+/*
+
     var _this = this;
       return {
         chartData: Ember.computed('dataset', function () {
@@ -30,7 +35,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
           f: 123123,
           g: "SQL-Training"
         },
-        achievements: this.store.findAll('achievement')
       };
   },
   dostuff: function() {
@@ -41,6 +45,14 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       this.set("activeSet", (this.get("activeSet") % 4) + 1);
       this.refresh();
       //this.model.set('chartData', data)
+    }*/
+  },
+  actions: {
+    error(error, transition) {
+      if (error) {
+        console.log(error);
+        return this.transitionTo('/not-found');
+      }
     }
   }
 });

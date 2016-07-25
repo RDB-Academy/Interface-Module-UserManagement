@@ -7,7 +7,7 @@ export default function(server) {
     Make sure to define a factory for each model you want to create.
   */
 
-  server.loadFixtures('users');
+  server.loadFixtures('profiles');
   server.loadFixtures('sessions');
-  server.createList('users', 10);
+  server.createList('profiles', 10);
 }

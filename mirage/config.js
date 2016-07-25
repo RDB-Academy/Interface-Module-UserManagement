@@ -31,8 +31,8 @@ export default function() {
 \*****************************************************************************************************/
   this.post('/login', (schema, request) => {
     var data = JSON.parse(request.requestBody);
-    var userQuery, sessionQuery;
-    var user, session;
+    var profileQuery, sessionQuery;
+    var profile, session;
     var response;
 
     if(  typeof data.emailAddress === 'undefined'
@@ -41,11 +41,11 @@ export default function() {
         return new Mirage.Response(400);
       }
 
-    userQuery = schema.users.where({
+    profileQuery = schema.profiles.where({
       emailAddress: data.emailAddress
     });
 
-    if(userQuery.models.length === 0 || userQuery.models[0].attrs.password !== data.password) {
+    if(profileQuery.models.length === 0 || profileQuery.models[0].attrs.password !== data.password) {
       response = new Mirage.Response(400, {}, {
         errors: [
           {
@@ -57,22 +57,22 @@ export default function() {
       return response;
     }
 
-    user = userQuery.models[0].attrs;
+    profile = profileQuery.models[0].attrs;
 
-    delete user.password;
+    delete profile.password;
 
     sessionQuery = schema.sessions.where({
-      userId: user.id
+      profileId: profile.id
     });
 
-    if(user.id === "1") {
+    if(profile.id === "1") {
       if(sessionQuery.models.length > 0) {
         session = sessionQuery.models[0].attrs;
-        session.user = user;
+        session.profile = profile;
         return session;
       }
     }
-    
+
     if(sessionQuery.models.length > 0) {
       console.log("Session/s found");
       for(var i = 0; i < sessionQuery.models.length; i++) {
@@ -87,7 +87,7 @@ export default function() {
     session = schema.sessions.create({
       id: schema.sessions.all().models.length,
       token: guid(),
-      userId: user.id,
+      profileId: profile.id,
       expiresAt: tomorrow,
       createdAt: new Date(),
       isActive: 1
@@ -95,7 +95,7 @@ export default function() {
 
     response = session.attrs;
 
-    response.user = user;
+    response.profile = profile;
 
     return response;
   })
@@ -124,7 +124,7 @@ export default function() {
 
   this.post('/restore', (schema, request) => {
     var data = JSON.parse(request.requestBody);
-    var userQuery, sessionQuery;
+    var profileQuery, sessionQuery;
     var sessionModel, session;
 
     if(typeof data.sessionToken === 'undefined') {
@@ -144,26 +144,26 @@ export default function() {
       console.log("invalid");
       return new Mirage.Response(400);
     }
-    session.user = sessionModel.user.attrs;
-    delete session.user.password;
+    session.profile = sessionModel.profile.attrs;
+    delete session.profile.password;
 
     return session;
   });
 
 /*****************************************************************************************************\
-|*  User API
+|*  Profile API
 \*****************************************************************************************************/
-  this.head('/users', (schema, request) => {
+  this.head('/profiles', (schema, request) => {
     if(typeof request.queryParams != 'undefined') {
-      var users;
+      var profiles;
       if(typeof request.queryParams.username != 'undefined') {
-        users = schema.users.where({username: request.queryParams.username});
+        profiles = schema.profiles.where({username: request.queryParams.username});
       } else if(typeof request.queryParams.emailAddress != 'undefined') {
-        users = schema.users.where({emailAddress: request.queryParams.emailAddress});
+        profiles = schema.profiles.where({emailAddress: request.queryParams.emailAddress});
       } else {
         return new Mirage.Response(400);
       }
-      if(users.models.length === 0) {
+      if(profiles.models.length === 0) {
         return new Mirage.Response(404);
       } else {
         return new Mirage.Response(200);
@@ -172,12 +172,28 @@ export default function() {
     return new Mirage.Response(400);
   })
 
-  this.post('/users', (schema, request) => {
+  this.get('/profiles/:username', (schema, request) => {
+    var username = request.params.username;
+    var profileQuery = schema.profiles.where({username: username});
+    var profile;
+    var response;
+    if(profileQuery.models.length === 0) {
+      return new Mirage.Response(404);
+    }
+
+    profile = profileQuery.models[0].attrs;
+
+    delete profile.password;
+
+    return profile;
+  })
+
+  this.post('/profiles', (schema, request) => {
     var data = JSON.parse(request.requestBody)
-    var user;
+    var profile;
     var response = {errors: []};
     var responseIterator = 0;
-    var userWithUsername, userWithEmailAddress;
+    var profileWithUsername, profileWithEmailAddress;
 
     if(  typeof data.username === 'undefined'
       || typeof data.emailAddress === 'undefined'
@@ -201,25 +217,25 @@ export default function() {
       });
     }
 
-    userWithUsername = schema.users.where({
+    profileWithUsername = schema.profiles.where({
       username:  data.username
     });
-    userWithEmailAddress = schema.users.where({
+    profileWithEmailAddress = schema.profiles.where({
       emailAddress:  data.emailAddress
     });
 
-    if(userWithUsername.models.length) {
+    if(profileWithUsername.models.length) {
       response.errors[responseIterator++] = {field: "username", error: "username is already in use"};
     }
-    if(userWithEmailAddress.models.length) {
+    if(profileWithEmailAddress.models.length) {
       response.errors[responseIterator++] = {field: "emailAddress", error: "email is already in use"};
     }
     if(responseIterator > 0) {
       return new Mirage.Response(400, {}, response);
     }
 
-    user = schema.users.create(data);
-    return {userId: user.id};
+    profile = schema.profiles.create(data);
+    return {profileId: profile.id};
   })
 
 /*****************************************************************************************************\
