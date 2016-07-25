@@ -92,8 +92,8 @@ export default Ember.Controller.extend({
         if(passwordError !== 0) {
           this.set('passwordError', 1);
         }
-
-        jQuery('.sign-up-form').addClass('invalid');
+        
+        this.set('isInvalid', "invalid");
       }
       Ember.run.debounce(this, this.resetInvalidStatus, 500);
     }
@@ -144,6 +144,6 @@ export default Ember.Controller.extend({
   },
 
   resetInvalidStatus() {
-    jQuery('.sign-up-form').removeClass('invalid');
+    this.set('isInvalid', "");
   }
 });

@@ -3,8 +3,10 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
 
-  emailAddress: "test@test.de",
-  password: "test",
+  emailAddress: "max.musterman@mail.de",
+  password: "password",
+
+  isInvalid: false,
 
   actions: {
     submit() {
@@ -16,13 +18,13 @@ export default Ember.Controller.extend({
           console.log(reason);
         });
       } else {
-        jQuery('.login-form').addClass('invalid');
+        this.set('isInvalid', "invalid");
       }
       Ember.run.debounce(this, this.resetInvalidStatus, 500);
     }
   },
 
   resetInvalidStatus: function() {
-    jQuery('.login-form').removeClass('invalid');
+    this.set('isInvalid', "");
   }
 });
