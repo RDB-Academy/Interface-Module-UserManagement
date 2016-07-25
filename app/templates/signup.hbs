@@ -1,24 +1,31 @@
 {{outlet}}
-<div class="panel panel-default sign-up-form {{isInvalid}}">
-  <div class="panel-heading">
-    <h3 class="panel-title text-center">Sign Up</h3>
+<div class="jumbotron deceptitron">
+  <div class="container settings">
+    <div class="page-header">
+      <h1>Sign Up</h1>
+    </div>
   </div>
-  <div class="panel-body">
-    <form {{action "submit" on="submit"}}>
-      <div class="form-group">
-        <label>Username</label>
-        {{input-field type="text" value=username valueError=usernameError placeholder="Username"}}
-      </div>
-      <div class="form-group">
-        <label>Email address</label>
-        {{input-field type="text" value=emailAddress valueError=emailAddressError placeholder="Email"}}
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        {{input-field-password value=password valueError=passwordError}}
-      </div>
-      <div class="clearfix"></div>
-      <button type="submit" class="btn btn-success pull-right">Sign Up</button>
-    </form>
+</div>
+<div class="container">
+  <div class="panel panel-default sign-up-form {{isInvalid}}">
+    <div class="panel-body">
+      <form {{action "submit" on="submit"}}>
+        <div class="form-group">
+          <label>Username</label>
+          {{input-field type="text" value=username valueError=usernameError placeholder="Username"}}
+        </div>
+        <div class="form-group">
+          <label>Email address</label>
+          {{input-field type="text" value=emailAddress valueError=emailAddressError placeholder="Email"}}
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          {{input-field-password value=password valueError=passwordError}}
+        </div>
+        <div class="clearfix"></div>
+        <button type="submit" class="btn btn-signup">Sign Up</button>
+      </form>
+    </div>
   </div>
+  
 </div>
