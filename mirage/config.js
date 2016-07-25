@@ -72,7 +72,7 @@ export default function() {
         return session;
       }
     }
-
+    
     if(sessionQuery.models.length > 0) {
       console.log("Session/s found");
       for(var i = 0; i < sessionQuery.models.length; i++) {
