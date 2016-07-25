@@ -8,5 +8,6 @@ export default function(server) {
   */
 
   server.loadFixtures('users');
+  server.loadFixtures('sessions');
   server.createList('users', 10);
 }

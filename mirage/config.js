@@ -65,6 +65,14 @@ export default function() {
       userId: user.id
     });
 
+    if(user.id === "1") {
+      if(sessionQuery.models.length > 0) {
+        session = sessionQuery.models[0].attrs;
+        session.user = user;
+        return session;
+      }
+    }
+
     if(sessionQuery.models.length > 0) {
       console.log("Session/s found");
       for(var i = 0; i < sessionQuery.models.length; i++) {
@@ -91,6 +99,31 @@ export default function() {
 
     return response;
   })
+
+
+
+  this.post('/restore', (schema, request) => {
+    var data = JSON.parse(request.requestBody);
+    var userQuery, sessionQuery;
+    var sessionModel, session;
+
+    if(typeof data.sessionToken === 'undefined') {
+      return new Mirage.Response(400);
+    }
+
+    sessionQuery = schema.sessions.where({token: data.sessionToken});
+
+    if(sessionQuery.models.length === 0) {
+      return new Mirage.Response(404);
+    }
+
+    sessionModel = sessionQuery.models[0];
+    session = sessionModel.attrs;
+    session.user = sessionModel.user.attrs;
+    delete session.user.password;
+
+    return session;
+  });
 
 /*****************************************************************************************************\
 |*  User API

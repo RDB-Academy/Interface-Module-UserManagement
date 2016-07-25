@@ -8,10 +8,20 @@ export default Base.extend({
 
   restore(data) {
     return new Promise((resolve, reject) => {
-      console.log("restore");
-      console.log(data);
-      resolve(data);
-      reject("Dummy");
+      if(data.expiresAt < new Date()) {
+        console.log("session is expired");
+        return reject();
+      }
+      this.get('ajax').post('/restore', {
+        data: JSON.stringify({
+          sessionToken: data.token
+        })
+      }).then((data) => {
+        resolve(data);
+      }).catch((error) => {
+        console.log(error);
+        reject(error);
+      });
     });
   },
 
