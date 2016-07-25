@@ -44,8 +44,16 @@ export default Base.extend({
   invalidate(data) {
     return new Promise((resolve, reject) => {
       console.log(data);
-      resolve(true);
-      reject("Dummy");
+      this.get('ajax').post('/logout', {
+        data: JSON.stringify({
+          sessionToken: data.token
+        })
+      }).then((data) => {
+        resolve(data);
+      }).catch((error) => {
+        console.log(error);
+        reject(error);
+      });
     });
   }
 });
