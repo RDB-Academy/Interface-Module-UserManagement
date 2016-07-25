@@ -2,11 +2,9 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
+  activeSet: 1,
   model(params) {
     console.log(params);
-    //var user = this.store.query('user', {username: params.username});
-    //console.log(user);
-
     var _this = this;
       return {
         chartData: Ember.computed('dataset', function () {
@@ -34,5 +32,15 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         },
         achievements: this.store.findAll('achievement')
       };
+  },
+  dostuff: function() {
+    console.log(this.get('chartData'));
+  }.observes('chartData'),
+  actions: {
+    chartDataChanger() {
+      this.set("activeSet", (this.get("activeSet") % 4) + 1);
+      this.refresh();
+      //this.model.set('chartData', data)
+    }
   }
 });
