@@ -50,6 +50,7 @@
       </table>
     </div>
     <div class="col-sm-4 hidden-xs">
+      {{profile-stat-radar}}
       {{profile-chart}}
     </div>
     <div class="clearfix"/>
@@ -71,7 +72,7 @@
       <div class="row achievements">
         {{#each model.achievements as |achievement|}}
             <div class="col-sm-2 col-xs-3">
-              {{!achievement-small achievement}}
+              {{achievement-small achievement}}
             </div>
         {{/each}}
       </div>

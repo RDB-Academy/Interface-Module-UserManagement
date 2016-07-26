@@ -5,7 +5,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model(params) {
     return Ember.RSVP.hash({
       profile: this.store.findRecord('profile', params.username),
-      //achievements: this.store.findAll('achievement')
+      achievements: this.store.findAll('achievement')
     });
 
 /*

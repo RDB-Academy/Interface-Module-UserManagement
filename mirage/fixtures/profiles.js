@@ -12,6 +12,7 @@ export default [
       achievementPoints: 10,
       mostPlayedMode: "SQL"
     }
+    
   },
   {
     id: 2,
