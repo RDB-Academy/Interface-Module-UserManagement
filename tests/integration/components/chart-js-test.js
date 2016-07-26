@@ -1,24 +1,30 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('profile-stat-radar', 'Integration | Component | profile stat radar', {
+moduleForComponent('chart-js', 'Integration | Component | chart js', {
   integration: true
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
+  var testData = {
+    username: "fabio",
+    sql: 10,
+    ra: 20,
+    bla: 40
+  };
+  this.set('ownerData', testData);
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{profile-stat-radar}}`);
+  this.render(hbs`{{chart-js owner=ownerData}}`);
 
   assert.equal(this.$().text().trim(), '');
-
+/*
   // Template block usage:
   this.render(hbs`
-    {{#profile-stat-radar}}
+    {{#chart-js}}
       template block text
-    {{/profile-stat-radar}}
+    {{/chart-js}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), 'template block text');*/
 });

@@ -7,6 +7,7 @@ export default Model.extend({
   emailAddress: attr("string"),
 
   globalStats: attr(""),
+  profileRadar: attr(""),
 
   profileImage: attr("string"),
   profileTitle: attr("string"),

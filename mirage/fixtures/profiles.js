@@ -11,13 +11,18 @@ export default [
       pointsEarned: 30,
       achievementPoints: 10,
       mostPlayedMode: "SQL"
+    },
+    profileRadar: {
+      sql: 50,
+      ra: 40,
+      taskTimeRatio: 40
     }
-    
+
   },
   {
     id: 2,
     username: "Arcturus",
-    emailAddress: "arcturus.mengsk@terran.liga",
+    emailAddress: "arcturus.mengsk@terran.league",
     password: "league",
     globalStats: {
       lastLogin: "2016-07-25T10:20:00.378Z",
@@ -26,6 +31,11 @@ export default [
       pointsEarned: 2344,
       achievementPoints: 12340,
       mostPlayedMode: "SQL"
+    },
+    profileRadar: {
+      sql: 40,
+      ra: 60,
+      taskTimeRatio: 50
     }
   }
 ];
