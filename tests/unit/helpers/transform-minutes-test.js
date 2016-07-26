@@ -5,6 +5,5 @@ module('Unit | Helper | transform minutes');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = transformMinutes([42]);
-  assert.ok(result);
+  assert.ok(transformMinutes(61) === "1h 01m");
 });

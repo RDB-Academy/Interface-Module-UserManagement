@@ -32,7 +32,7 @@
             </tr>
           {{/if}}
           <tr>
-            <td>Total Time Spend</td><td> {{model.profile.globalStats.timeSpend}} </td>
+            <td>Total Time Spend</td><td> {{transform-minutes model.profile.globalStats.timeSpend}} </td>
           </tr>
           <tr>
             <td>Total Tasks Done</td><td> {{model.profile.globalStats.tasksDone}} </td>
