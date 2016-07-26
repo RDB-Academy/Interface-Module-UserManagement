@@ -176,7 +176,7 @@ export default function() {
     var username = request.params.username;
     var profileQuery = schema.profiles.where({username: username});
     var profile;
-    var response;
+
     if(profileQuery.models.length === 0) {
       return new Mirage.Response(404);
     }

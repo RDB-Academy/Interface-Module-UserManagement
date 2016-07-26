@@ -5,7 +5,7 @@
       <img class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
     </div>
     <div class="col-xs-8 col-sm-8"> <!-- max username: 14 -->
-      <h1>{{model.profile.username}}<br class="visible-xs"><small> {current status} </small></h1><hr>
+      <h1>{{model.profile.username}}<br class="visible-xs"><small>{current status} </small></h1><hr>
     </div>
     <div class="col-xs-4 visible-xs">
       <img align="right" class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
@@ -13,9 +13,11 @@
     <div class="col-xs-12 col-sm-4" id="table-col">
       <table class="table table-striped table-hover profile-stats">
         <tbody>
+          {{#if isFriend}}
           <tr>
-            <td>Last Login</td><td> {{model.profileStats.a}} </td>
+            <td>Last Login</td><td> {{model.profile.globalStats.lastLogin}} </td>
           </tr>
+          {{/if}}
           <tr>
             <td>Total Time Spend</td><td> {{model.profileStats.b}} </td>
           </tr>
@@ -31,14 +33,11 @@
           <tr>
             <td>Most played Mode</td><td> {{model.profileStats.f}} </td>
           </tr>
-          <tr>
-            <td>Total Points</td><td> {{model.profileStats.g}} </td>
-          </tr>
         </tbody>
       </table>
     </div>
     <div class="col-sm-4 hidden-xs">
-      {{!profile-chart}}
+      {{profile-chart}}
     </div>
     <div class="clearfix"/>
     <div class="col-xs-12 col-md-12">
@@ -59,7 +58,7 @@
       <div class="row achievements">
         {{#each model.achievements as |achievement|}}
             <div class="col-sm-2 col-xs-3">
-                {{!achievement-small achievement}}
+              {{!achievement-small achievement}}
             </div>
         {{/each}}
       </div>
