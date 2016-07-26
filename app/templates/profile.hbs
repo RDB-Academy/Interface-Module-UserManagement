@@ -5,7 +5,20 @@
       <img class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
     </div>
     <div class="col-xs-8 col-sm-8"> <!-- max username: 14 -->
-      <h1>{{model.profile.username}}<br class="visible-xs"><small>{current status} </small></h1><hr>
+      <h1>
+        {{model.profile.username}}
+        <br class="visible-xs">
+        <small>
+          {current status}
+        </small>
+        {{#unless isFriend}}
+          <button class="btn btn-default btn-xs btn-info" style="margin-left: 50px;">
+            Add as Friend
+          </button>
+        {{/unless}}
+      </h1>
+
+      <hr>
     </div>
     <div class="col-xs-4 visible-xs">
       <img align="right" class="fb-image-profile thumbnail img-circle" src="img/alchemist_logo.jpg"/>
@@ -14,24 +27,24 @@
       <table class="table table-striped table-hover profile-stats">
         <tbody>
           {{#if isFriend}}
-          <tr>
-            <td>Last Login</td><td> {{model.profile.globalStats.lastLogin}} </td>
-          </tr>
+            <tr>
+              <td>Last Login</td><td> {{moment-from-now model.profile.globalStats.lastLogin interval=1000}} </td>
+            </tr>
           {{/if}}
           <tr>
-            <td>Total Time Spend</td><td> {{model.profileStats.b}} </td>
+            <td>Total Time Spend</td><td> {{model.profile.globalStats.timeSpend}} </td>
           </tr>
           <tr>
-            <td>Total Tasks Done</td><td> {{model.profileStats.c}} </td>
+            <td>Total Tasks Done</td><td> {{model.profile.globalStats.tasksDone}} </td>
           </tr>
           <tr>
-            <td>Task Points</td><td> {{model.profileStats.d}} </td>
+            <td>Task Points</td><td> {{model.profile.globalStats.pointsEarned}} </td>
           </tr>
           <tr>
-            <td>Achievement Points</td><td> {{model.profileStats.e}} </td>
+            <td>Achievement Points</td><td> {{model.profile.globalStats.achievementPoints}} </td>
           </tr>
           <tr>
-            <td>Most played Mode</td><td> {{model.profileStats.f}} </td>
+            <td>Most played Mode</td><td> {{model.profile.globalStats.mostPlayedMode}} </td>
           </tr>
         </tbody>
       </table>

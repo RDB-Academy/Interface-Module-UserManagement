@@ -12,5 +12,19 @@ export default [
       achievementPoints: 10,
       mostPlayedMode: "SQL"
     }
+  },
+  {
+    id: 2,
+    username: "Arcturus",
+    emailAddress: "arcturus.mengsk@terrain.liga",
+    password: "imperator",
+    globalStats: {
+      lastLogin: "2016-07-25T10:20:00.378Z",
+      timeSpend: 234234,
+      tasksDone: 234,
+      pointsEarned: 2344,
+      achievementPoints: 12340,
+      mostPlayedMode: "SQL"
+    }
   }
 ];
