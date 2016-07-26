@@ -16,8 +16,8 @@ export default [
   {
     id: 2,
     username: "Arcturus",
-    emailAddress: "arcturus.mengsk@terrain.liga",
-    password: "imperator",
+    emailAddress: "arcturus.mengsk@terran.liga",
+    password: "league",
     globalStats: {
       lastLogin: "2016-07-25T10:20:00.378Z",
       timeSpend: 234234,
