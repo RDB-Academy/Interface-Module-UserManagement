@@ -238,7 +238,29 @@ export default function() {
     return profile;
   })
 
+/*****************************************************************************************************\
+|*  Settings (DEL/UPDATE) API
+\*****************************************************************************************************/
 
+  this.post('/settings/account', (schema, request) => {
+    var data = JSON.parse(request.requestBody);
+    //var profile etc...
+
+    //Vorläufig
+    if (data.password === 'test') {
+      console.log("success");
+      return new Mirage.Response(200);
+    } else {
+      console.log("error");
+      return new Mirage.Response(400);
+        //{errors: [{field: "password", error: "passwordError" }]}
+    }
+
+
+
+
+
+  })
 
 /*****************************************************************************************************\
 |*  Template API
