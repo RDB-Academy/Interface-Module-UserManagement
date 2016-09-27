@@ -45,7 +45,7 @@ export default Ember.Controller.extend({
       var passwordError     = this.get('passwordError');
 
       if((usernameError === 0 && emailAddressError === 0 && password.length > 3)) {
-        this.get('ajax').post('/users', {
+        this.get('ajax').post('/profiles', {
           data: JSON.stringify({
             username: username,
             emailAddress: emailAddress,

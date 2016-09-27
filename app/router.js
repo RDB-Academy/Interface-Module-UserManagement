@@ -8,10 +8,10 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('home');
   this.route('profile', { path: '/profile/:username'});
-  this.route('achievements');
-  this.route('leaderboard');
+  /*this.route('achievements');*/
+  /*this.route('leaderboard');*/
   this.route('aboutus');
-  this.route('friends');
+  /*this.route('friends');*/
   this.route('impressum');
   this.route('settings', function() {
     this.route('index', { path: '/profile'} );
