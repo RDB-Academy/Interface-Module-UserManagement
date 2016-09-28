@@ -6,10 +6,22 @@
   </div>
   <div class="panel-body">
     <form class="form-horizontal">
+      {{#if hasError}}
+      <div class="alert alert-danger">
+          <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <span>{{errorMessage}}</span>
+      </div>
+      {{/if}}
+      {{#if success}}
+      <div class="alert alert-success">
+          <span class="glyphicon glyphicon-ok-sign"></span>
+          <span>{{errorMessage}}</span>
+      </div>
+      {{/if}}
       <div class="form-group">
         <label for="oldPassword" class="col-sm-2 control-label">Old Password:</label>
         <div class="col-sm-10">
-          {{input-field-password" value=password valueError=passwordError placeholder="" showPasswordDifficulty=false}}
+          {{input-field-password value=password valueError=passwordError placeholder="" showPasswordDifficulty=false}}
         </div>
       </div>
       <div class="form-group">

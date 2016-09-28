@@ -248,7 +248,6 @@ export default function() {
 
     //Vorläufig
     if (data.password === 'test') {
-      console.log("success");
       return new Mirage.Response(200);
     } else {
       console.log("error");
