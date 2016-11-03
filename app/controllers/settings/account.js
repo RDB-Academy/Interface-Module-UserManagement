@@ -15,9 +15,6 @@ export default Ember.Controller.extend({
       var newPasswordVerification = this.get('newPasswordVerification');
       this.set('errorMessage', '');
       this.set('hasError', false);
-      //console.log(password);
-      //console.log(newPassword);
-      //console.log(newPasswordVerification);
       if (!(Ember.isEmpty(password) || Ember.isEmpty(newPassword) || Ember.isEmpty(newPasswordVerification))) {
         if (newPassword !== newPasswordVerification) {
         this.set('newPasswordError', 1);

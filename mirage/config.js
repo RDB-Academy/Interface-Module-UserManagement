@@ -254,12 +254,9 @@ export default function() {
       return new Mirage.Response(400);
         //{errors: [{field: "password", error: "passwordError" }]}
     }
-
-
-
-
-
   })
+
+  
 
 /*****************************************************************************************************\
 |*  Template API
